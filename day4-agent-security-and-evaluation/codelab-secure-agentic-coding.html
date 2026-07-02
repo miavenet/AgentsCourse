@@ -1,0 +1,1832 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"><meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty"><meta property="og:site_name" content="Google Codelabs">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1a73e8"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/codelabs/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/touchicon-180.png"><link rel="canonical" href="https://codelabs.developers.google.com/secure-agentic-coding"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google Codelabs" href="https://codelabs.developers.google.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://codelabs.developers.google.com/secure-agentic-coding" /><link rel="alternate" hreflang="x-default" href="https://codelabs.developers.google.com/secure-agentic-coding" /><link rel="alternate" hreflang="ar"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://codelabs.developers.google.com/secure-agentic-coding?hl=vi" /><title>Vibecode and Secure an AI Agent Lifecycle with Antigravity and TDD &nbsp;|&nbsp; Google Codelabs</title>
+
+<meta property="og:title" content="Vibecode and Secure an AI Agent Lifecycle with Antigravity and TDD &nbsp;|&nbsp; Google Codelabs"><meta name="description" content="Vibe-code a secure shopping assistant agent using Agent Development Kit (ADK) and Gemini models. Secure boundaries with Antigravity IDE, Semgrep in pre-commit hooks, and a custom STRIDE threat modeling skill.">
+  <meta property="og:description" content="Vibe-code a secure shopping assistant agent using Agent Development Kit (ADK) and Gemini models. Secure boundaries with Antigravity IDE, Semgrep in pre-commit hooks, and a custom STRIDE threat modeling skill."><meta property="og:url" content="https://codelabs.developers.google.com/secure-agentic-coding"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    </head>
+  <body class="color-scheme--light"
+        template="codelab"
+        theme="codelabs-theme"
+        type="codelab"
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+        <devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Google Codelabs"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://codelabs.developers.google.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+          
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                          fp-auth
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+        <devsite-book-nav scrollbars hidden>
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" data-nosnippet
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+          
+        </devsite-book-nav>
+      
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                            data-nosnippet
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav" data-nosnippet>
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation" data-nosnippet>
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Vibecode and Secure an AI Agent Lifecycle with Antigravity and TDD<devsite-actions hidden data-nosnippet></devsite-actions>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid=""
+                    codelab-ga4id=""
+                    doc-id=""
+                    id="secure-tdd-vibecoding-antigravity"
+                    title="Vibecode and Secure an AI Agent Lifecycle with Antigravity and TDD"
+                    no-tooltip=""
+                    environment="web"
+                    category=""
+                    feedback-link="https://github.com/googlecodelabs/feedback/issues/new"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="2" step="0">
+          
+            <google-codelab-about codelab-title="Vibecode and Secure an AI Agent Lifecycle with Antigravity and TDD"
+                                  authors="Aron Eidelman, Sita Lakshmi Sangameswaran"
+                                  last-updated="2026-06-18T04:30:46Z"
+                                  duration="73">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          
+          <aside class="special"><p>This lab is part of Kaggle&#39;s <strong>5-Day AI Agents: Intensive Vibe Coding Course with Google</strong>. You can find the additional codelabs and resources available on the <a href="https://www.kaggle.com/competitions/5-day-ai-agents-intensive-vibecoding-course-with-google" target="_blank">event site</a>.</p>
+</aside>
+<p>In this codelab, you will build a retail web application with an integrated AI Shopping Assistant using  <strong>Google&#39;s Agent Development Kit (ADK)</strong>. You will use <strong>Google Antigravity IDE</strong> (Google&#39;s agentic IDE) to establish a secure, test-driven development (TDD) workflow.</p>
+<p>Rather than treating security as a late-stage gate, you will learn to &#34;shift security left&#34; to the point of code inception. You will enforce development standards, automate <a href="https://owasp.org/www-community/Threat_Modeling_Process#stride-threat--mitigation-techniques" target="_blank">STRIDE threat modeling</a>, and gate agent actions with git pre-commit hooks and agent-specific execution hooks.</p>
+<h2 is-upgraded id="what-youll-do" data-text="What you'll do" tabindex="-1">What you'll do</h2>
+<ul>
+<li>Scaffold and build a ADK 2.0 shopping assistant agent using Antigravity IDE and <code translate="no" dir="ltr">agents-cli</code>.</li>
+<li>Set up project-level secure coding standards using a persistent context file (<code translate="no" dir="ltr">CONTEXT.md</code>).</li>
+<li>Build and invoke a custom workspace-level STRIDE Threat Modeling Skill in Antigravity IDE.</li>
+<li>Enforce security guardrails directly during the TDD Plan Phase.</li>
+<li>Write outcome-based security tests in Pytest using Antigravity.</li>
+<li>Configure Git pre-commit hooks to automate <a href="https://semgrep.dev/" target="_blank">Semgrep</a> scans with local remediation loops in Antigravity.</li>
+</ul>
+<h2 is-upgraded id="what-youll-need" data-text="What you'll need" tabindex="-1">What you'll need</h2>
+<ul>
+<li>A web browser such as <a href="https://www.google.com/chrome/" target="_blank">Chrome</a></li>
+<li>Familiarity with Python, Pytest, and basic terminal commands</li>
+<li><strong>Google Antigravity IDE</strong> installed. See the <a href="https://antigravity.google/docs/home" target="_blank">official website</a>.</li>
+<li><strong>uv</strong> package manager installed. See <a href="https://docs.astral.sh/uv/getting-started/installation/" target="_blank">uv installation guide</a>.</li>
+<li><strong>Git</strong> command line tool installed. Git is used exclusively for local version control in this lab, so a GitHub account is not required. See the <a href="https://github.com/git-guides/install-git" target="_blank">Git installation guide</a>.</li>
+</ul>
+<p>This codelab is for developers of all levels, including beginners. The entire lab will take approximately 60 minutes to complete.</p>
+<h3 is-upgraded id="set-up-authentication-environment" data-text="Set up Authentication &amp; Environment" tabindex="-1">Set up Authentication &amp; Environment</h3>
+<aside class="special"><p><strong>Local Concept Demonstration:</strong> Because this lab focuses entirely on demonstrating local development guardrails and pre-commit remediation loops, everything runs locally on your workstation. There is no need to authenticate to Google Cloud or connect your repository to GitHub!</p>
+</aside>
+<p>Provide your authentication credentials for the agent to call Gemini models. Obtain a standard Gemini API key from <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a> and export it in your IDE terminal session:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-bash" class="language-bash" translate="no" dir="ltr"><span class="devsite-syntax-n">export</span> <span class="devsite-syntax-n">GEMINI_API_KEY</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"your_api_key_here"</span>
+<span class="devsite-syntax-n">export</span> <span class="devsite-syntax-n">GOOGLE_GENAI_USE_ENTERPRISE</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">FALSE</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Setup Workspace and Toolchain" duration="5" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Setup Workspace and Toolchain" tabindex="-1">
+              2. Setup Workspace and Toolchain
+          </h2>
+          
+          <p>First, initialize the project workspace and install the underlying agent management toolchain. To do that, we will prompt Antigravity IDE to automate the setup process.</p>
+<aside class="special"><p><strong>Note for Antigravity users:</strong> During this codelab, Antigravity may generate implementation plans or display popups before executing commands or writing code. Be sure to review and <strong>approve</strong> these plans or popups to allow Antigravity to proceed with the tasks.</p>
+<p><strong>Quota Tip:</strong> If you run out of quota during testing or development, you can switch the model in Antigravity to another available model.</p>
+</aside>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Help</span> <span class="devsite-syntax-n">me</span> <span class="devsite-syntax-nb">set</span> <span class="devsite-syntax-n">up</span> <span class="devsite-syntax-n">my</span> <span class="devsite-syntax-n">local</span> <span class="devsite-syntax-n">project</span> <span class="devsite-syntax-n">workspace</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">Please</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-mf">1.</span> <span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">new</span> <span class="devsite-syntax-n">directory</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">~/</span><span class="devsite-syntax-n">secure</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">lab</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">navigate</span> <span class="devsite-syntax-n">into</span> <span class="devsite-syntax-n">it</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">initialize</span>
+   <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">Git</span> <span class="devsite-syntax-n">repository</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">configure</span> <span class="devsite-syntax-n">my</span> <span class="devsite-syntax-n">local</span> <span class="devsite-syntax-n">Git</span> <span class="devsite-syntax-n">identity</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">user</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span>
+   <span class="devsite-syntax-s2">"Kaggle Student"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">user</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">email</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"student@example.com"</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-mf">2.</span> <span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">activate</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">Python</span> <span class="devsite-syntax-n">virtual</span> <span class="devsite-syntax-n">environment</span> <span class="devsite-syntax-n">using</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">uv</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-mf">3.</span> <span class="devsite-syntax-n">Install</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">verify</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cli</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">toolchain</span> <span class="devsite-syntax-n">by</span> <span class="devsite-syntax-n">running</span>
+   <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">uvx</span> <span class="devsite-syntax-n">google</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cli</span> <span class="devsite-syntax-n">setup</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cli</span> <span class="devsite-syntax-n">info</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will execute the necessary terminal commands on your behalf, establishing a clean Git repository and installing the companion ADK skills into your IDE.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Scaffold the ADK Agent Project" duration="10" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Scaffold the ADK Agent Project" tabindex="-1">
+              3. Scaffold the ADK Agent Project
+          </h2>
+          
+          <p>In this phase, we guide Antigravity to use <code translate="no" dir="ltr">agents-cli</code> to scaffold a fully functional ADK 2.0 agent project called <code translate="no" dir="ltr">shopping-assistant</code>. We will instruct Antigravity to design a retail assistant with a discount redemption tool.</p>
+<p><strong>Note:</strong> To show the power of automated gating hooks, in this prompt, we explicitly instruct Antigravity to include a simulated vulnerability: a hardcoded mock API key used for local development.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Use</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cli</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">scaffold</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">new</span> <span class="devsite-syntax-n">ADK</span> <span class="devsite-syntax-mf">2.0</span> <span class="devsite-syntax-n">agent</span> <span class="devsite-syntax-n">project</span> <span class="devsite-syntax-n">called</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">The</span> <span class="devsite-syntax-n">workflow</span> <span class="devsite-syntax-n">should</span> <span class="devsite-syntax-n">act</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">an</span> <span class="devsite-syntax-n">AI</span> <span class="devsite-syntax-n">shopping</span> <span class="devsite-syntax-n">assistant</span>
+<span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">retail</span> <span class="devsite-syntax-n">store</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">It</span> <span class="devsite-syntax-n">should</span> <span class="devsite-syntax-n">include</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">tool</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">redeem</span> <span class="devsite-syntax-n">single</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">use</span> <span class="devsite-syntax-n">discount</span>
+<span class="devsite-syntax-n">codes</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">checking</span> <span class="devsite-syntax-n">an</span> <span class="devsite-syntax-ow">in</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">memory</span> <span class="devsite-syntax-n">store</span> <span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">codes</span> <span class="devsite-syntax-n">like</span> <span class="devsite-syntax-n">WELCOME50</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">SUMMER20</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-n">ensuring</span> <span class="devsite-syntax-n">they</span> <span class="devsite-syntax-n">can</span> <span class="devsite-syntax-n">only</span> <span class="devsite-syntax-n">be</span> <span class="devsite-syntax-n">redeemed</span> <span class="devsite-syntax-n">once</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">requiring</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">registered</span> <span class="devsite-syntax-n">user</span> <span class="devsite-syntax-n">ID</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-o">.</span>
+
+<span class="devsite-syntax-n">Also</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">make</span> <span class="devsite-syntax-n">sure</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">hooks</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">semgrep</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">are</span> <span class="devsite-syntax-n">added</span>
+<span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">project</span><span class="devsite-syntax-s1">'s dependencies in `pyproject.toml` and installed. Finally, to demonstrate</span>
+<span class="devsite-syntax-n">automated</span> <span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-n">security</span> <span class="devsite-syntax-n">gating</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">later</span> <span class="devsite-syntax-n">step</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">explicitly</span> <span class="devsite-syntax-n">initialize</span>
+<span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">Gemini</span> <span class="devsite-syntax-n">model</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">simulated</span> <span class="devsite-syntax-n">hardcoded</span> <span class="devsite-syntax-n">API</span> <span class="devsite-syntax-n">key</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">api_key</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"AIzaSyD-mock-key-value-12345"</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will execute <code translate="no" dir="ltr">agents-cli scaffold create shopping-assistant --adk</code>, configure <code translate="no" dir="ltr">pyproject.toml</code>, and implement the agent logic.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Explore the Agent Code" duration="5" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Explore the Agent Code" tabindex="-1">
+              4. Explore the Agent Code
+          </h2>
+          
+          <p>👉 <strong>Ask Antigravity to explain the generated code:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Read</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">explain</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">project</span> <span class="devsite-syntax-n">structure</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">my</span> <span class="devsite-syntax-n">new</span> <span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span> <span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-n">Walk</span> <span class="devsite-syntax-n">me</span> <span class="devsite-syntax-n">through</span> <span class="devsite-syntax-n">how</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">configured</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">highlighting</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">role</span> <span class="devsite-syntax-n">of</span>
+<span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">discount</span> <span class="devsite-syntax-n">redemption</span> <span class="devsite-syntax-n">tool</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">LlmAgent</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">root</span> <span class="devsite-syntax-n">Workflow</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p>In the Antigravity IDE, newly created project files are displayed directly in the auxiliary pane (left side). You can view <code translate="no" dir="ltr">shopping-assistant/app/agent.py</code> there or open it from the IDE file explorer.</p>
+<aside class="special"><p><strong>Note:</strong> Because Antigravity generates implementations dynamically, the code in your <code translate="no" dir="ltr">app/agent.py</code> file may be structured slightly differently than the snippet below, but it will share the same core ADK 2.0 concepts.</p>
+</aside>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-python" class="language-python" translate="no" dir="ltr"><span class="devsite-syntax-c1"># shopping-assistant/app/agent.py</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">__future__</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">annotations</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">typing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">Any</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Dict</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.adk.agents.context</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">Context</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.adk.apps.app</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">App</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.adk.events.event</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">Event</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.adk.workflow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">Edge</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Workflow</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.adk.workflow.agents.llm_agent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">LlmAgent</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.adk.models.google_llm</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">Gemini</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">google.adk.workflow.node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">node</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">pydantic</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">BaseModel</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Field</span>
+
+<span class="devsite-syntax-c1"># Simulated vulnerability: Unsafe hardcoded API key introduced in initial draft code</span>
+<span class="devsite-syntax-n">model</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Gemini</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"gemini-3.1-flash-lite"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">api_key</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"AIzaSyD-mock-key-value-12345"</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-c1"># In-memory discount redemption store (simulating database state)</span>
+<span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Dict</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-nb">bool</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">{</span><span class="devsite-syntax-s2">"WELCOME50"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-kc">False</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s2">"SUMMER20"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-kc">False</span><span class="devsite-syntax-p">}</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">DiscountRequest</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">BaseModel</span><span class="devsite-syntax-p">):</span>
+    <span class="devsite-syntax-n">code</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Field</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">description</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"The discount code to redeem."</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-n">user_id</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Field</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">description</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"The ID of the user requesting redemption."</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">redeem_discount</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">user_id</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-o">-</span>&gt; <span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-sd">"""Agent Tool: Redeem a single-use discount code for a user."""</span>
+    <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-n">code</span> <span class="devsite-syntax-ow">not</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">:</span>
+        <span class="devsite-syntax-k">return</span> <span class="devsite-syntax-s2">"Error: Invalid discount code."</span>
+    <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-p">]:</span>
+        <span class="devsite-syntax-k">return</span> <span class="devsite-syntax-s2">"Error: Discount code has already been redeemed."</span>
+    <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-ow">not</span> <span class="devsite-syntax-n">user_id</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">user_id</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">startswith</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"guest_"</span><span class="devsite-syntax-p">):</span>
+        <span class="devsite-syntax-k">return</span> <span class="devsite-syntax-s2">"Error: Registered user account required to redeem discounts."</span>
+        
+    <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-kc">True</span>
+    <span class="devsite-syntax-k">return</span> <span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"Success: Discount code </span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2"> redeemed successfully for user </span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">user_id</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">."</span>
+
+<span class="devsite-syntax-n">shopping_agent</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">LlmAgent</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"ShoppingHelper"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">model</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">instruction</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"You are a helpful shopping assistant. Use your tools to redeem discount codes for users."</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">tools</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">redeem_discount</span><span class="devsite-syntax-p">]</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">root_workflow</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">Workflow</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"shopping_assistant_workflow"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">edges</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-n">Edge</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">chain</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">'START'</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">shopping_agent</span><span class="devsite-syntax-p">)]</span>
+<span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-n">app</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">App</span><span class="devsite-syntax-p">(</span>
+    <span class="devsite-syntax-n">name</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"shopping_assistant"</span><span class="devsite-syntax-p">,</span>
+    <span class="devsite-syntax-n">root_agent</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">root_workflow</span>
+<span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="production-best-practice:-concurrency-race-conditions" data-text="Production Best Practice: Concurrency &amp; Race Conditions" tabindex="-1"><strong>Production Best Practice: Concurrency &amp; Race Conditions</strong></h2>
+<p>In our tool logic, we check an in-memory dictionary (<code translate="no" dir="ltr">DISCOUNT_STORE</code>) and modify its state. In a multi-threaded production environment with a real database, two concurrent requests could both read the code as unredeemed before either write commits, causing a <strong>double-redemption</strong> vulnerability. In production, always use pessimistic locking (e.g., <code translate="no" dir="ltr">.with_for_update()</code>) or optimistic versioning to ensure transaction isolation.</p>
+<h2 is-upgraded id="lint-the-initial-agent-graph" data-text="Lint the Initial Agent Graph" tabindex="-1">Lint the Initial Agent Graph</h2>
+<p>To verify that our newly scaffolded agent graph compiles correctly, we can prompt Antigravity to run the linter and test the agent on our behalf.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Run</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cli</span> <span class="devsite-syntax-n">lint</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">our</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">project</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">verify</span> <span class="devsite-syntax-n">syntax</span> <span class="devsite-syntax-ow">and</span> 
+<span class="devsite-syntax-n">refactor</span> <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-nb">any</span> <span class="devsite-syntax-n">issues</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will execute <code translate="no" dir="ltr">agents-cli lint</code> and <code translate="no" dir="ltr">agents-cli lint --fix</code> to fix any formatting or lint issues detected.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Create Project-Specific Rules" duration="5" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Create Project-Specific Rules" tabindex="-1">
+              5. Create Project-Specific Rules
+          </h2>
+          
+          <p>To prevent overloading your agent&#39;s active memory with thousands of pages of generic security documentation—which causes context rot and reasoning latency, you must establish a &#34;paved road&#34; of pre-approved secure conventions. In Antigravity IDE, you can establish these guardrails by creating a persistent context file.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">customization</span> <span class="devsite-syntax-n">directory</span> <span class="devsite-syntax-n">named</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">and</span>
+<span class="devsite-syntax-n">create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">file</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">CONTEXT</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">md</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">defining</span> <span class="devsite-syntax-n">our</span> <span class="devsite-syntax-n">secure</span>
+<span class="devsite-syntax-n">coding</span> <span class="devsite-syntax-n">standards</span><span class="devsite-syntax-p">:</span>
+
+<span class="devsite-syntax-c1"># Local Project Context &amp; Secure Coding Standards</span>
+
+<span class="devsite-syntax-c1">## Core Paved Roads</span>
+<span class="devsite-syntax-n">We</span> <span class="devsite-syntax-n">systematically</span> <span class="devsite-syntax-n">address</span> <span class="devsite-syntax-n">common</span> <span class="devsite-syntax-n">vulnerability</span> <span class="devsite-syntax-n">classes</span> <span class="devsite-syntax-n">by</span> <span class="devsite-syntax-n">guiding</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">agent</span>
+<span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">use</span> <span class="devsite-syntax-n">our</span> <span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">configured</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">secure</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">by</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">default</span> <span class="devsite-syntax-n">helper</span> <span class="devsite-syntax-n">patterns</span> <span class="devsite-syntax-n">instead</span> <span class="devsite-syntax-n">of</span>
+<span class="devsite-syntax-n">writing</span> <span class="devsite-syntax-n">raw</span> <span class="devsite-syntax-n">implementation</span> <span class="devsite-syntax-n">logic</span> <span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">scratch.</span>
+
+<span class="devsite-syntax-mf">1.</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Tool</span> <span class="devsite-syntax-n">Input</span> <span class="devsite-syntax-n">Validation</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Every</span> <span class="devsite-syntax-n">agent</span> <span class="devsite-syntax-n">tool</span> <span class="devsite-syntax-n">must</span> <span class="devsite-syntax-n">validate</span> <span class="devsite-syntax-n">incoming</span>
+   <span class="devsite-syntax-n">parameters</span> <span class="devsite-syntax-n">against</span> <span class="devsite-syntax-n">strict</span> <span class="devsite-syntax-n">Pydantic</span> <span class="devsite-syntax-n">schemas</span> <span class="devsite-syntax-n">rather</span> <span class="devsite-syntax-n">than</span> <span class="devsite-syntax-n">parsing</span> <span class="devsite-syntax-n">raw</span>
+   <span class="devsite-syntax-n">dictionaries</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">strings</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-mf">2.</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">No</span> <span class="devsite-syntax-n">Shell</span> <span class="devsite-syntax-n">Execution</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Never</span> <span class="devsite-syntax-n">use</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">run_command</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">raw</span> <span class="devsite-syntax-n">shell</span> <span class="devsite-syntax-n">execution</span>
+   <span class="devsite-syntax-n">tools</span> <span class="devsite-syntax-n">unless</span> <span class="devsite-syntax-n">explicitly</span> <span class="devsite-syntax-n">approved</span> <span class="devsite-syntax-n">by</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">hooks</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">json</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-mf">3.</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">Commit</span> <span class="devsite-syntax-n">Remediation</span> <span class="devsite-syntax-n">Loop</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">If</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">git</span> <span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-n">fails</span> <span class="devsite-syntax-n">due</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span>
+   <span class="devsite-syntax-n">hook</span> <span class="devsite-syntax-n">error</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">such</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">Semgrep</span> <span class="devsite-syntax-n">scan</span> <span class="devsite-syntax-n">finding</span><span class="devsite-syntax-p">),</span> <span class="devsite-syntax-n">you</span> <span class="devsite-syntax-n">MUST</span> <span class="devsite-syntax-n">treat</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">violation</span>
+   <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">refactoring</span> <span class="devsite-syntax-n">task</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">apply</span> <span class="devsite-syntax-n">targeted</span> <span class="devsite-syntax-n">fixes</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-n">tests</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">verify</span> <span class="devsite-syntax-n">no</span>
+   <span class="devsite-syntax-n">regressions</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">attempt</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-n">again</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will create the <code translate="no" dir="ltr">.agents/</code> directory and the <code translate="no" dir="ltr">CONTEXT.md</code> file, displaying it directly in the auxiliary pane for your review.</p>
+<aside class="warning"><p><strong>Caution:</strong> Failing to centralize these rules causes the agent to fall back on basic training data, which might result in vulnerable string concatenation or open redirect vectors.</p>
+</aside>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Configure Local Gating Hooks" duration="5" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Configure Local Gating Hooks" tabindex="-1">
+              6. Configure Local Gating Hooks
+          </h2>
+          
+          <p>To prevent insecure code or secrets from ever leaving your workstation, configure automated gates at the boundaries of your development environment <em>before</em> committing code. We will prompt Antigravity to generate the hook configurations, then install them using the terminal.</p>
+<h2 is-upgraded id="1.-git-pre-commit-hook" data-text="1. Git Pre-Commit Hook" tabindex="-1">1. Git Pre-Commit Hook</h2>
+<p>To ensure our static analysis reliably catches simulated credentials and blocks insecure commits, we will define a custom Semgrep rule and configure a Git pre-commit hook to enforce it.</p>
+<h3 is-upgraded id="define-a-custom-semgrep-rule" data-text="Define a Custom Semgrep Rule" tabindex="-1">Define a Custom Semgrep Rule</h3>
+<p>Default Semgrep rules (<code translate="no" dir="ltr">--config auto</code>) do not flag mock keys containing words like <code translate="no" dir="ltr">"mock"</code> or hyphens due to low-confidence scoring. To reliably detect our hardcoded API key, we will create a custom local rules file utilizing direct regex scanning instead of generic rules.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">custom</span> <span class="devsite-syntax-n">Semgrep</span> <span class="devsite-syntax-n">rules</span> <span class="devsite-syntax-n">file</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">semgrep</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">rules</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">yaml</span><span class="devsite-syntax-err">`</span>
+<span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">rule</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">detect</span> <span class="devsite-syntax-n">hardcoded</span> <span class="devsite-syntax-n">Google</span> <span class="devsite-syntax-n">API</span> <span class="devsite-syntax-n">key</span> <span class="devsite-syntax-n">prefixes</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">matching</span> <span class="devsite-syntax-n">regex</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">AIzaSy</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">A</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">Za</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">z0</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">9</span><span class="devsite-syntax-n">_</span>\<span class="devsite-syntax-o">-</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">*</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">Configure</span> <span class="devsite-syntax-n">it</span> <span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">Python</span> <span class="devsite-syntax-n">files</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">an</span> <span class="devsite-syntax-n">error</span> <span class="devsite-syntax-n">severity</span>
+<span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">clear</span> <span class="devsite-syntax-n">security</span> <span class="devsite-syntax-n">warning</span> <span class="devsite-syntax-n">message</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will create <code translate="no" dir="ltr">shopping-assistant/.semgrep/rules.yaml</code> defining our custom scanning rule. Review the generated rule definition:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-yaml" class="language-yaml" translate="no" dir="ltr"><span class="devsite-syntax-c1"># shopping-assistant/.semgrep/rules.yaml</span>
+<span class="devsite-syntax-n">rules</span><span class="devsite-syntax-p">:</span>
+  <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-nb">id</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">detect</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">hardcoded</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">api</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">key</span>
+    <span class="devsite-syntax-n">pattern</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">regex</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s1">'AIzaSy[A-Za-z0-9_\-]*'</span>
+    <span class="devsite-syntax-n">message</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"Security Issue: Hardcoded Google API key prefix detected."</span>
+    <span class="devsite-syntax-n">languages</span><span class="devsite-syntax-p">:</span>
+      <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-n">python</span>
+    <span class="devsite-syntax-n">severity</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">ERROR</span>
+</code></pre></devsite-code>
+<h3 is-upgraded id="configure-the-pre-commit-hook" data-text="Configure the Pre-Commit Hook" tabindex="-1">Configure the Pre-Commit Hook</h3>
+<p>Next, configure the Git pre-commit hook to run our custom Semgrep rule. When executing hooks in a subdirectory layout, paths to local configs must be relative to the Git repository root directory (<code translate="no" dir="ltr">shopping-assistant/.semgrep/rules.yaml</code>), not the project subdirectory.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">config</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">yaml</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">file</span> <span class="devsite-syntax-n">configured</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">run</span>
+<span class="devsite-syntax-n">local</span> <span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-n">hooks</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">end</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">of</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">fixer</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">trailing</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">whitespace</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">local</span>
+<span class="devsite-syntax-n">Semgrep</span> <span class="devsite-syntax-n">security</span> <span class="devsite-syntax-n">scan</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">Python</span> <span class="devsite-syntax-n">files</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">Ensure</span> <span class="devsite-syntax-n">Semgrep</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-n">configured</span>
+<span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-n">error</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">flag</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">references</span> <span class="devsite-syntax-n">our</span> <span class="devsite-syntax-n">custom</span> <span class="devsite-syntax-n">rules</span> <span class="devsite-syntax-n">file</span> <span class="devsite-syntax-n">relative</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">Git</span>
+<span class="devsite-syntax-n">repository</span> <span class="devsite-syntax-n">root</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">Once</span> <span class="devsite-syntax-n">created</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-n">install</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">the</span>
+<span class="devsite-syntax-n">terminal</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">activate</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">hooks</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will generate <code translate="no" dir="ltr">shopping-assistant/.pre-commit-config.yaml</code> and execute <code translate="no" dir="ltr">pre-commit install</code> on your behalf. Review the generated configuration:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-yaml" class="language-yaml" translate="no" dir="ltr"><span class="devsite-syntax-c1"># shopping-assistant/.pre-commit-config.yaml</span>
+<span class="devsite-syntax-n">repos</span><span class="devsite-syntax-p">:</span>
+  <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-n">repo</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">local</span>
+    <span class="devsite-syntax-n">hooks</span><span class="devsite-syntax-p">:</span>
+      <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-nb">id</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">end</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">of</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">fixer</span>
+        <span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">End</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">File</span> <span class="devsite-syntax-n">Fixer</span>
+        <span class="devsite-syntax-n">entry</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">end</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">of</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">fixer</span>
+        <span class="devsite-syntax-n">language</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">system</span>
+        <span class="devsite-syntax-n">types</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-p">]</span>
+      <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-nb">id</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">trailing</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">whitespace</span>
+        <span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Trailing</span> <span class="devsite-syntax-n">Whitespace</span>
+        <span class="devsite-syntax-n">entry</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">trailing</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">whitespace</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">fixer</span>
+        <span class="devsite-syntax-n">language</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">system</span>
+        <span class="devsite-syntax-n">types</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-p">]</span>
+      <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-nb">id</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">semgrep</span>
+        <span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Semgrep</span> <span class="devsite-syntax-n">Security</span> <span class="devsite-syntax-n">Scan</span>
+        <span class="devsite-syntax-n">entry</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">semgrep</span> <span class="devsite-syntax-o">--</span><span class="devsite-syntax-n">error</span> <span class="devsite-syntax-o">--</span><span class="devsite-syntax-n">config</span> <span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">semgrep</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">rules</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">yaml</span>
+        <span class="devsite-syntax-n">language</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">system</span>
+        <span class="devsite-syntax-n">types</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">python</span><span class="devsite-syntax-p">]</span>
+</code></pre></devsite-code>
+<aside class="special"><p><strong>Tip:</strong> The <code translate="no" dir="ltr">--error</code> flag is <strong>critical</strong>; without it, Semgrep will log the security finding to standard output but return exit code <code translate="no" dir="ltr">0</code> (success by default), which allows the unsafe commit to pass. Pre-commit only blocks commits on non-zero exit codes.</p>
+</aside>
+<p>This configuration ensures that even if an agent is running in fully autonomous, non-interactive mode, the pre-commit gate will fire and block any commit that fails static analysis scans.</p>
+<h3 is-upgraded id="direct-execution-commands-for-manual-verification" data-text="Direct Execution Commands (For Manual Verification)" tabindex="-1">Direct Execution Commands (For Manual Verification)</h3>
+<p>To verify your static analysis setup manually without triggering a full commit hook cycle, you can execute these checks directly from the terminal.</p>
+<p><strong>Via pre-commit (from the &#34;shopping-assistant&#34; directory):</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-bash" class="language-bash" translate="no" dir="ltr"><span class="devsite-syntax-n">uv</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-n">pre</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-n">semgrep</span> <span class="devsite-syntax-o">--</span><span class="devsite-syntax-nb">all</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">files</span>
+</code></pre></devsite-code>
+<p><strong>Via Semgrep directly (from the &#34;shopping-assistant&#34; directory):</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-bash" class="language-bash" translate="no" dir="ltr"><span class="devsite-syntax-n">uv</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-n">semgrep</span> <span class="devsite-syntax-o">--</span><span class="devsite-syntax-n">error</span> <span class="devsite-syntax-o">--</span><span class="devsite-syntax-n">config</span> <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">semgrep</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">rules</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">yaml</span> <span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="2.-built-in-antigravity-agent-hook" data-text="2. Built-in Antigravity Agent Hook" tabindex="-1">2. Built-in Antigravity Agent Hook</h2>
+<p>For deeper, mid-trajectory gating, configure an agent hook in <code translate="no" dir="ltr">shopping-assistant/.agents/hooks.json</code>. Unlike git hooks, agent hooks intercept Antigravity <em>before</em> it can run critical tools (like executing shell commands) on your system.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">hooks</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">json</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">file</span> <span class="devsite-syntax-n">configured</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">a</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">PreToolUse</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">hook</span> <span class="devsite-syntax-n">that</span> <span class="devsite-syntax-n">intercepts</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">run_command</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">executions</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">runs</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">python3</span> <span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">scripts</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">validate_tool_call</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-mi">10</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">second</span> <span class="devsite-syntax-n">timeout</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will create <code translate="no" dir="ltr">shopping-assistant/.agents/hooks.json</code>. Review the generated configuration:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-json" class="language-json" translate="no" dir="ltr"><span class="devsite-syntax-p">{</span>
+  <span class="devsite-syntax-s2">"enabled"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">true</span><span class="devsite-syntax-p">,</span>
+  <span class="devsite-syntax-s2">"PreToolUse"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-p">[</span>
+    <span class="devsite-syntax-p">{</span>
+      <span class="devsite-syntax-s2">"matcher"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"run_command"</span><span class="devsite-syntax-p">,</span>
+      <span class="devsite-syntax-s2">"command"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-s2">"python3 .agents/scripts/validate_tool_call.py"</span><span class="devsite-syntax-p">,</span>
+      <span class="devsite-syntax-s2">"timeout"</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-mi">10</span>
+    <span class="devsite-syntax-p">}</span>
+  <span class="devsite-syntax-p">]</span>
+<span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<aside class="warning"><p><strong>Caution:</strong> To safely intercept tool executions like <code translate="no" dir="ltr">run_command</code>, the <code translate="no" dir="ltr">PreToolUse</code> event definition MUST include the mandatory <code translate="no" dir="ltr">matcher</code> field. Leaving this out or misconfiguring it can let the agent execute raw, unchecked shell actions.</p>
+</aside>
+<p>Next, prompt Antigravity to create the underlying tool validation script referenced by our hook.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">script</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">scripts</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">validate_tool_call</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span><span class="devsite-syntax-err">`</span>
+<span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">logic</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">inspect</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">run_command</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">executions</span> <span class="devsite-syntax-n">passed</span> <span class="devsite-syntax-n">using</span> <span class="devsite-syntax-n">stdin</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">block</span>
+<span class="devsite-syntax-n">destructive</span> <span class="devsite-syntax-n">commands</span> <span class="devsite-syntax-n">like</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">rm</span> <span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">rf</span> <span class="devsite-syntax-o">/</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will generate <code translate="no" dir="ltr">shopping-assistant/.agents/scripts/validate_tool_call.py</code>, similar to the one below. Review the generated validation script:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-python" class="language-python" translate="no" dir="ltr"><span class="devsite-syntax-c1"># shopping-assistant/.agents/scripts/validate_tool_call.py</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">sys</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">json</span>
+
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">main</span><span class="devsite-syntax-p">():</span>
+    <span class="devsite-syntax-k">try</span><span class="devsite-syntax-p">:</span>
+        <span class="devsite-syntax-n">context</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">json</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">load</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">stdin</span><span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-n">command</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">context</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">get</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"tool_args"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-p">{})</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">get</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"CommandLine"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s2">""</span><span class="devsite-syntax-p">)</span>
+        
+        <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-s2">"rm -rf /"</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">command</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-s2">"mkfs"</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">command</span><span class="devsite-syntax-p">:</span>
+            <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"BLOCKED: Destructive command detected."</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">stderr</span><span class="devsite-syntax-p">)</span>
+            <span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">exit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">)</span>
+            
+        <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"APPROVED: Command validation passed."</span><span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">exit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-k">except</span> <span class="devsite-syntax-ne">Exception</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">e</span><span class="devsite-syntax-p">:</span>
+        <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"Validation error: </span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">e</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">file</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">stderr</span><span class="devsite-syntax-p">)</span>
+        <span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">exit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-k">if</span> <span class="devsite-syntax-vm">__name__</span> <span class="devsite-syntax-o">==</span> <span class="devsite-syntax-s2">"__main__"</span><span class="devsite-syntax-p">:</span>
+    <span class="devsite-syntax-n">main</span><span class="devsite-syntax-p">()</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="hook-trade-offs" data-text="Hook Trade-offs" tabindex="-1">Hook Trade-offs</h2>
+<ul>
+<li><strong>Git Hooks</strong>: Native to version control; run even if an agent runs in fully autonomous, non-interactive mode. However, they can be bypassed using the <code translate="no" dir="ltr">--no-verify</code> flag during a commit.</li>
+<li><strong>Agent Hooks</strong>: Capture events mid-trajectory to block dangerous tool commands, but they do not protect the repository if a developer bypasses the IDE.</li>
+</ul>
+<p>Local gates reinforce good developer habits and help catch vulnerabilities instantly. Remember, however, that local gates can be bypassed, meaning your remote, isolated CI/CD pipeline remains your ultimate, unbypassable security barrier.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Implement STRIDE Threat Modeling Skill" duration="8" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Implement STRIDE Threat Modeling Skill" tabindex="-1">
+              7. Implement STRIDE Threat Modeling Skill
+          </h2>
+          
+          <p>Now, you will grant Antigravity the specialized knowledge of a security architect. Antigravity skills are modular, declarative Markdown directories that instruct the agent how to run multi-step reasoning jobs. Antigravity automatically discovers any skills placed in <code translate="no" dir="ltr">.agents/skills/</code>.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">local</span> <span class="devsite-syntax-n">skill</span> <span class="devsite-syntax-n">directory</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">skills</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">stride</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">threat</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">create</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">skill</span>
+<span class="devsite-syntax-n">definition</span> <span class="devsite-syntax-n">file</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">skills</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">stride</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">threat</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">model</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">SKILL</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">md</span><span class="devsite-syntax-err">`</span>
+<span class="devsite-syntax-k">with</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">following</span> <span class="devsite-syntax-n">content</span><span class="devsite-syntax-p">:</span>
+
+<span class="devsite-syntax-o">---</span>
+<span class="devsite-syntax-n">name</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">stride</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">threat</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">model</span>
+<span class="devsite-syntax-n">description</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Performs</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">systematic</span> <span class="devsite-syntax-n">STRIDE</span> <span class="devsite-syntax-n">threat</span> <span class="devsite-syntax-n">modeling</span> <span class="devsite-syntax-n">assessment</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">the</span>
+<span class="devsite-syntax-n">current</span> <span class="devsite-syntax-n">project</span><span class="devsite-syntax-s1">'s codebase and architecture. Use this when starting a new</span>
+<span class="devsite-syntax-n">implementation</span> <span class="devsite-syntax-n">phase</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">reviewing</span> <span class="devsite-syntax-n">existing</span> <span class="devsite-syntax-n">components</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-o">---</span>
+
+<span class="devsite-syntax-c1"># STRIDE Threat Modeling Skill</span>
+
+<span class="devsite-syntax-c1">## Goal</span>
+<span class="devsite-syntax-n">Guide</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">agent</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">analyze</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">workspace</span> <span class="devsite-syntax-n">directory</span> <span class="devsite-syntax-n">structure</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">configuration</span>
+<span class="devsite-syntax-n">files</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">code</span> <span class="devsite-syntax-n">files</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">produce</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">structured</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">threat_model</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">md</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">assessment</span><span class="devsite-syntax-o">.</span>
+
+<span class="devsite-syntax-c1">## Instructions</span>
+<span class="devsite-syntax-mf">1.</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Analyze</span> <span class="devsite-syntax-n">System</span> <span class="devsite-syntax-n">Boundaries</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Map</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">entry</span> <span class="devsite-syntax-n">points</span> <span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">workflows</span><span class="devsite-syntax-p">,</span>
+   <span class="devsite-syntax-n">prompts</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">data</span> <span class="devsite-syntax-n">storage</span> <span class="devsite-syntax-n">layers</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-mf">2.</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">STRIDE</span> <span class="devsite-syntax-n">Evaluation</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Evaluate</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">system</span> <span class="devsite-syntax-n">against</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">six</span> <span class="devsite-syntax-n">STRIDE</span> <span class="devsite-syntax-n">pillars</span><span class="devsite-syntax-p">:</span>
+   <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Spoofing</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Are</span> <span class="devsite-syntax-n">caller</span> <span class="devsite-syntax-n">identity</span> <span class="devsite-syntax-n">boundaries</span> <span class="devsite-syntax-n">verified</span> <span class="devsite-syntax-n">before</span> <span class="devsite-syntax-n">executing</span>
+     <span class="devsite-syntax-n">sensitive</span> <span class="devsite-syntax-n">tool</span> <span class="devsite-syntax-n">logic</span><span class="devsite-syntax-err">?</span>
+   <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Tampering</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Can</span> <span class="devsite-syntax-n">users</span> <span class="devsite-syntax-n">manipulate</span> <span class="devsite-syntax-n">data</span> <span class="devsite-syntax-n">flows</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">parameters</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">underlying</span>
+     <span class="devsite-syntax-n">state</span><span class="devsite-syntax-err">?</span>
+   <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Repudiation</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Are</span> <span class="devsite-syntax-n">critical</span> <span class="devsite-syntax-n">transactions</span> <span class="devsite-syntax-n">securely</span> <span class="devsite-syntax-n">logged</span><span class="devsite-syntax-err">?</span>
+   <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Information</span> <span class="devsite-syntax-n">Disclosure</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Are</span> <span class="devsite-syntax-n">we</span> <span class="devsite-syntax-n">risking</span> <span class="devsite-syntax-n">leakage</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">PII</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">internal</span> <span class="devsite-syntax-n">tokens</span><span class="devsite-syntax-p">,</span>
+     <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">raw</span> <span class="devsite-syntax-n">stack</span> <span class="devsite-syntax-n">traces</span><span class="devsite-syntax-err">?</span>
+   <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Denial</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">Service</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Are</span> <span class="devsite-syntax-n">there</span> <span class="devsite-syntax-n">rate</span> <span class="devsite-syntax-n">limits</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">expensive</span> <span class="devsite-syntax-n">database</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">LLM</span>
+     <span class="devsite-syntax-n">queries</span><span class="devsite-syntax-err">?</span>
+   <span class="devsite-syntax-o">-</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Elevation</span> <span class="devsite-syntax-n">of</span> <span class="devsite-syntax-n">Privilege</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Can</span> <span class="devsite-syntax-n">an</span> <span class="devsite-syntax-n">unauthenticated</span> <span class="devsite-syntax-n">user</span> <span class="devsite-syntax-n">bypass</span> <span class="devsite-syntax-n">access</span>
+     <span class="devsite-syntax-n">control</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">reach</span> <span class="devsite-syntax-n">privileged</span> <span class="devsite-syntax-n">tool</span> <span class="devsite-syntax-n">actions</span><span class="devsite-syntax-err">?</span>
+<span class="devsite-syntax-mf">3.</span> <span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Output</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Generate</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">highly</span> <span class="devsite-syntax-n">structured</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">threat_model</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">md</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">saved</span> <span class="devsite-syntax-n">directly</span>
+   <span class="devsite-syntax-n">into</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">workspace</span> <span class="devsite-syntax-n">root</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will create the custom skill directory and <code translate="no" dir="ltr">SKILL.md</code> file.</p>
+<p>Now, let&#39;s execute your newly created skill to evaluate your active project graph (<code translate="no" dir="ltr">shopping-assistant/app/agent.py</code>).</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Run</span> <span class="devsite-syntax-n">stride</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">threat</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">model</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">our</span> <span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span> <span class="devsite-syntax-n">agent</span> <span class="devsite-syntax-n">graph</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity matches your intent, loads the threat assessment instructions on-demand from your local skill directory, analyzes your existing <code translate="no" dir="ltr">agent.py</code> file, and generates a structured <code translate="no" dir="ltr">threat_model.md</code> directly in your <code translate="no" dir="ltr">shopping-assistant</code> root. This approach keeps your everyday working context clean and lightweight while giving you instant access to expert security reasoning.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Gate the TDD Plan Phase" duration="5" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Gate the TDD Plan Phase" tabindex="-1">
+              8. Gate the TDD Plan Phase
+          </h2>
+          
+          <p>Before implementing further features or refactoring code, Antigravity utilizes its semantic codebase understanding to map out changes in an <code translate="no" dir="ltr">implementation_plan.md</code> and a <code translate="no" dir="ltr">task.md</code> checklist. To force Antigravity to design for security up-front, we configure a system rule in <code translate="no" dir="ltr">.agents/CONTEXT.md</code> that restricts plan approval.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Append</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">following</span> <span class="devsite-syntax-n">TDD</span> <span class="devsite-syntax-n">planning</span> <span class="devsite-syntax-n">gate</span> <span class="devsite-syntax-n">instruction</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">bottom</span> <span class="devsite-syntax-n">of</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">CONTEXT</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">md</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-p">:</span>
+
+<span class="devsite-syntax-c1">## TDD Planning Gate</span>
+<span class="devsite-syntax-n">During</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">Plan</span> <span class="devsite-syntax-n">phase</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">you</span> <span class="devsite-syntax-n">must</span> <span class="devsite-syntax-n">decompose</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">workspace</span> <span class="devsite-syntax-n">task</span> <span class="devsite-syntax-n">into</span> <span class="devsite-syntax-n">logical</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-n">modular</span> <span class="devsite-syntax-n">stages</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">Every</span> <span class="devsite-syntax-n">implementation</span> <span class="devsite-syntax-n">plan</span> <span class="devsite-syntax-n">MUST</span> <span class="devsite-syntax-n">include</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">dedicated</span>
+<span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Security</span> <span class="devsite-syntax-n">Boundaries</span> &amp; <span class="devsite-syntax-n">Assertions</span><span class="devsite-syntax-o">**</span> <span class="devsite-syntax-n">section</span> <span class="devsite-syntax-n">outlining</span> <span class="devsite-syntax-n">specific</span> <span class="devsite-syntax-n">edge</span> <span class="devsite-syntax-n">cases</span>
+<span class="devsite-syntax-n">that</span> <span class="devsite-syntax-n">could</span> <span class="devsite-syntax-n">exploit</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">feature</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will update <code translate="no" dir="ltr">shopping-assistant/.agents/CONTEXT.md</code> with the new planning gate rule.</p>
+<p>When you prompt Antigravity to build or refactor a feature in subsequent steps, it will automatically analyze this rule and present an implementation plan with an explicit security breakdown. You will be able to review this plan directly in Antigravity&#39;s interactive dialog or auxiliary pane, where you must click <strong>Proceed</strong> or <strong>Approve</strong> before code generation begins.</p>
+<h2 is-upgraded id="test-the-planning-gate-optional" data-text="Test the Planning Gate (Optional)" tabindex="-1">Test the Planning Gate (Optional)</h2>
+<p>To observe this planning gate in action right now, try prompting Antigravity with one of the following feature requests. Instead of immediately generating code, Antigravity will enter the Plan phase and present an <code translate="no" dir="ltr">implementation_plan.md</code> featuring a detailed <strong>Security Boundaries &amp; Assertions</strong> breakdown (e.g., identifying race conditions, unauthorized privilege escalation, or negative point values) for your review!</p>
+<p>👉 <strong>Prompt to Antigravity (Choose one to test):</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Plan</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">new</span> <span class="devsite-syntax-n">agent</span> <span class="devsite-syntax-n">tool</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">award_loyalty_points</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">that</span> <span class="devsite-syntax-n">awards</span> <span class="devsite-syntax-n">points</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">user</span><span class="devsite-syntax-s1">'s</span>
+<span class="devsite-syntax-n">account</span> <span class="devsite-syntax-n">after</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">successful</span> <span class="devsite-syntax-n">purchase</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Plan</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">new</span> <span class="devsite-syntax-n">agent</span> <span class="devsite-syntax-n">tool</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">process_cart_checkout</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">that</span> <span class="devsite-syntax-n">receives</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">cart</span> <span class="devsite-syntax-n">ID</span> <span class="devsite-syntax-ow">and</span>
+<span class="devsite-syntax-n">discount</span> <span class="devsite-syntax-n">code</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">applies</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">discount</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">processes</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">order</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Plan</span> <span class="devsite-syntax-n">a</span> <span class="devsite-syntax-n">new</span> <span class="devsite-syntax-n">agent</span> <span class="devsite-syntax-n">tool</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">update_discount_status</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">that</span> <span class="devsite-syntax-n">allows</span> <span class="devsite-syntax-n">administrators</span> <span class="devsite-syntax-n">to</span>
+<span class="devsite-syntax-n">activate</span> <span class="devsite-syntax-ow">or</span> <span class="devsite-syntax-n">deactivate</span> <span class="devsite-syntax-n">discount</span> <span class="devsite-syntax-n">codes</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">store</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Write Isolated, Outcome-Based Tests" duration="10" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Write Isolated, Outcome-Based Tests" tabindex="-1">
+              9. Write Isolated, Outcome-Based Tests
+          </h2>
+          
+          <p>Now we guide Antigravity to write comprehensive security tests for our existing ADK agent tools. To ensure our security tests are resilient and realistic, we structure them based on two core principles:</p>
+<ul>
+<li><strong>Assert on outcomes, not interactions</strong>: Assert on final return strings and state mutations instead of writing fragile mocks that spy on internal helper calls.</li>
+<li><strong>Enforce Strict Guardrails</strong>: Verify that tools enforce explicit business logic boundaries (like single-use redemption and registered user rules).</li>
+</ul>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Use</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cli</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">pytest</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">generate</span> <span class="devsite-syntax-n">an</span> <span class="devsite-syntax-n">outcome</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">based</span> <span class="devsite-syntax-n">security</span> <span class="devsite-syntax-n">test</span> <span class="devsite-syntax-n">suite</span>
+<span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">tests</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">test_agent</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-o">.</span> <span class="devsite-syntax-n">Inspect</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">app</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-ow">and</span>
+<span class="devsite-syntax-n">write</span> <span class="devsite-syntax-n">tests</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">verify</span> <span class="devsite-syntax-nb">all</span> <span class="devsite-syntax-n">security</span> <span class="devsite-syntax-n">boundaries</span> <span class="devsite-syntax-ow">and</span> <span class="devsite-syntax-n">business</span> <span class="devsite-syntax-n">logic</span> <span class="devsite-syntax-n">guardrails</span>
+<span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">redeem_discount</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">tool</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will generate <code translate="no" dir="ltr">shopping-assistant/tests/test_agent.py</code>, similar to the one below. Review the generated test file:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-python" class="language-python" translate="no" dir="ltr"><span class="devsite-syntax-c1"># shopping-assistant/tests/test_agent.py</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">pytest</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">app.agent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">redeem_discount</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">DISCOUNT_STORE</span>
+
+<span class="devsite-syntax-nd">@pytest</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">fixture</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">autouse</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-kc">True</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">reset_store</span><span class="devsite-syntax-p">():</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-sd">"""Ensure strict test isolation by resetting in-memory store state before each test run."""</span>
+    <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"WELCOME50"</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-kc">False</span>
+    <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"SUMMER20"</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-kc">False</span>
+    <span class="devsite-syntax-k">yield</span>
+    <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"WELCOME50"</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-kc">False</span>
+    <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"SUMMER20"</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-kc">False</span>
+
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">test_discount_code_can_only_be_redeemed_once</span><span class="devsite-syntax-p">():</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-sd">"""Verify a user cannot submit a request reusing a single-use code."""</span>
+    <span class="devsite-syntax-c1"># First redemption - should succeed</span>
+    <span class="devsite-syntax-n">res_one</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">redeem_discount</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"WELCOME50"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s2">"user_123"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-k">assert</span> <span class="devsite-syntax-s2">"Success"</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">res_one</span>
+    <span class="devsite-syntax-k">assert</span> <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"WELCOME50"</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-kc">True</span>
+    
+    <span class="devsite-syntax-c1"># Second redemption trying to reuse the same code</span>
+    <span class="devsite-syntax-n">res_two</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">redeem_discount</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"WELCOME50"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s2">"user_456"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-k">assert</span> <span class="devsite-syntax-s2">"Error: Discount code has already been redeemed"</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">res_two</span>
+
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">test_discount_redemption_rejects_invalid_code</span><span class="devsite-syntax-p">():</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-sd">"""Verify that unknown discount codes are hard-blocked."""</span>
+    <span class="devsite-syntax-n">res</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">redeem_discount</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"INVALID999"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s2">"user_123"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-k">assert</span> <span class="devsite-syntax-s2">"Error: Invalid discount code"</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">res</span>
+
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">test_discount_redemption_rejects_guest_accounts</span><span class="devsite-syntax-p">():</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-sd">"""Verify that unauthenticated guest accounts cannot redeem discounts."""</span>
+    <span class="devsite-syntax-n">res</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">redeem_discount</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"SUMMER20"</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s2">"guest_999"</span><span class="devsite-syntax-p">)</span>
+    <span class="devsite-syntax-k">assert</span> <span class="devsite-syntax-s2">"Error: Registered user account required"</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">res</span>
+    <span class="devsite-syntax-k">assert</span> <span class="devsite-syntax-n">DISCOUNT_STORE</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-s2">"SUMMER20"</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-ow">is</span> <span class="devsite-syntax-kc">False</span>
+</code></pre></devsite-code>
+<h2 is-upgraded id="verify-tdd-green-phase" data-text="Verify TDD GREEN Phase" tabindex="-1">Verify TDD GREEN Phase</h2>
+<p>To verify that our newly generated security tests pass successfully against our existing <code translate="no" dir="ltr">agent.py</code> implementation, prompt Antigravity to execute pytest on your behalf.</p>
+<p>👉 <strong>Prompt to Antigravity:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Run</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">uv</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-n">pytest</span> <span class="devsite-syntax-n">tests</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">test_agent</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">py</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">on</span> <span class="devsite-syntax-n">our</span> <span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span><span class="devsite-syntax-err">`</span> <span class="devsite-syntax-n">project</span> <span class="devsite-syntax-n">to</span> <span class="devsite-syntax-n">verify</span> <span class="devsite-syntax-n">that</span> <span class="devsite-syntax-n">our</span> <span class="devsite-syntax-n">security</span> <span class="devsite-syntax-n">tests</span> <span class="devsite-syntax-k">pass</span> <span class="devsite-syntax-n">successfully</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p><strong>What to expect:</strong> Antigravity will execute <code translate="no" dir="ltr">uv run pytest tests/test_agent.py</code> in the terminal. All test cases pass successfully. The logical application boundaries are now secure, but we must make sure our static scanner catches the hardcoded API key during commit.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Verify Gating and Agent Self-Correction" duration="5" step="9">
+          
+          <h2 class="step-title" id="9" data-text="Verify Gating and Agent Self-Correction" tabindex="-1">
+              10. Verify Gating and Agent Self-Correction
+          </h2>
+          
+          <p>Now that tests are green, you enter the <strong>Refactor and Commit Phase</strong>. This is where our local security scans and pre-commit hooks verify that no repo leaves the workstation with vulnerabilities, and Antigravity demonstrates its autonomous self-correction capabilities.</p>
+<aside class="special"><p><strong>Commit Hygiene:</strong> Do not use the <code translate="no" dir="ltr">--no-verify</code> flag when executing the commit command! We specifically want the pre-commit hook to fire so you can observe Semgrep intercept the simulated API key leak.</p>
+</aside>
+<ol type="1">
+<li>In your terminal, navigate to the project directory and commit the code using <code translate="no" dir="ltr">uv run</code> to ensure local pre-commit hook binaries are active on your PATH:<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-shell" class="language-shell" translate="no" dir="ltr"><span class="devsite-syntax-n">cd</span> <span class="devsite-syntax-o">~/</span><span class="devsite-syntax-n">secure</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">lab</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span>
+<span class="devsite-syntax-n">git</span> <span class="devsite-syntax-n">add</span> <span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-n">uv</span> <span class="devsite-syntax-n">run</span> <span class="devsite-syntax-n">git</span> <span class="devsite-syntax-n">commit</span> <span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">m</span> <span class="devsite-syntax-s2">"feat: implement shopping assistant agent"</span>
+</code></pre></devsite-code>
+</li>
+<li>Observe that the commit fails because the Git pre-commit hook runs Semgrep automatically:<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>Semgrep Security Scan....................................................Failed
+- hookid: semgrep
+
+  app/agent.py
+  Security Issue: Hardcoded Google API key prefix detected.
+</pre></devsite-code>
+</li>
+<li>Guided by the <strong>Pre-Commit Remediation Loop</strong> rule configured in <code translate="no" dir="ltr">.agents/CONTEXT.md</code>, Antigravity automatically intercepts the pre-commit failure in the IDE terminal, reads the Semgrep error logs, and starts a refactoring step to move from a hardcoded API key to retrieving the key securely.</li>
+<li>Review the refactored code generated by Antigravity in <code translate="no" dir="ltr">shopping-assistant/app/agent.py</code> to resolve the API key leak.</li>
+<li>Antigravity automatically runs <code translate="no" dir="ltr">pytest</code> to verify the tests are still green.</li>
+<li>Antigravity attempts the commit again on your behalf. Provided your local Git identity is configured and a repo is initialized, the scan passes, and the commit succeeds!</li>
+</ol>
+<p>This demonstrates the core power of combining TDD with local pre-commit hooks and agent loops. Instead of waiting for a remote CI/CD failure, the agent is kept accountable locally, refactoring its code to be secure-by-default before it is ever pushed.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Run and Test the Agent Locally" duration="10" step="10">
+          
+          <h2 class="step-title" id="10" data-text="Run and Test the Agent Locally" tabindex="-1">
+              11. Run and Test the Agent Locally
+          </h2>
+          
+          <p>Now that the security boundaries are verified and committed, run the ADK agent locally using your exported Gemini API key to interact with it in the local playground.</p>
+<ol type="1">
+<li>In your terminal, ensure your Gemini API Key is exported in your environment:<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-shell" class="language-shell" translate="no" dir="ltr"><span class="devsite-syntax-n">echo</span> <span class="devsite-syntax-err">$</span><span class="devsite-syntax-n">GEMINI_API_KEY</span> <span class="devsite-syntax-c1"># Verify your key is exported</span>
+</code></pre></devsite-code>
+</li>
+<li>Launch the local development playground for your agent:<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-shell" class="language-shell" translate="no" dir="ltr"><span class="devsite-syntax-n">cd</span> <span class="devsite-syntax-o">~/</span><span class="devsite-syntax-n">secure</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">lab</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">shopping</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">assistant</span>
+<span class="devsite-syntax-n">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">cli</span> <span class="devsite-syntax-n">playground</span>
+</code></pre></devsite-code>
+You should see output indicating the local playground server is running on port 8080:<div></div><devsite-code><pre translate="no" dir="ltr" is-upgraded>* Serving ADK Playground
+* Running on http://127.0.0.1:8080/dev-ui/?app=app
+</pre></devsite-code>
+</li>
+<li>Open the provided URL in your web browser to start chatting with your Shopping Assistant agent interactively. Try asking it to redeem a discount code:<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-text" class="language-text" translate="no" dir="ltr"><span class="devsite-syntax-n">Can</span> <span class="devsite-syntax-n">you</span> <span class="devsite-syntax-n">redeem</span> <span class="devsite-syntax-n">the</span> <span class="devsite-syntax-n">discount</span> <span class="devsite-syntax-n">code</span> <span class="devsite-syntax-n">WELCOME50</span> <span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">user</span> <span class="devsite-syntax-n">user_123</span><span class="devsite-syntax-err">?</span>
+</code></pre></devsite-code>
+The agent will process your request using Gemini model execution and attempt to redeem the discount.<aside class="special"><p><strong>Note:</strong> Because Antigravity generates tool logic dynamically, your agent&#39;s implementation of the registered user check may vary. If the agent rejects <code translate="no" dir="ltr">user_123</code> as unregistered (e.g., <code translate="no" dir="ltr">User ID 'user_123' is not registered</code>), ask the agent which user IDs are registered in its store (or check <code translate="no" dir="ltr">app/agent.py</code>), and retry with a valid registered user ID!</p>
+</aside>
+</li>
+</ol>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Clean up" duration="2" step="11">
+          
+          <h2 class="step-title" id="11" data-text="Clean up" tabindex="-1">
+              12. Clean up
+          </h2>
+          
+          <p>To clean up your workstation and avoid leaving unwanted resources or secrets in your local environment, follow these cleanup steps.</p>
+<ol type="1">
+<li><strong>Stop Local Server</strong>: If your playground server is still running, stop it in your terminal by pressing <code translate="no" dir="ltr">Ctrl + C</code>.</li>
+<li><strong>Remove Local Project Files</strong>: Delete the local project directory from your machine: <div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python"><code language="language-shell" class="language-shell" translate="no" dir="ltr"><span class="devsite-syntax-n">rm</span> <span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">rf</span> <span class="devsite-syntax-o">~/</span><span class="devsite-syntax-n">secure</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">agent</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">lab</span>
+</code></pre></devsite-code>
+</li>
+</ol>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Congratulations" duration="1" step="12">
+          
+          <h2 class="step-title" id="12" data-text="Congratulations" tabindex="-1">
+              13. Congratulations
+          </h2>
+          
+          <p>Congratulations! You have successfully established a secure, test-driven development lifecycle using Google Antigravity IDE, built a pure ADK 2.0 shopping assistant agent, and verified it locally.</p>
+<h2 is-upgraded id="what-youve-learned" data-text="What you've learned" tabindex="-1">What you've learned</h2>
+<ul>
+<li>How to scaffold and integrate an ADK 2.0 agent (ADK) using Antigravity IDE and <code translate="no" dir="ltr">agents-cli</code>.</li>
+<li>How to set up project-level secure coding standards using <code translate="no" dir="ltr">CONTEXT.md</code>.</li>
+<li>How to create and run a custom STRIDE Threat Modeling Skill in Antigravity IDE.</li>
+<li>How to gate the plan phase of an AI agent to enforce security boundaries.</li>
+<li>How to implement isolated, outcome-based security tests using pytest.</li>
+<li>How to run and test the agentic application locally.</li>
+<li>The differences and trade-offs between Git hooks and agent-specific execution hooks.</li>
+</ul>
+<h2 is-upgraded id="next-steps" data-text="Next steps" tabindex="-1">Next steps</h2>
+<ul>
+<li>Explore <a href="https://cloud.google.com/vertex-ai" target="_blank">Antigravity Customizing Guide</a> for advanced configurations.</li>
+<li>Read more about <a href="https://en.wikipedia.org/wiki/STRIDE_(security)" target="_blank">STRIDE Threat Modeling</a>.</li>
+<li>Implement Semgrep rules tailored to your organization&#39;s security policies.</li>
+</ul>
+<h2 is-upgraded id="earn-your-kaggle-5-day-ai-agents-badge-🎉" data-text="Earn your Kaggle 5-Day AI Agents badge 🎉" tabindex="-1">Earn your Kaggle 5-Day AI Agents badge 🎉</h2>
+<p>Completed this lab as part of Kaggle&#39;s <strong>5-Day AI Agents: Intensive Vibe Coding Course with Google</strong>? Claim your completion badge:</p>
+<p><a href="https://developers.google.com/profile/badges/events/cloud/five-day-ai-agents/award" target="_blank"><strong>Get the 5-Day AI Agents badge</strong></a></p>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent" data-nosnippet>
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent"
+     aria-label="Footer links"
+     data-nosnippet>
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//googledevelopers.blogspot.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.facebook.com/Google-Developers-967415219957038"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Facebook
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//medium.com/google-developers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Medium
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//twitter.com/googledevs"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Twitter
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.youtube.com/user/GoogleDevelopers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Programs</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.womentechmakers.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Women Techmakers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/gdg"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Developer Groups
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/experts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Developer Experts
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/accelerators"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Accelerators
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Developer consoles</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.developers.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Google API Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.cloud.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Cloud Platform Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//play.google.com/apps/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.firebase.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Firebase Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.actions.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Actions on Google Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//cast.google.com/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Cast SDK Developer Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//chrome.google.com/webstore/developer/dashboard"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Chrome Web Store Dashboard
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent" data-nosnippet>
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//developers.google.com/terms/site-terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Sign up for the Google Developers newsletter</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&amp;utm_source=google-products&amp;utm_team=googledevs&amp;utm_campaign=201611-newsletter-launch"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section>
+      </section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;codelabs&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+    
+<script nonce="nbKK8xO3+YUT7XNZZ/JXP18n7TndzQ">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/js/app_loader.js', '[17,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs","https://codelabs-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/codelabs/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","codelabs.developers.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Search__enable_ai_eligibility_checks","MiscFeatureFlags__enable_view_transitions","Profiles__enable_public_developer_profiles","Profiles__enable_recognition_badges","Cloud__fast_free_trial","Cloud__enable_cloud_shell","MiscFeatureFlags__enable_project_variables","Profiles__enable_join_program_group_endpoint","BookNav__enable_tenant_cache_key","Profiles__enable_completequiz_endpoint","MiscFeatureFlags__remove_cross_domain_tracking_params","Cloud__cache_serialized_dynamic_content","DevPro__enable_code_assist","Profiles__enable_completecodelab_endpoint","MiscFeatureFlags__developers_footer_image","Profiles__enable_complete_playlist_endpoint","Search__enable_page_map","Profiles__enable_developer_profiles_callout","DevPro__enable_embed_profile_creation","DevPro__enable_vertex_credit_card","Concierge__enable_remove_info_panel_tags","MiscFeatureFlags__enable_variable_operator","Analytics__enable_devpro_interaction_logging","DevPro__enable_google_payments","MiscFeatureFlags__enable_framebox_badge_methods","Profiles__enable_user_type","Profiles__enable_awarding_url","DevPro__enable_devpro_offers","DevPro__enable_developer_subscriptions","Search__enable_suggestions_from_borg","Concierge__enable_pushui","DevPro__enable_firebase_workspaces_card","MiscFeatureFlags__fix_lower_breadcrumbs","DevPro__enable_cloud_innovators_plus","EngEduTelemetry__enable_engedu_telemetry","MiscFeatureFlags__gdp_dashboard_reskin_enabled","Profiles__enable_callout_notifications","Profiles__enable_developer_profile_pages_as_content","Cloud__enable_free_trial_server_call","DevPro__enable_free_benefits","Profiles__enable_stripe_subscription_management","Profiles__enable_playlist_community_acl","Profiles__enable_developer_profile_benefits_ui_redesign","DevPro__enable_enterprise","SignIn__enable_l1_signup_flow","Cloud__enable_llm_concierge_chat","MiscFeatureFlags__enable_firebase_utm","Profiles__enable_profile_collections","Cloud__enable_cloud_dlp_service","TpcFeatures__enable_unmirrored_page_left_nav","Profiles__enable_targeted_hero","DevPro__enable_google_payments_buyflow","Profiles__enable_auto_apply_credits","DevPro__enable_g1_ineligible_redirect","Experiments__reqs_query_experiments","Profiles__enable_purchase_prompts","DevPro__enable_nvidia_credits_card","Concierge__enable_actions_menu","Cloud__enable_legacy_calculator_redirect","Profiles__enable_dashboard_curated_recommendations","Profiles__require_profile_eligibility_for_signin","AIStudioInteractionsToggle__interactions_are_default","Profiles__enable_page_saving","MiscFeatureFlags__enable_explicit_template_dependencies","CloudShell__cloud_code_overflow_menu","DevPro__remove_eu_tax_intake_form","Profiles__enable_release_notes_notifications","MiscFeatureFlags__developers_footer_dark_image","Search__enable_dynamic_content_confidential_banner","MiscFeatureFlags__enable_variable_operator_index_yaml","DevPro__enable_google_one_card","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__enable_explain_this_code","TpcFeatures__proxy_prod_host","Search__enable_ai_search_summaries_for_all","CloudShell__cloud_shell_button","DevPro__enable_g1_integration","Cloud__enable_cloudx_experiment_ids","DevPro__enable_devsite_captcha","MiscFeatureFlags__enable_appearance_cookies","DevPro__enable_credits_banner","Analytics__enable_clearcut_logging"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.clients6.google.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.clients6.google.com",1,4,null,"https://developerprofiles-pa.clients6.google.com",[17,"codelabs","Google Codelabs","codelabs.developers.google.com",null,"codelabs-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1],null,null,null,null,null,null,[1]],null,[33,null,null,null,null,null,"/images/lockup.svg",null,null,null,null,1,1,null,null,null,null,null,null,null,null,1,null,null,null,null,[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,29,32,36],null,[[],[1,1]],[[null,null,null,null,null,null,null,null,null,null,null,null,1]],null,4],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,1,"https://developerscontentinsights-pa.clients6.google.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.clients6.google.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,null,"https://developers.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>

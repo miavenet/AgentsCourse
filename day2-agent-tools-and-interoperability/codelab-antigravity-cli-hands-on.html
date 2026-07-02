@@ -1,0 +1,1763 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"><meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty"><meta property="og:site_name" content="Google Codelabs">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1a73e8"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/codelabs/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/touchicon-180.png"><link rel="canonical" href="https://codelabs.developers.google.com/antigravity-cli-hands-on"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google Codelabs" href="https://codelabs.developers.google.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on" /><link rel="alternate" hreflang="x-default" href="https://codelabs.developers.google.com/antigravity-cli-hands-on" /><link rel="alternate" hreflang="ar"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://codelabs.developers.google.com/antigravity-cli-hands-on?hl=vi" /><title>Hands-on with Antigravity CLI &nbsp;|&nbsp; Google Codelabs</title>
+
+<meta property="og:title" content="Hands-on with Antigravity CLI &nbsp;|&nbsp; Google Codelabs"><meta name="description" content="This codelab guides you through a series of activities with Antigravity CLI. The activities range from installing Antigravity CLI, looking at basic capabilities and exploring a few use cases.">
+  <meta property="og:description" content="This codelab guides you through a series of activities with Antigravity CLI. The activities range from installing Antigravity CLI, looking at basic capabilities and exploring a few use cases."><meta property="og:url" content="https://codelabs.developers.google.com/antigravity-cli-hands-on"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    </head>
+  <body class="color-scheme--light"
+        template="codelab"
+        theme="codelabs-theme"
+        type="codelab"
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+        <devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Google Codelabs"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://codelabs.developers.google.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+          
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                          fp-auth
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+        <devsite-book-nav scrollbars hidden>
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" data-nosnippet
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+          
+        </devsite-book-nav>
+      
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                            data-nosnippet
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav" data-nosnippet>
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation" data-nosnippet>
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Hands-on with Antigravity CLI<devsite-actions hidden data-nosnippet></devsite-actions>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid="UA-52746336-1"
+                    codelab-ga4id=""
+                    doc-id="1T5BXlS-fNqP6Y0mfjvekWDJ6-_HrmQBDzS6YhYQ7cug"
+                    id="antigravity-cli-hands-on"
+                    title="Hands-on with Antigravity CLI"
+                    no-tooltip=""
+                    environment="web"
+                    category="antigravitycli"
+                    feedback-link="https://github.com/googlecodelabs/feedback/issues/new?title=[antigravity-cli-hands-on]"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="2" step="0">
+          
+            <google-codelab-about codelab-title="Hands-on with Antigravity CLI"
+                                  authors="Romin Irani"
+                                  last-updated="2026-06-17T13:13:28Z"
+                                  duration="137">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          
+          <p>In this codelab, you will learn about  <a href="https://antigravity.google/product/antigravity-cli" target="_blank">Antigravity CLI</a>, a lightweight Terminal User Interface (TUI) surface of Antigravity. It brings the same core agentic capabilities as  <a href="https://antigravity.google/product/antigravity-2" target="_blank">Antigravity</a> (such as multi-step reasoning, multi-file editing, tool calling, and conversation history) directly to your terminal.</p>
+<p><strong>What you&#39;ll learn</strong></p>
+<ol type="1">
+<li>Installing and configuring Antigravity CLI</li>
+<li>Understanding basic usage of Antigravity CLI</li>
+<li>Exploring a few use cases with Antigravity CLI</li>
+</ol>
+<h3 is-upgraded id="what-youll-need" data-text="What you'll need" tabindex="-1"><strong>What you'll need</strong></h3>
+<p>You would need the following:</p>
+<ul>
+<li>Chrome web browser</li>
+<li>A personal Gmail account</li>
+</ul>
+<p>This codelab, designed for users and developers of all levels (including beginners). The use cases in the codelab have been categorized into developer and non-developer tasks. The developer use cases demonstrate how to vibe code with Antigravity CLI and work with a GitHub repository to perform common development tasks like code explanation/understanding, generating documentation, fixing issues and more. It is recommended that you complete these use cases in the codelab. There is an optional section at the end that covers several every day tasks that are non-developer focused.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Installation" duration="5" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Installation" tabindex="-1">
+              2. Installation
+          </h2>
+          
+          <p>Before you do the setup and run Antigravity CLI, let us create a folder that we will be using as our home folder for all the projects that we create inside of it. This is a starting point for the Antigravity CLI to work with, though it will also reference some other folders on your system and which you will come to later, as needed.</p>
+<p>Go ahead and create a sample folder (<strong><code translate="no" dir="ltr">agy-cli-projects</code></strong>) and navigate to that via the commands shown below. If you prefer to use some other folder name, please do so.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">mkdir agy-cli-projects
+</code></pre></devsite-code>
+<p>Let&#39;s navigate to that folder:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">cd agy-cli-projects
+</code></pre></devsite-code>
+<p>The installation is straightforward and binaries are available across major Operating Systems. I have taken the commands to run in the terminal directly from the installation document:</p>
+<p><strong>macOS | Linux</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">curl -fsSL https://antigravity.google/cli/install.sh | bash
+</code></pre></devsite-code>
+<p><strong>Windows PowerShell</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">irm https://antigravity.google/cli/install.ps1 | iex
+</code></pre></devsite-code>
+<p><strong>Windows CMD</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">curl -fsSL https://antigravity.google/cli/install.cmd -o install.cmd &amp;&amp; install.cmd &amp;&amp; del install.cmd
+</code></pre></devsite-code>
+<p>This should ideally setup and install the Antigravity CLI (<code translate="no" dir="ltr">agy</code>) in your system and in the Path.</p>
+<p>In some cases, if the installer is not able to add the binary ( <code translate="no" dir="ltr">agy</code> to the PATH), it will say so. For e.g. here is a sample output on a machine, where the installer was not able to add the binary to the PATH and it suggested what to do.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-o">%</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">curl</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">fsSL</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">https</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-o">//</span><span class="devsite-syntax-n">antigravity</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">cli</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">install</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">sh</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">|</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">bash</span>
+<span class="devsite-syntax-err">⠋</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Detecting</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">system</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">environment</span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-err">✓</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Platform</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">detected</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">darwin_arm64</span>
+<span class="devsite-syntax-err">⠋</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Querying</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">release</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">repository</span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-err">✓</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Latest</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">available</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">version</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mf">1.0</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-mi">1</span>
+<span class="devsite-syntax-err">⠋</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Downloading</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">release</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">package</span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-err">✓</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Download</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complete</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">checksum</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">verified</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-err">⠋</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Extracting</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">binary</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">archive</span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-err">⠋</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Configuring</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">shell</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">environment</span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-n">I0523</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">11</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-mi">44</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-mf">14.012088</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">76528</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">installer</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">go</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-mi">27</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Running</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Antigravity</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CLI</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">setup</span><span class="devsite-syntax-o">...</span>
+<span class="devsite-syntax-n">Warning</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">Users</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">neilirani</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">local</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">bin</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">not</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">present</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">active</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PATH</span><span class="devsite-syntax-o">.</span>
+<span class="devsite-syntax-n">To</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'agy'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CLI</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">globally</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">please</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">manually</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">add</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">shell</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">profile</span><span class="devsite-syntax-p">:</span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">echo</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s1">'export PATH="/Users/yourusername/.local/bin:$PATH"'</span><span class="devsite-syntax-w"> &gt;&gt; </span><span class="devsite-syntax-o">~/.</span><span class="devsite-syntax-n">zshrc</span><span class="devsite-syntax-w"> &amp;&amp; </span><span class="devsite-syntax-n">source</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">~/.</span><span class="devsite-syntax-n">zshrc</span>
+<span class="devsite-syntax-err">✅</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Antigravity</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CLI</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">binary</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">placed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">successfully</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">Users</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">yourusername</span><span class="devsite-syntax-o">/.</span><span class="devsite-syntax-n">local</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">bin</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-n">agy</span>
+<span class="devsite-syntax-n">Note</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">binary</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">installed</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">but</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">not</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">active</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">PATH</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Please</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">follow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">instructions</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">above</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">add</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">then</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">restart</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">your</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">terminal</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">session</span><span class="devsite-syntax-o">.</span>
+</code></pre></devsite-code>
+<p>Just check out the version of Antigravity CLI via the following command (the version shown is the one at the time of writing this codelab):</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Bash" syntax-guessed><code translate="no" dir="ltr">$<span class="devsite-syntax-w"> </span>agy<span class="devsite-syntax-w"> </span>--version
+<span class="devsite-syntax-m">1</span>.0.7
+</code></pre></devsite-code>
+<p>When we launch Antigravity CLI for the first time, it will ask you to login. Launch <code translate="no" dir="ltr">agy</code> and it should show something similar to this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">    ▄▀▀▄
+   ▀▀▀▀▀▀
+  ▀▀▀▀▀▀▀▀
+ ▄▀▀    ▀▀▄
+▄▀▀      ▀▀▄
+
+Welcome to the Antigravity CLI. You are currently not signed in.
+
+Select login method:
+&gt; 1. Google OAuth
+  2. Use a Google Cloud project
+
+[Use arrow keys to navigate, Enter to select]
+</code></pre></devsite-code>
+<p>Use your personal account for now. Choose <strong>1. Google OAuth</strong> and press <strong>Enter</strong>. This will launch a browser and you can login with your Google Account. On successful authentication and authorization, you are asked to copy a code. Please come back into the Antigravity CLI terminal and paste the code.</p>
+<p>Once the login is successful, a few things happen:</p>
+<ol type="1">
+<li>First up, it asks you about the color theme that you wish to choose for Antigravity CLI, as shown below. Pick the one that you like.</li>
+<li>Next up, you need to accept a few terms of service. Accept those.</li>
+</ol>
+<p>Finally, the most important thing is to give your permission that you trust the folder, as shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Accessing workspace:
+
+/Users/yourusername/agy-cli-projects
+
+Do you trust the contents of this project?
+
+Antigravity CLI requires permission to read, edit, and execute files here.
+
+&gt; Yes, I trust this folder
+ No, exit
+
+ ↑/↓ Navigate · enter Confirm
+</code></pre></devsite-code>
+<p>You will see this typically in any new folder that you launch the Antigravity CLI on. We will come to more on this later in the series but for now, go ahead and say <strong>Yes, I trust this folder</strong>.</p>
+<p>Congratulations! You are all set now and Antigravity CLI is waiting for your prompt.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Our first interaction with Antigravity CLI" duration="5" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Our first interaction with Antigravity CLI" tabindex="-1">
+              3. Our first interaction with Antigravity CLI
+          </h2>
+          
+          <p>Let&#39;s get started with Antigravity CLI and type your first query as shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Give me a famous quote on Artificial Intelligence and who said that?
+</code></pre></devsite-code>
+<p>We get a sample response as shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">  Here is a famous quote on Artificial Intelligence:                                                                           
+                                                                                                                               
+  │ "Artificial intelligence is the new electricity."                                                                          
+  │ — Andrew Ng                                                                                                                
+</code></pre></devsite-code>
+<p>Apart from giving prompts here, what are the various commands that Antigravity CLI supports? You can find that by typing <strong><code translate="no" dir="ltr">/help</code></strong> (forward slash). It will show you 3 tabs : <strong>general</strong>, <strong>commands</strong> and <strong>shortcuts</strong>. By default, you will arrive on the <strong>general</strong> tab and you can use the tab key to navigate to <strong>commands</strong>, where you will see a variety of commands. You can navigate to keyboard <strong>shortcuts</strong> too.</p>
+<p>The list of <strong>commands</strong> at the time of writing are shown below:</p>
+<p class="image-container"><img alt="18e1b7ada382cd8f.png" style="width: 624.00px" src="/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/18e1b7ada382cd8f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p><strong>Note</strong>: You can quit Antigravity CLI anytime via the <strong><code translate="no" dir="ltr">/quit</code></strong> command or you can do <strong><code translate="no" dir="ltr">ctrl+d</code></strong> twice in the interactive Antigravity CLI terminal session.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Antigravity CLI - a few housekeeping commands" duration="10" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Antigravity CLI - a few housekeeping commands" tabindex="-1">
+              4. Antigravity CLI - a few housekeeping commands
+          </h2>
+          
+          <p>Make sure that Antigravity CLI has been running and it is waiting for your command. If you have tried the <strong><code translate="no" dir="ltr">/quit</code></strong> command at the end of the previous section, please launch Antigravity CLI again via the <strong><code translate="no" dir="ltr">agy</code></strong> command.</p>
+<p>Notice the model that it is using, the name of which, will be shown in the bottom right. The first thing ideally is to understand that most of the customization and settings that you need to do are available via the <code translate="no" dir="ltr">/config</code> or <code translate="no" dir="ltr">/settings</code> command.</p>
+<h2 is-upgraded id="configuration-settings" data-text="Configuration / Settings" tabindex="-1">Configuration / Settings</h2>
+<p>Go ahead and invoke the <code translate="no" dir="ltr">/config</code> command. This will bring up various areas of Antigravity that you can customize based on your preferences. This includes the Color Scheme, Tool permission, telemetry settings and more.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Settings
+  Search:  
+          ────────────────────
+&gt; Animation Speed      medium
+  Artifact Review      asks for review
+  Color Scheme         dark
+  Editor               auto ($EDITOR)
+  Enable Telemetry     on
+  Non-Workspace Access off
+  Notifications        off
+  Rendering Mode       native terminal (inline)
+  Sandbox Mode         off
+  Show Feedback Survey on
+  Show Tips            on
+  Tool Permission      request-review
+  Use AI Credits       off
+  Verbosity            high
+</code></pre></devsite-code>
+<p>For example, the Color Scheme brings up the following options, from which I can choose my preferred color scheme:</p>
+<p class="image-container"><img alt="6e447a36ed0039cc.png" style="width: 624.00px" src="/static/antigravity-cli-hands-on/img/6e447a36ed0039cc.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/6e447a36ed0039cc_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h3 is-upgraded id="settings.json" data-text="settings.json" tabindex="-1">settings.json</h3>
+<p>The configuration settings need to be stored somewhere right? All of them get stored in <code translate="no" dir="ltr">~/.gemini/antigravity-cli/settings.json</code> file. A sample is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-s">"colorScheme"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"dark"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-s">"model"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"Gemini 3.5 Flash (High)"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-s">"statusLine"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">{</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"type"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"command"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">""</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"enabled"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kc">true</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-p">},</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-s">"trustedWorkspaces"</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">[</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"/Users/romin/antigravity-cli-projects"</span><span class="devsite-syntax-p">,</span>
+<span class="devsite-syntax-w">        </span><span class="devsite-syntax-s">"/Users/romin/agy-cli-projects"</span>
+<span class="devsite-syntax-w">      </span><span class="devsite-syntax-p">]</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-p">}</span>
+</code></pre></devsite-code>
+<p>You can notice the <code translate="no" dir="ltr">colorScheme</code> that I have selected, the model and also various folders from where I have started Antigravity CLI and said yes to trusting the folders.</p>
+<p><strong>Note</strong>: You can modify the <code translate="no" dir="ltr">settings.json</code> directly too and restart Antigravity CLI as a best practice to see the changes. But be sure of the settings, else it will display an error at startup. If not comfortable with directly modifying the file, it is suggested to use the <code translate="no" dir="ltr">/settings</code> or <code translate="no" dir="ltr">/config</code> command in the Antigravity CLI to work with this file.</p>
+<h3 is-upgraded id="tool-permission" data-text="Tool Permission" tabindex="-1">Tool Permission</h3>
+<p>An important setting to understand is the Tool Permission. This controls whether terminal commands require your approval before running. You can get to this via the <code translate="no" dir="ltr">/config</code> command.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr"> Tool Permission
+  &gt; request-review (current)
+    proceed-in-sandbox
+    always-proceed
+    strict
+</code></pre></devsite-code>
+<p>By default, it is set to <code translate="no" dir="ltr">request-review</code>. Let&#39;s understand this in more detail. In Antigravity, Tool Permission settings control the balance between security (guarding your host system against unintended changes) and velocity (how autonomously the agent can work without pausing for your input). Let&#39;s review the options:</p>
+<p><strong>request-review (Current Default)</strong></p>
+<p>In this mode, the agent is treated as a collaborative partner that checks in before performing any action that could affect your system or project files outside of pre-approved bounds. Whenever the agent attempts to run a terminal command, perform a file operation (like writing/deleting), or call an external service where permission hasn&#39;t been pre-approved, the execution pauses. The user is prompted to approve or reject the specific action.</p>
+<p><strong>proceed-in-sandbox</strong></p>
+<p>This mode allows the agent to execute terminal commands automatically, but within a secure, isolated container. The agent can run commands without prompting you, but those commands are executed in a virtualized sandbox (e.g., a lightweight container). They cannot modify your actual host machine&#39;s filesystem or access your local network.</p>
+<p><strong>always-proceed</strong></p>
+<p>This is the fully autonomous mode, giving the agent maximum speed and capability. The agent is granted full permission to run commands and write files directly on your host machine. It will never prompt you for confirmation.</p>
+<p><strong>strict</strong></p>
+<p>This is a zero-trust, high-security mode. The agent&#39;s capabilities are restricted to executing read tools. All non-read tools will require the user to be prompted for action.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Antigravity CLI - Command Parameters" duration="10" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Antigravity CLI - Command Parameters" tabindex="-1">
+              5. Antigravity CLI - Command Parameters
+          </h2>
+          
+          <p>There are a few command line parameters that one can provide when you start Antigravity CLI. To get a full list of options, you can use the <strong><code translate="no" dir="ltr">--help</code></strong> as shown below.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">agy --help
+</code></pre></devsite-code>
+<p>This should show the full range of options available. A sample listing is shown below:</p>
+<p class="image-container"><img alt="3745cfdddb4bf83f.png" style="width: 624.00px" src="/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/3745cfdddb4bf83f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Let us take a look at a few of them.</p>
+<h2 is-upgraded id="non-interactive-mode-autonomous" data-text="Non-interactive mode (autonomous)" tabindex="-1">Non-interactive mode (autonomous)</h2>
+<p>An interesting option is to run Antigravity CLI in a non-interactive mode. This means that you directly provide it the prompt and it will go ahead and respond to it, without the Antigravity CLI interactive terminal opening up. This is very useful if you plan to use Antigravity CLI in an automated fashion as part of the script or any other automation process.</p>
+<p>You use the <strong><code translate="no" dir="ltr">-p</code></strong> parameter to provide the prompt to Antigravity CLI as shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">agy -p "What is the gcloud command to deploy to Cloud Run"
+</code></pre></devsite-code>
+<p>This might be a good way to get some quick answers but do keep in mind that there is no scope to continue the conversation with follow up questions.</p>
+<h2 is-upgraded id="choose-a-specific-model" data-text="Choose a specific model" tabindex="-1">Choose a specific model</h2>
+<p>The first one is to ask Antigravity CLI to use a specific Gemini mode. You can use the <code translate="no" dir="ltr">--model</code> parameter to tell Antigravity CLI to use a specific model during its session only. This is very useful for the non-interactive mode that we mentioned in the previous section, where you would like to launch several <code translate="no" dir="ltr">agy</code> sessions and use specific models for specific tasks.</p>
+<p>But first, you need to know which models are available for Antigravity CLI. You can do that via the <code translate="no" dir="ltr">models</code> subcommand as shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">agy models
+</code></pre></devsite-code>
+<p>This will list the models that are available for Antigravity CLI. A sample list is shown below:</p>
+<ul>
+<li>Gemini 3.5 Flash (Medium)</li>
+<li>Gemini 3.5 Flash (High)</li>
+<li>Gemini 3.5 Flash (Low)</li>
+<li>Gemini 3.1 Pro (Low)</li>
+<li>Gemini 3.1 Pro (High)</li>
+<li>Claude Sonnet 4.6 (Thinking)</li>
+<li>Claude Opus 4.6 (Thinking)</li>
+<li>GPT-OSS 120B (Medium)</li>
+</ul>
+<p>You can use any of these model names to specify the model to be used for the session. You can do that via the <code translate="no" dir="ltr">--model</code> command shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">agy --model "Gemini 3.5 Flash (Low)"
+</code></pre></devsite-code>
+<p>Once Antigravity CLI launches, you can check either via the <code translate="no" dir="ltr">/model</code> command about the specific model that you asked it to use or look at the bottom right that shows the model used for the session.</p>
+<h2 is-upgraded id="living-dangerously" data-text="Living dangerously" tabindex="-1">Living dangerously</h2>
+<p>If you like to live dangerously, then you can look for a very aptly named parameter called <code translate="no" dir="ltr">--dangerously-skip-permissions</code>. This will auto approve all tool permissions. There will be no prompt asking you for permissions. So use it with care.</p>
+<p>Launch Antigravity CLI via the following command:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">agy --dangerously-skip-permissions
+</code></pre></devsite-code>
+<p>Then give the following prompt. Check that it did not ask me for any write file permissions.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">&gt; get the latest news and write it in a file called news.txt. Then create another file that contains the summary of that file.
+
+● ListDir(/Users/romin/agy-cli-projects)
+● WebSearch(latest world news May 24 2026 news headlines) (ctrl+o to expand)
+
+▸ Thought for 2s, 95 tokens
+ Processing News Information
+
+● Create(/Users/romin/agy-cli-projects/news.txt)
+● Create(/Users/romin/agy-cli-projects/summary.txt) (ctrl+o to expand)
+
+ I have fetched the latest world news headlines and created the requested files in your workspace:                                                                  
+                                                                                                                                                                    
+ 1. news.txt: Contains the detailed news headlines for today (May 24, 2026), including topics on geopolitics (U.S.-Iran negotiations, Ukraine conflict), U.S. 
+ security incidents, the Ebola outbreak in Central Africa, and the passing of NASCAR champion Kyle Busch.                                                           
+ 2. summary.txt: Contains a concise, structured summary of the major categories covered in the news file.                                                        
+</code></pre></devsite-code>
+<p>This mode can be useful in scenarios where things are local and in your control but still be prepared for surprises and hence use it with care.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Antigravity CLI - Shell mode" duration="5" step="5">
+          
+          <h2 class="step-title" id="5" data-text="Antigravity CLI - Shell mode" tabindex="-1">
+              6. Antigravity CLI - Shell mode
+          </h2>
+          
+          <p>This is a good time to learn how to directly work with the Shell from within Antigravity CLI. You can go into shell mode by pressing <strong><code translate="no" dir="ltr">!</code></strong> in the message box. This will toggle to a Shell mode. You can get back by pressing <strong><code translate="no" dir="ltr">!</code></strong> again or by hitting the <strong><code translate="no" dir="ltr">ESC</code></strong> key.</p>
+<p>When in shell mode, you will see the <strong><code translate="no" dir="ltr">!</code></strong> at the start of the prompt as shown below:</p>
+<p class="image-container"><img alt="8019057be515e68f.png" style="width: 624.00px" src="/static/antigravity-cli-hands-on/img/8019057be515e68f.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/8019057be515e68f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>You can directly check using standard commands like <strong><code translate="no" dir="ltr">pwd</code></strong> and <strong><code translate="no" dir="ltr">ls</code></strong>. Please note that the commands assume a Linux type OS. If you are on another operating system (Windows), please use equivalent commands like (<strong><code translate="no" dir="ltr">cd</code></strong>, <strong><code translate="no" dir="ltr">dir</code></strong> and <strong><code translate="no" dir="ltr">type</code></strong>).</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Use cases to try out" duration="10" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Use cases to try out" tabindex="-1">
+              7. Use cases to try out
+          </h2>
+          
+          <p>Antigravity CLI can be applied to a wide range of use cases that apply to both developers and non-developers alike. Presented here are a few scenarios and depending on your area of interest, you can try any or all of them out.</p>
+<p>In each of these cases, the prompt is provided. You are free to try this out in the Antigravity CLI interactive mode to understand better how Antigravity CLI goes about its task.</p>
+<h2 is-upgraded id="vibe-coding-with-antigravity-cli" data-text="Vibe coding with Antigravity CLI" tabindex="-1">Vibe coding with Antigravity CLI</h2>
+<p>Let&#39;s use Antigravity CLI to vibe code an application. In this task, you will ask Antigravity CLI to generate an application and then push the initial version to a GitHub repository.</p>
+<p><strong>Prerequisite</strong></p>
+<p>To perform the tasks in this section, there are a few prerequisites:</p>
+<ul>
+<li>Git</li>
+<li>Antigravity CLI</li>
+<li>Python 3 environment</li>
+<li>Setup <strong><code translate="no" dir="ltr">gh</code></strong> ( <a href="https://github.com/cli/cli" target="_blank">GitHub CLI tool</a>).</li>
+<li>Familiarity with Git basics and a bit of programming knowledge</li>
+</ul>
+<p>We will assume that you have launched Antigravity CLI in a <strong>specific folder of your choice</strong>. In our case, we have launched Antigravity CLI from the initial home folder : <strong><code translate="no" dir="ltr">agy-cli-projects</code></strong> and another folder <strong><code translate="no" dir="ltr">bq-releases-notes</code></strong> inside of that.</p>
+<p>Start with an initial prompt. Think of it as a specification for your application. Feel free to modify it as you see fit. Keep in mind that throughout the session with Antigravity CLI, it will ask you for permissions to create the files, etc. Do give the required permissions.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-nx">Please</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">build</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">web</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">application</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">me</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">using</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Python</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Flask</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">plain</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">vanilla</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">HTML</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">JavaScript</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">CSS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fetches</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">BigQuery</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Release</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">notes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">https</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-c1">//docs.cloud.google.com/feeds/bigquery-release-notes.xml) and shows them to me. </span>
+
+<span class="devsite-syntax-nx">A</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">simple</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">refresh</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">button</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">spinner</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">good</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">enough</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">anytime</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">I</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-nx">d</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">like</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">refresh</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">details</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span>
+
+<span class="devsite-syntax-nx">I</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">would</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">also</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">like</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ability</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">take</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">any</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">specific</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">update</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">select</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">then</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Tweet</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">about</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-p">.</span>
+</code></pre></devsite-code>
+<p>The next few prompts and responses are a sample flow that was observed. Antigravity CLI will come up with a plan and ask you for any confirmations / clarifications or go ahead. Please follow the instructions. As a sample, this is my sample conversational thread:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-nx">I</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">will</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">start</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">exploring</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">workspace</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">see</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">there</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">an</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">existing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">structure</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">this</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">brand</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">project</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w">                                                                   </span>
+
+<span class="devsite-syntax-err">●</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ListDir</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">Users</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">romin</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">agy</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">cli</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">projects</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">bq</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">release</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">notes</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctrl</span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-nx">o</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">expand</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">I</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">will</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">read</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">BigQuery</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">release</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">notes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">XML</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">feed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">understand</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">its</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">structure</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">Atom</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">RSS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">elements</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">entry</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">item</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">elements</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">namespaces</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">dates</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">titles</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">content</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">so</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">we</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">can</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">parse</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">it</span><span class="devsite-syntax-w">      </span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">correctly</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Python</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Flask</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">backend</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w">                                                                                                                                                </span>
+
+<span class="devsite-syntax-err">●</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ReadURL</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">https</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-c1">//docs.cloud.google.com/feeds/bigquery-release-notes.xml) (ctrl+o to expand)</span>
+
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">I</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">will</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">view</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">fetched</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">feed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">content</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">saved</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">locally</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">understand</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">its</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">format</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">structure</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w">                                                                                            </span>
+
+<span class="devsite-syntax-err">●</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Read</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">Users</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">romin</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">gemini</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">antigravity</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">cli</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">brain</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-mi">116191</span><span class="devsite-syntax-nx">af</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">e6ea</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">4</span><span class="devsite-syntax-nx">ba5</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">aa23</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">62</span><span class="devsite-syntax-nx">f995bd068a</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">system_generated</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">steps</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-mi">6</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">content</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">md</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctrl</span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-nx">o</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">expand</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-err">▸</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Thought</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-nx">s</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-m devsite-syntax-m-Double">2.3</span><span class="devsite-syntax-nx">k</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">tokens</span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Analyzing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">XML</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Feed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Structure</span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">I</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">will</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">write</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">implementation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">plan</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">detailing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">architecture</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">design</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">aesthetic</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">components</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">verification</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">steps</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">BigQuery</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Release</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Notes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Web</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Application</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">This</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">plan</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">will</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">be</span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">written</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">artifacts</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">directory</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w">                                                                                                                                                   </span>
+
+<span class="devsite-syntax-err">●</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Create</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">Users</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">romin</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">gemini</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">antigravity</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">cli</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">brain</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-mi">116191</span><span class="devsite-syntax-nx">af</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">e6ea</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">4</span><span class="devsite-syntax-nx">ba5</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">aa23</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-mi">62</span><span class="devsite-syntax-nx">f995bd068a</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">implementation_plan</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">md</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">ctrl</span><span class="devsite-syntax-o">+</span><span class="devsite-syntax-nx">o</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">expand</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">I</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">have</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">created</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">implementation_plan</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">md</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">outline</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">design</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">architecture</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">BigQuery</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Release</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Notes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Web</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Application</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">                                                                                                                                                                                       </span>
+<span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Please</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">review</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">plan</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">especially</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">approach</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Twitter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Composer</span><span class="devsite-syntax-w"> &amp; </span><span class="devsite-syntax-nx">Preview</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Card</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kd">let</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">me</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">know</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">you</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">approve</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">there</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">are</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">any</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">adjustments</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">you</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-nx">d</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">like</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">make</span><span class="devsite-syntax-p">!</span><span class="devsite-syntax-w">           </span>
+
+<span class="devsite-syntax-w">                                                                                                                                                           </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">artifact</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">·</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-nx">artifact</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">review</span>
+</code></pre></devsite-code>
+<p>It&#39;s time to understand what Artifacts are in Antigravity. Artifacts are how the Antigravity CLI keeps us in the loop with an implementation plan, list of tasks that it is working on, verifiable outputs and more. These files are generated and are a record of the work that Antigravity is doing, its plan, task list and more.</p>
+<p>Once it does that, it says &#34; I have created the <code translate="no" dir="ltr">implementation_plan.md</code> to outline the design and architecture of the BigQuery Release Notes Web Application. Please review the plan, especially the approach for the Twitter Composer &amp; Preview Card, and let me know if you approve or if there are any adjustments you&#39;d like to make!&#34;</p>
+<p>You can see that it also mentions in the bottom right, that there is <strong>1 Artifact to review</strong> and in this case, it is the <code translate="no" dir="ltr">implementation_plan.md</code>.</p>
+<p>Give the command <code translate="no" dir="ltr">/artifact</code>. This will display the artifact that it generated <code translate="no" dir="ltr">implementation_plan.md</code> and you can use the arrow keys to open, approve, reject and so on. Just Escape and come back to the prompt, here you can approve it , if you&#39;d like.</p>
+<p>In our case, we are going to go with what it has generated and will be approving it. This kicks off the next set of steps, where it will start the implementation i.e. creating files, running a few commands, etc. You will be prompted to approve and give permission to execute, as required.</p>
+<p>In our case, we gave it the approval to create the Python virtual environment, install the dependencies via <code translate="no" dir="ltr">requirements.txt</code> and so on.</p>
+<p>In the background, it has also created a <code translate="no" dir="ltr">task.md</code> file as part of the tasks that it has to do based on the implementation plan and it ticks off the individual tasks, as it completes them. Once it is complete, it will let you know and you can check the application in the browser. Here is what it generated for us:</p>
+<p class="image-container"><img alt="366a66b7a4249b18.png" style="width: 397.16px" src="/static/antigravity-cli-hands-on/img/366a66b7a4249b18.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/366a66b7a4249b18_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>We can stop for now. The idea was to demonstrate and check out what it can do with simple requirements.</p>
+<h3 is-upgraded id="optional-push-changes-to-a-github-repository" data-text="(Optional) Push changes to a Github repository" tabindex="-1">(Optional) Push changes to a Github repository</h3>
+<p>If you do not want to push the event website that we created to Github, you can ignore this section and move on to the next one.</p>
+<p>First up, let&#39;s create a <code translate="no" dir="ltr">.gitignore</code> file and you can take the help of Antigravity CLI.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Create a .gitignore file for this project.
+</code></pre></devsite-code>
+<p>The next step for you is to give instructions to Antigravity CLI to push this repository under our GitHub account and this should use the Github helper (gh) that is expected to be available and configured / setup on your machine.</p>
+<p>Give a prompt similar to the one below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Great! I would now like to push all of this to a new repository in my GitHub account. I would like to name this repository &lt;Your-Name&gt;-event-talks-app
+</code></pre></devsite-code>
+<p>It will go through a number of commands here:</p>
+<ol type="1">
+<li>Create the repository.</li>
+<li>It will use multiple Git commands : init, add, commit to manage the local Git repository.</li>
+<li>It will then setup the Git remote and do a push</li>
+</ol>
+<p>If all goes well, you should have a GitHub repository in place. You can visit the Github repository page. A sample screenshot is shown below:</p>
+<p class="image-container"><img alt="b393c67b13ddf19a.png" style="width: 532.50px" src="/static/antigravity-cli-hands-on/img/b393c67b13ddf19a.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/b393c67b13ddf19a_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Note that you have not generated a <strong><code translate="no" dir="ltr">README.md</code></strong> for this project and that is a good exercise for the next section, where we shall now work with this repository that you just created.</p>
+<h2 is-upgraded id="using-antigravity-cli-to-work-with-a-code-repository" data-text="Using Antigravity CLI to work with a code repository" tabindex="-1">Using Antigravity CLI to work with a code repository</h2>
+<p>In this use case, you shall use Antigravity CLI to work with a code repository. You will perform multiple tasks that include:</p>
+<ul>
+<li>Understanding the code base</li>
+<li>Generating documentation</li>
+<li>Implementing a new feature</li>
+</ul>
+<p>This should give you a good foundation to then work with your repositories and use Antigravity CLI as an assistant vis-a-vis these developer specific tasks.</p>
+<p><strong>Prerequisite</strong></p>
+<p>To perform the tasks in this section, you will need to the following:</p>
+<ul>
+<li>Antigravity CLI</li>
+<li><strong>You should have completed the previous section and have the code that has been generated handy, where we created a BigQuery Release Notes reader.</strong></li>
+</ul>
+<p>Let&#39;s continue to use Antigravity CLI from the folder/directory that you used to generate the BigQuery Release Notes  application.</p>
+<p>Try out the following prompts as listed below:</p>
+<h3 is-upgraded id="understanding-the-code-base" data-text="Understanding the code base" tabindex="-1">Understanding the code base</h3>
+<ul>
+<li>I would like to understand this project in detail. Help me understand the main features and then break it down into Server and Client side. Take a sample flow and show me how the request and response works. <strong>Note that it will create a new file (artifact) and you can view all the artifacts or specific artifacts via the</strong> ﻿**<code translate="no" dir="ltr">/artifact</code>**﻿ **command.**</li>
+<li>Explain <code translate="no" dir="ltr">@app.py</code></li>
+</ul>
+<h3 is-upgraded id="generating-a-readme-file" data-text="Generating a README file" tabindex="-1">Generating a README file</h3>
+<ul>
+<li>Generate a <strong><code translate="no" dir="ltr">README</code></strong> file for this project.</li>
+</ul>
+<h3 is-upgraded id="implementing-a-new-feature" data-text="Implementing a new feature" tabindex="-1">Implementing a new feature</h3>
+<ul>
+<li>Please implement two simple utility features: a &#34;Copy to Clipboard&#34; button on each card and an &#34;Export to CSV&#34; button.</li>
+<li>Please implement a simple toggle switch in the header that swaps the page&#39;s color scheme from dark to light mode by overriding the CSS root variables.</li>
+</ul>
+<p>It should provide you with a plan, which you can approve. On approval, Antigravity CLI will go ahead and make those changes. Do test out your changes and if there are bugs (likely), do ask Antigravity CLI to fix it.</p>
+<h3 is-upgraded id="generate-issues-based-on-suggested-features" data-text="Generate Issues based on suggested features" tabindex="-1">Generate Issues based on suggested features</h3>
+<p>Let&#39;s try something interesting here. You are going to ask Antigravity CLI about how it can improve the user experience of this application.</p>
+<p>Try the following prompt:</p>
+<ul>
+<li>I would like you to assess the application from a user experience point of view. Ease of use, responsiveness, helpful messages and more. Please come up with a list of improvements and I would like you to provide them as a list to me.</li>
+</ul>
+<p>As a follow up, you can now take one of the issues that was generated earlier and ask Antigravity CLI to work and implement it.</p>
+<h2 is-upgraded id="optional-everyday-tasks" data-text="(Optional) Everyday Tasks" tabindex="-1">(Optional) Everyday Tasks</h2>
+<p>The use cases given below are tasks that you might end up doing regularly. These include arranging files into folders, fetching and summarizing content from the web, processing image files and extracting content from them, working with databases and more.</p>
+<p>Feel free to explore any of the use cases that you like.</p>
+<h3 is-upgraded id="organizing-filesfolders" data-text="Organizing Files/Folders" tabindex="-1">Organizing Files/Folders</h3>
+<p>You can use Antigravity CLI to organize the files depending on types in various folders as needed. Go to a folder on your machine that has several files .txt, .png, .jpg, .pdf, .mp4 and others. This is likely to be your Desktop or your Downloads folder.</p>
+<p>Navigate to that folder and start Antigravity CLI. You are going to ask Antigravity CLI to create some folders first: Images, Documents, Videos and then you will ask Antigravity CLI to organize the files in the folders.</p>
+<p>The Antigravity CLI will often prompt you for permission before executing commands, especially those that modify your file system (like writing, moving, or deleting files). <strong>Always review these prompts carefully before granting permission.</strong> This is your safety net.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Create the following folders "Images","Documents","Videos"
+</code></pre></devsite-code>
+<p>Then give the following prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-k">Go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">through</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">all</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">this</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">folder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">then</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">organize</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">them</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">moving</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">all</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ending</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">jpg</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">jpeg</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">gif</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">into</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"Images"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">folder</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Move</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">all</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">".txt"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">into</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"Documents"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">folder</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Move</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">all</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">".mp4"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ss">"Videos"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">folder</span><span class="devsite-syntax-p">.</span>
+</code></pre></devsite-code>
+<p>An example run on our machine is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">I have completed organizing your files into their respective folders. Here is a summary of the files moved:                                          
+                                                                                                                                                       
+  • Images: Moved 95 files ending in  .jpg  or  .jpeg  (no  .gif  files were present).                                                         
+  • Documents: Moved 1 file ending in  .txt  ( 12March_Live_chat_transcript.txt ).                                                                
+  • Videos: Moved 26 files ending in  .mp4 .
+</code></pre></devsite-code>
+<p>A few other organizing scenarios (the prompts are given next to each scenario):</p>
+<ol type="1">
+<li><strong>Summarization:</strong> For each document in the ‘Documents&#39; folder, create a txt file in the same folder named ‘summary_ORIGINAL_FILENAME.txt&#39; that contains a 3-sentence summary of the document&#39;s main points.</li>
+<li><strong>Categorizing by Type:</strong> Scan all PDF and DOCX files in this directory. Move all files with &#34;invoice&#34; in their name or content into the ‘Financial/Invoices&#39; folder. Move files with &#34;receipt&#34; into ‘Financial/Receipts&#39;. Any other .docx files go into ‘Reports&#39;.</li>
+<li><strong>Extracting Key Information (and &#34;tagging&#34;):</strong> For each PDF file in the ‘Financial/Invoices&#39; folder, read its content. If you find a date, rename the file to include that date in YYYY-MM-DD format, e.g., ‘invoice_2025-07-26_original_name.pdf&#39;.</li>
+</ol>
+<h3 is-upgraded id="summarizing-articles-local-files-or-web" data-text="Summarizing Articles (Local Files or Web)" tabindex="-1">Summarizing Articles (Local Files or Web)</h3>
+<p>For each of the scenarios below, feel free to change the url, topic of interest and the local file names as applicable. The filenames provided are sample file names, you can replace them with filenames of files that you have on your system.</p>
+<p>Try out any of the following scenarios (the prompts are given next to each scenario):</p>
+<ul>
+<li><strong>Summarize a web article (single URL):</strong> Go to  <a href="https://medium.com/google-cloud/antigravity-cli-tutorial-series-12b46cfe3bf2" target="_blank">https://medium.com/google-cloud/antigravity-cli-tutorial-series-12b46cfe3bf2</a> and summarize the top 3 key takeaways from this news article.</li>
+<li><strong>Summarize multiple web articles (e.g., from a search):</strong> Find the latest news articles about &#34;Antigravity CLI&#34; using Google Search. For the top 5 relevant articles, summarize each in 2-3 sentences and list their URLs.</li>
+<li><strong>Summarize a local text file:</strong> Summarize the main points of the article in ‘my_research_paper.txt&#39;. Focus on the methodology and conclusions.</li>
+<li><strong>Summarize a local PDF:</strong> Read ‘financial_report_Q2_2025.pdf&#39;. Provide a summary of the financial performance and key challenges mentioned.</li>
+</ul>
+<h3 is-upgraded id="extracting-specific-information-local-files-or-web" data-text="Extracting Specific Information (Local Files or Web)" tabindex="-1">Extracting Specific Information (Local Files or Web)</h3>
+<p>For each of the scenarios below, feel free to change the url, topic of interest and the local file names as applicable. The filenames provided are sample file names, you can replace them with filenames of files that you have on your system.</p>
+<p>Try out any of the following scenarios (the prompts are given next to each scenario):</p>
+<ul>
+<li><strong>Extract entities from a local article:</strong> From ‘biography.txt&#39;, list all named individuals and the significant dates associated with them.</li>
+<li><strong>Extract data from a table in a PDF:</strong> In ‘quarterly_sales.pdf&#39;, extract the data from the table on page 3 that shows &#34;Product Sales by Region&#34; and present it in a Markdown table format.</li>
+<li><strong>Extract news headlines and sources from a news website:</strong> Go to ‘https://news.google.com/&#39; (or a similar news site). Extract the main headlines from the front page and their corresponding news sources. Present them as a bulleted list.</li>
+<li><strong>Find product specifications from an e-commerce page:</strong> Browse to ‘https://www.amazon.in/Google-Cloud-Certified-Associate-Engineer/dp/1119871441&#39; (example for a book). Extract the book title, author and other details. Present this in a structured JSON format.</li>
+<li>Extract <strong>duration</strong> from a <strong>video</strong>, in a certain format (eg &#34;2h37m42s&#34;).</li>
+</ul>
+<h3 is-upgraded id="answering-questions-based-on-content-rag-like-behavior" data-text="Answering Questions based on Content (RAG-like behavior)" tabindex="-1">Answering Questions based on Content (RAG-like behavior)</h3>
+<p>For each of the scenarios below, feel free to change the url, topic of interest and the local file names as applicable. The filenames provided are sample file names, you can replace them with filenames of files that you have on your system.</p>
+<p>Try out any of the following scenarios (the prompts are given next to each scenario):</p>
+<ul>
+<li><strong>Q&amp;A on a local document:</strong> I&#39;m attaching ‘user_manual.pdf&#39;. What are the steps to troubleshoot network connectivity issues?</li>
+<li><strong>Q&amp;A on a web page:</strong> Using the content from ‘https://www.who.int/news-room/fact-sheets/detail/climate-change-and-health&#39;, what are the primary health risks associated with climate change according to WHO?</li>
+<li><strong>Compare information across multiple sources:</strong> I have two news articles: ‘article1.txt&#39; and ‘article2.txt&#39;, both discussing the recent economic policy changes. Compare and contrast their views on the potential impact on small businesses.</li>
+</ul>
+<h3 is-upgraded id="content-generation-based-on-extracted-information" data-text="Content Generation based on Extracted Information" tabindex="-1">Content Generation based on Extracted Information</h3>
+<p>For each of the scenarios below, feel free to change the url, topic of interest and the local file names as applicable.</p>
+<p>Try out any of the following scenarios (the prompts are given next to each scenario):</p>
+<ul>
+<li><strong>Generate a news brief from an article:</strong> Read @tech_innovation_article.txt. Write a short, engaging news brief (around 150 words) suitable for a company newsletter, highlighting the new technology and its potential.</li>
+<li><strong>Draft an email summarizing a meeting transcript:</strong> Here is a meeting transcript file: @meeting_transcript.txt. Draft an email to the team summarizing the key decisions made and action items assigned, including who is responsible for each.</li>
+</ul>
+<h3 is-upgraded id="antigravity-cli-multi-modal-support" data-text="Antigravity CLI multi-modal support" tabindex="-1">Antigravity CLI multi-modal support</h3>
+<p>Antigravity CLI has multi-model support via Gemini and you can ask it to process files of different content formats as per your requirements.</p>
+<p>You are going to process a bunch of invoice images with Antigravity CLI and extract key information from them. Follow the steps given below:</p>
+<ul>
+<li>Create a folder on your machine and download some invoices from the following GitHub  <a href="https://github.com/rominirani/gemini-cli-codelab-projects/tree/main/invoice-processing" target="_blank">repository</a>.</li>
+<li>Launch Antigravity CLI from that folder</li>
+</ul>
+<p>Give the following prompt to extract out information from the invoices in the form of a table.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-n">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">current</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">folder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">contains</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">list</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">invoice</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">Image</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">format</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Go</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">through</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">all</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">this</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">folder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">extract</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">following</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">invoice</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">information</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">form</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">table</span><span class="devsite-syntax-err">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Invoice</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">No</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Invoice</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">Date</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Invoice</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Sent</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">By</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Due</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">Date</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Due</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Amount</span><span class="devsite-syntax-p">.</span>
+</code></pre></devsite-code>
+<p>You should ideally get an output that looks like this:</p>
+<p class="image-container"><img alt="7203d699d875a91f.png" style="width: 624.00px" src="/static/antigravity-cli-hands-on/img/7203d699d875a91f.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/7203d699d875a91f_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Here is another scenario, where you can ask for additional derived columns. Let&#39;s say that you want to show a red cross emoji for all the invoice due dates that are in the past. You can give a prompt as follows:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">list all files with .png extension in this folder. Extract the invoice information from it by reading them locally and display it in a table format containing the following column headers: : Invoice No, Invoice Date, Invoice Sent By, Due Date, Due Amount. Add a column at the end of the table that shows a red cross emoji in case the due date is in the past.
+</code></pre></devsite-code>
+<p>This produces the following output:</p>
+<p class="image-container"><img alt="e11fcde0400f5a0b.png" style="width: 624.00px" src="/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b.png" srcset="https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_36.png 36w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_48.png 48w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_72.png 72w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_96.png 96w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_480.png 480w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_720.png 720w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_856.png 856w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_960.png 960w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_1440.png 1440w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_1920.png 1920w,https://codelabs.developers.google.com/static/antigravity-cli-hands-on/img/e11fcde0400f5a0b_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Apply this to any of your own files that are in formats other than text.</p>
+<h3 is-upgraded id="using-antigravity-cli-to-generate-data" data-text="Using Antigravity CLI to generate data" tabindex="-1">Using Antigravity CLI to generate data</h3>
+<p>You can prompt Antigravity CLI to produce data in various data formats. This could range from content pieces to JSON data, that you might need to mock. Let&#39;s focus here on scenarios applicable to developers/testers.</p>
+<p>Here are some prompts to try out:</p>
+<p><strong>Generate JSON data of sample customer reviews</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Generate a JSON array of 3 synthetic customer reviews for a new smartphone. Each review should have 'reviewId' (string, UUID-like), 'productId' (string, e.g., 'SMARTPHONE_X'), 'rating' (integer, 1-5), 'reviewText' (string, 20-50 words), and 'reviewDate' (string, YYYY-MM-DD format).
+</code></pre></devsite-code>
+<p><strong>Generating Mock API Responses (JSON)</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="verilog" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-n">Generate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">JSON</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">array</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">representing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mh">7</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">daily</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sales</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">records</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">mock</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">API</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">endpoint</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Each</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">record</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">should</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">include</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">date</span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">YYYY</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">MM</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">DD</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">chronologically</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">increasing</span><span class="devsite-syntax-p">),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">revenue</span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">float</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">between</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mf">5000.00</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mf">20000.00</span><span class="devsite-syntax-p">),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">unitsSold</span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">integer</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">between</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mh">100</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mh">500</span><span class="devsite-syntax-p">),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">region</span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-k">string</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">either</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">North</span><span class="devsite-syntax-p">',</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">South</span><span class="devsite-syntax-p">',</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">East</span><span class="devsite-syntax-p">',</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">'</span><span class="devsite-syntax-n">West</span><span class="devsite-syntax-p">').</span>
+</code></pre></devsite-code>
+<p><strong>Generating Sample Database Insert Statements (SQL)</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Generate 5 SQL INSERT statements for a table named 'users' with columns: 'id' (INTEGER, primary key), 'username' (VARCHAR(50), unique), 'email' (VARCHAR(100)), 'password_hash' (VARCHAR(255)), 'created_at' (DATETIME, current timestamp). Ensure the password_hash is a placeholder string like 'hashed_password_X'.
+</code></pre></devsite-code>
+<p><strong>Generating CSV Data for Data Loading/Analysis</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Generate 10 lines of CSV data, including a header row, for customer transactions. Columns should be: 'TransactionID' (unique string), 'CustomerID' (integer), 'ItemPurchased' (string, e.g., 'Laptop', 'Monitor', 'Keyboard'), 'Quantity' (integer, 1-3), 'UnitPrice' (float, between 100.00 and 1500.00), 'TransactionDate' (YYYY-MM-DD).
+</code></pre></devsite-code>
+<p><strong>Generate a Configuration file (YAML)</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Generate a sample YAML configuration for a 'user_service'. Include sections for 'database' with 'host', 'port', 'username', 'password', 'database_name'. Also include a 'api_keys' section with 'payment_gateway' and 'email_service' placeholders. Use realistic default values.
+</code></pre></devsite-code>
+<p><strong>Generating Test Data for Edge Cases/Validation</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-nx">Generate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">JSON</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">array</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">8</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">email</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">addresses</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">testing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">purposes</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Include</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">mix</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">of</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">valid</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">standard</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">emails</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">missing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-sc">'@'</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">invalid</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">domains</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">e</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">.,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">com1</span><span class="devsite-syntax-err">'</span><span class="devsite-syntax-p">),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">special</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">characters</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">local</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">part</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">are</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">usually</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">invalid</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-nx">e</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nx">g</span><span class="devsite-syntax-p">.,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">spaces</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">multiple</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">dots</span><span class="devsite-syntax-p">).</span>
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Congratulations" duration="0" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Congratulations" tabindex="-1">
+              8. Congratulations
+          </h2>
+          
+          <p>Congratulations, you&#39;ve successfully explored Antigravity CLI, its capabilities and applied it to a few use cases.</p>
+<h2 is-upgraded id="earn-your-kaggle-5-day-ai-agents-badge" data-text="Earn your Kaggle 5-Day AI Agents badge" tabindex="-1">Earn your Kaggle 5-Day AI Agents badge</h2>
+<p>Completed this lab as part of Kaggle&#39;s <strong>5-Day AI Agents: Intensive Vibe Coding Course with Google</strong>? Claim your completion badge: Get the  <a href="https://developers.google.com/profile/badges/events/cloud/five-day-ai-agents/award" target="_blank">5-Day AI Agents badge</a>.</p>
+<h2 is-upgraded id="reference-docs" data-text="Reference docs" tabindex="-1"><strong>Reference docs</strong></h2>
+<ul>
+<li><a href="https://antigravity.google/product/antigravity-cli" target="_blank">Antigravity CLI Project Home page</a></li>
+<li><a href="https://antigravity.google/docs/cli-overview" target="_blank">Antigravity CLI documentation</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent" data-nosnippet>
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent"
+     aria-label="Footer links"
+     data-nosnippet>
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//googledevelopers.blogspot.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.facebook.com/Google-Developers-967415219957038"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Facebook
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//medium.com/google-developers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Medium
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//twitter.com/googledevs"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Twitter
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.youtube.com/user/GoogleDevelopers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Programs</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.womentechmakers.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Women Techmakers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/gdg"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Developer Groups
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/experts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Developer Experts
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/accelerators"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Accelerators
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Developer consoles</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.developers.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Google API Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.cloud.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Cloud Platform Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//play.google.com/apps/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.firebase.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Firebase Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.actions.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Actions on Google Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//cast.google.com/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Cast SDK Developer Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//chrome.google.com/webstore/developer/dashboard"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Chrome Web Store Dashboard
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent" data-nosnippet>
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//developers.google.com/terms/site-terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Sign up for the Google Developers newsletter</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&amp;utm_source=google-products&amp;utm_team=googledevs&amp;utm_campaign=201611-newsletter-launch"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section>
+      </section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;codelabs&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+    
+<script nonce="a/bnew/4ojeKSZveQv9d+W6Y7BonHe">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/js/app_loader.js', '[17,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs","https://codelabs-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/codelabs/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","codelabs.developers.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["Cloud__enable_legacy_calculator_redirect","MiscFeatureFlags__enable_project_variables","MiscFeatureFlags__developers_footer_image","DevPro__enable_enterprise","Search__enable_ai_eligibility_checks","Profiles__enable_developer_profile_benefits_ui_redesign","Profiles__enable_profile_collections","Search__enable_suggestions_from_borg","Concierge__enable_pushui","MiscFeatureFlags__gdp_dashboard_reskin_enabled","DevPro__enable_nvidia_credits_card","Profiles__enable_auto_apply_credits","Cloud__enable_cloud_dlp_service","DevPro__enable_code_assist","Experiments__reqs_query_experiments","Profiles__enable_dashboard_curated_recommendations","Concierge__enable_remove_info_panel_tags","SignIn__enable_l1_signup_flow","Profiles__enable_playlist_community_acl","MiscFeatureFlags__enable_view_transitions","Profiles__enable_targeted_hero","Profiles__require_profile_eligibility_for_signin","Cloud__enable_llm_concierge_chat","Search__enable_dynamic_content_confidential_banner","DevPro__enable_free_benefits","MiscFeatureFlags__enable_variable_operator","AIStudioInteractionsToggle__interactions_are_default","DevPro__enable_google_payments","Profiles__enable_completecodelab_endpoint","CloudShell__cloud_shell_button","DevPro__enable_cloud_innovators_plus","TpcFeatures__enable_unmirrored_page_left_nav","Cloud__cache_serialized_dynamic_content","Cloud__enable_cloud_shell","TpcFeatures__proxy_prod_host","MiscFeatureFlags__remove_cross_domain_tracking_params","DevPro__enable_embed_profile_creation","DevPro__enable_google_payments_buyflow","Concierge__enable_actions_menu","Profiles__enable_developer_profile_pages_as_content","Profiles__enable_awarding_url","DevPro__enable_vertex_credit_card","DevPro__remove_eu_tax_intake_form","Profiles__enable_developer_profiles_callout","DevPro__enable_devsite_captcha","BookNav__enable_tenant_cache_key","DevPro__enable_g1_integration","Analytics__enable_clearcut_logging","DevPro__enable_devpro_offers","Search__enable_ai_search_summaries_for_all","DevPro__enable_developer_subscriptions","Profiles__enable_stripe_subscription_management","CloudShell__cloud_code_overflow_menu","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__enable_explain_this_code","Cloud__enable_free_trial_server_call","Profiles__enable_purchase_prompts","Cloud__enable_cloud_shell_fte_user_flow","MiscFeatureFlags__enable_framebox_badge_methods","MiscFeatureFlags__enable_firebase_utm","DevPro__enable_credits_banner","DevPro__enable_g1_ineligible_redirect","MiscFeatureFlags__fix_lower_breadcrumbs","Profiles__enable_page_saving","Profiles__enable_complete_playlist_endpoint","Search__enable_page_map","MiscFeatureFlags__enable_appearance_cookies","Profiles__enable_join_program_group_endpoint","Profiles__enable_public_developer_profiles","DevPro__enable_google_one_card","Profiles__enable_release_notes_notifications","EngEduTelemetry__enable_engedu_telemetry","Profiles__enable_user_type","MiscFeatureFlags__enable_explicit_template_dependencies","MiscFeatureFlags__enable_variable_operator_index_yaml","Profiles__enable_callout_notifications","Analytics__enable_devpro_interaction_logging","Profiles__enable_completequiz_endpoint","DevPro__enable_firebase_workspaces_card","MiscFeatureFlags__developers_footer_dark_image","Cloud__fast_free_trial","Profiles__enable_recognition_badges"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.clients6.google.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.clients6.google.com",1,4,null,"https://developerprofiles-pa.clients6.google.com",[17,"codelabs","Google Codelabs","codelabs.developers.google.com",null,"codelabs-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1],null,null,null,null,null,null,[1]],null,[33,null,null,null,null,null,"/images/lockup.svg",null,null,null,null,1,1,null,null,null,null,null,null,null,null,1,null,null,null,null,[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,29,32,36],null,[[],[1,1]],[[null,null,null,null,null,null,null,null,null,null,null,null,1]],null,4],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,1,"https://developerscontentinsights-pa.clients6.google.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.clients6.google.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,null,"https://developers.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>
