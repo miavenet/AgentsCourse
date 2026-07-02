@@ -61,6 +61,13 @@ CLI, probes are chosen to be reliable when healthy and to fail cleanly when
 broken, and every teaching section ends in a graded recall. If you extend a
 lab, re-run its commands and keep the CHECK honest.
 
+Run `bash agent-ops/verify.sh` to self-check the module: fast mode exercises
+the metrics SLO gate and a pocket-agent smoke; `--full` adds the eval gate
+rejecting a regression, the canary rolling back, and the service health +
+kill switch. Exit code = failed-check count. (Repo-wide, the
+`scripts/hooks/bash_guard.py` PreToolUse hook auto-approves these lab
+commands so they don't prompt — see the root README.)
+
 ## Working space
 
 Labs write into `agent-ops/scratch/` (gitignored). Progress lives in
