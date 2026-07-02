@@ -29,6 +29,14 @@ and runnable by any Claude model — launch with `/tutor` inside Claude Code
 (`claude --model haiku` is sufficient). Progress lives in
 `tutor/progress.md`; commit it after each session to track your journey.
 
+## Harness engineering module
+
+`harness-eng/` is a hands-on companion module: five practical labs
+(dissect Claude Code, build an MCP server, measure context rot, write
+guardrail hooks, build an eval harness) plus a from-scratch agent-harness
+workshop. Launch with `/harness`. Theory on demand in
+`harness-eng/resources/`.
+
 ## Recommended daily flow
 
 1. Listen to the summary **podcast** (link in the day's `resources.md`).
