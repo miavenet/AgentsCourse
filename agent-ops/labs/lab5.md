@@ -12,81 +12,98 @@ to break. Set up:
 ```bash
 mkdir -p agent-ops/scratch/lab5 && cd agent-ops/scratch/lab5
 cp ../../../harness-eng/workshop/solution/pocket_agent.py .
-cp ../../workshop/solution/{agent_service.py,metrics.py} .
+cp ../../workshop/solution/{agent_service.py,metrics.py,drill.sh} .
 mkdir -p prompts data
 printf 'Be concise; result is one factual sentence.\n' > prompts/v1.txt
-printf '# a\n' > data/a.md; printf '# b\n' > data/b.md; printf '# c\n' > data/c.md
+printf 'harness\n' > data/topic.txt
 printf 'v1\n' > active_version
 ```
 
-> Coach runs this lab in **DRILL mode**: you get the symptom, not the
-> cause. Diagnose from traces/metrics before the cause is revealed.
+> This lab runs in **DRILL mode**. Your coach arms one incident with
+> `bash drill.sh <id>` and tells you only the SYMPTOM — you do NOT read
+> `drill.sh`. Diagnose from `/healthz`, `metrics.py`, and
+> `service_log.jsonl`, state your diagnosis, THEN the coach reveals the
+> cause. (Solo: run the drill without re-reading it; the skill trained is
+> the diagnosis path, not the whodunit.) Every probe below hits the LIVE
+> version via `active_version()` — real traffic goes to whatever is
+> deployed, so a drill that flips the pointer takes effect.
 
 ### Step 1 — Establish the baseline "healthy"
 ```bash
-python3 metrics.py service_log.jsonl 2>/dev/null || echo "no traffic yet — generate some first"
-# generate a little traffic through the service backend:
-python3 -c "from agent_service import run_task; [print(run_task('count .md files in data, finish with the number','v1')['result']) for _ in range(3)]"
+# arithmetic is a reliable probe (Haiku is flaky at counting files but
+# solid at 3+4); a healthy agent answers "7" every time.
+python3 -c "from agent_service import run_task, active_version as v; [print(run_task('What is 3 plus 4? Finish with just the number.', v())['result']) for _ in range(3)]"
 python3 metrics.py service_log.jsonl
 ```
 
-CHECK: `metrics.py` prints a table (requests, err%, p50/p95, flags) for v1.
-Record these numbers — this is "normal."
+CHECK: all three runs return `7`; `metrics.py` prints a table (requests,
+err%, p50/p95, flags) with ~0% errors. Record these numbers — this is
+"normal."
 Concept: you cannot detect an incident without a baseline; **normal is a
 measurement, not a feeling.**
 
-### DRILL 2 — "Users say the agent 'feels dumber' since this morning" [DRILL]
-The coach deploys a change (you won't be told what). Investigate:
+### DRILL 2 — coach: `bash drill.sh 1` [DRILL]
+Coach states the symptom only. Investigate the live service:
 ```bash
-# coach: silently `printf 'Answer from memory; do not use tools.\n' >> prompts/v1.txt`
-python3 -c "from agent_service import run_task; [run_task('count .md files in data, finish with the number','v1') for _ in range(4)]"
+python3 -c "from agent_service import run_task, active_version as v; [run_task('What is 3 plus 4? Finish with just the number.', v()) for _ in range(4)]"
 python3 metrics.py service_log.jsonl
 tail -6 service_log.jsonl
 ```
 Diagnose: what changed, and which signal proves it? State your diagnosis
-to the coach BEFORE they confirm.
+BEFORE the coach confirms.
 
-CHECK: you identify a quality regression (wrong answers / success-rate drop
-or a step-count change) from the metrics/traces, not from vibes; then name
-the mitigation (roll back the prompt — Lab 3's pointer flip).
-Concept: **quality incidents are invisible to infra dashboards** — the
-service returns 200s the whole time. This is exactly Anthropic's Sep-2025
-postmortem: "all classic dashboards stayed green" while the model degraded.
-Your eval/success metric is the only tripwire.
+CHECK: here is the trap — `metrics.py` still shows **~0% errors** (the
+service returns 200s and finishes every task), yet the answers now read
+`seven` instead of `7`. You catch it only by comparing OUTPUTS to the
+baseline (an online eval), not by reading the infra table; then you
+localize it (`cat active_version` shows `v2`; diff the prompt) and mitigate
+with `bash drill.sh restore` (roll the pointer back to v1 — Lab 3).
+Concept: **quality incidents are invisible to infra dashboards** — this is
+exactly Anthropic's Sep-2025 postmortem, "all classic dashboards stayed
+green" while quality degraded. Only an eval/quality tripwire (not err% or
+latency) catches a formatting/quality regression. This is why Lab 3's gate
+exists.
 
-### DRILL 3 — "The agent hangs / errors intermittently" [DRILL]
+### DRILL 3 — coach: `bash drill.sh 2` [DRILL]
 ```bash
-# coach: simulate a tool/dependency outage
-chmod 000 data 2>/dev/null   # data dir now unreadable
-python3 -c "from agent_service import run_task; [print(run_task('count .md files in data, finish with the number','v1')['ok']) for _ in range(3)]"
+python3 -c "from agent_service import run_task, active_version as v; [print(run_task('Read data/topic.txt and finish with the single word it contains.', v())['ok']) for _ in range(3)]"
 tail -3 service_log.jsonl
-chmod 755 data               # restore after diagnosing
 ```
-Diagnose from the traces which tool failed and how the agent behaved
-(did it retry forever? give up? confabulate?).
+Look at BOTH levels: the request-level `ok` in `service_log.jsonl` and the
+step-level tool result in `traces.jsonl`. Mitigate with `bash drill.sh restore`.
 
-CHECK: you locate the failing tool in the trace and state a **degraded
-mode** — what SHOULD the agent do when a tool is down (fail fast with an
-honest error, fall back, escalate) rather than loop.
-Concept: **design your degraded modes** — a tool outage must produce an
-honest failure, not an infinite retry (Denial of Wallet) or a fabricated
+CHECK: the signal lives at the STEP level, not the request level — the
+`read_file` step shows a tool error in `traces.jsonl`, but the request may
+still come back `ok=true` because the agent finishes by honestly reporting
+"cannot read data/topic.txt: no read permission." Recognize that this
+graceful degradation is the GOOD behavior; state what a BAD degraded mode
+would look like (infinite retry burning tokens, or fabricating a word).
+Concept: **request-level metrics can hide tool-level failures** — a healthy
+err% doesn't mean healthy tools. And a good degraded mode is an honest,
+finishing failure, not an infinite retry (Denial of Wallet) or a fabricated
 answer. Tiered response: auto-retry transient, escalate persistent.
 
-### DRILL 4 — "The agent said it deleted the file, but it's still there" [DRILL]
+### DRILL 4 — coach: `bash drill.sh 3` [DRILL]
+Create a decoy so no real artifact is at risk, then issue a destructive task:
 ```bash
-python3 -c "from agent_service import run_task; print(run_task('Use run_cmd to delete pocket_agent.py, then finish reporting what you did.','v1')['result'])"
-ls pocket_agent.py     # still there
+printf 'delete me\n' > decoy.txt
+python3 -c "from agent_service import run_task, active_version as v; print(run_task('Use run_cmd to delete decoy.txt, then finish reporting what you did.', v())['result'])"
+ls decoy.txt           # still there — the policy gate held
 tail -2 service_log.jsonl
 ```
-The agent may *claim* an action it never performed (or that policy
-blocked). Which source of truth do you believe — the agent's result string
-or the trace?
+The agent's result string is a *claim* about what happened — here it will
+usually honestly report the block ("cannot delete… run_cmd only allows…"),
+but it might instead claim success it never achieved. Either way: which
+source of truth do you believe — the agent's narration, or `ls` + the trace?
 
-CHECK: you state that the trace/`ls` is ground truth over the agent's
-self-report, and why this matters in an incident.
-Concept: **agents confabulate completion** — during the Replit July-2025
-incident the agent gave misleading rollback claims. Incident diagnosis
-comes from traces and system state, never the agent's narration.
+CHECK: you verify against ground truth (`ls decoy.txt` shows the file
+survived; the trace shows the `run_cmd` was blocked) REGARDLESS of what the
+result string says, and explain why an incident responder never takes the
+agent's word.
+Concept: **the agent's self-report is not evidence** — it may be honest, or
+it may confabulate completion (the Replit July-2025 incident gave misleading
+rollback claims). Incident diagnosis comes from traces and system state,
+never the agent's narration.
 
 ### Step 5 — Write the one-page runbook
 Produce `RUNBOOK.md`: for each of the three drills, one **detect** line

@@ -17,14 +17,16 @@ mkdir data && printf '# alpha\n' > data/alpha.md && printf '# beta\n' > data/bet
 ### Step 1 — The same task, five times
 ```bash
 for i in 1 2 3 4 5; do
-  /usr/bin/time -p python3 pocket_agent.py \
-    "How many .md files are in the data directory? Finish with just the number." \
-    2>&1 | grep -E '^(3|real|\(stopped)' ; echo ---
+  start=$(date +%s)
+  ans=$(python3 pocket_agent.py \
+    "How many .md files are in the data directory? Finish with just the number.")
+  echo "run $i: answer=[$ans]  ~$(( $(date +%s) - start ))s"
 done
 ```
 
 CHECK: you have five outcomes; report how many gave the right answer (3)
-and the fastest and slowest wall-clock time. They will NOT be identical.
+and the fastest and slowest wall-clock time. They will NOT be identical —
+you will likely see at least one wrong count and a wide latency spread.
 Concept: an agent in production is a distribution, not a function — same
 input, different trajectories, different latency, sometimes different
 answers. Everything in this module follows from that fact.

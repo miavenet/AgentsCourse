@@ -26,7 +26,7 @@ Prereq: the `harness-eng` module (its Pocket-Agent is the thing you put
 into production here). If you skipped it, run `/harness` first — or at least
 confirm `harness-eng/workshop/solution/pocket_agent.py` exists.
 
-## The path (~4–5 hours total, spread over days)
+## The path (five labs ~4 h + workshop ~2–3 h; spread over days)
 
 | Stage | You build / break | Production layer |
 |-------|-------------------|------------------|
@@ -52,6 +52,14 @@ questions and a `## Theory` section for the strong-theory layer.
   *Design Patterns for Securing LLM Agents* (2506.08837), *AgentDojo* (2406.13352).
 - Origin texts: the Day-4 whitepaper (security & evaluation) and Day-5
   whitepaper (spec-driven production) in the sibling `dayN-*/` folders.
+
+## Quality bar
+
+This module is held to the repo's `RIGOR.md` rubric (≥95/100, zero
+blockers): every command and CHECK has been run against the live `claude`
+CLI, probes are chosen to be reliable when healthy and to fail cleanly when
+broken, and every teaching section ends in a graded recall. If you extend a
+lab, re-run its commands and keep the CHECK honest.
 
 ## Working space
 
