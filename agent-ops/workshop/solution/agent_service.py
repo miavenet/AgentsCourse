@@ -68,7 +68,14 @@ def load_prompt(version: str) -> str:
 
 
 def run_task(task: str, version: str, max_steps: int = MAX_STEPS) -> dict:
-    """One request through the full path: guards → versioned agent → guards."""
+    """One request through the full path: guards → versioned agent → guards.
+
+    NOTE: this mutates the module-global pocket_agent.SYSTEM to swap prompt
+    versions, so it is safe ONLY because the server is single-threaded
+    (http.server.HTTPServer, not ThreadingHTTPServer). Under concurrency
+    you'd pass the system prompt through explicitly instead of via a global —
+    a real seam a production version must close.
+    """
     rid = uuid.uuid4().hex[:8]
     flags = guard_input(task)
     pocket_agent.SYSTEM = BASE_SYSTEM + "\n" + load_prompt(version)
@@ -79,9 +86,13 @@ def run_task(task: str, version: str, max_steps: int = MAX_STEPS) -> dict:
     except Exception as e:
         result, ok = f"internal error: {e}", False
     result, out_flags = guard_output(result)
+    # We redact the OUTPUT before logging; note the raw task is still logged
+    # (truncated) — task inputs can also carry secrets/PII, so a hardened
+    # service would run guard_output over the logged task too.
     rec = {"request_id": rid, "ts": round(time.time(), 1), "version": version,
            "ok": ok, "latency_s": round(time.time() - t0, 1),
-           "flags": flags + out_flags, "task": task[:120], "result": result[:200]}
+           "flags": flags + out_flags,
+           "task": guard_output(task[:120])[0], "result": result[:200]}
     with open(SERVICE_LOG, "a") as f:
         f.write(json.dumps(rec) + "\n")
     return rec

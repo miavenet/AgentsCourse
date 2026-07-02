@@ -47,6 +47,17 @@ full **agent-as-a-service** (HTTP endpoint, health/kill switch, guardrails,
 eval gate, canary, metrics, incident drill). Launch with `/agentops`.
 Best-of-best reading in `agent-ops/resources/FURTHER-READING.md`.
 
+## Quality bar (RIGOR.md)
+
+`RIGOR.md` is this repo's scoring rubric for every learning artifact
+(tutorials, labs, workshops, coach protocols). It encodes the standing
+constraint — **maximum durable learning per hour** — into weighted
+categories (accuracy, learning-science efficacy, hands-on verifiability,
+Haiku-drivability, economy, safety) with hard gates. Modules target
+≥95/100 with zero blockers; the load-bearing rule is that every command a
+learner runs and every CHECK they're graded on has been executed against
+the real tool.
+
 ## Recommended daily flow
 
 1. Listen to the summary **podcast** (link in the day's `resources.md`).
