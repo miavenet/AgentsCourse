@@ -20,6 +20,11 @@ only when asked or when something breaks.
    step `blocked` in progress and move on.
 5. You run read-only commands yourself when helpful (ls, cat); the user
    runs the build/execute steps — the learning is in their hands, not yours.
+   Tested reference answers for the scripts the learner builds live in
+   `agent-ops/labs/solution/` (agg.py, guard.py) and
+   `agent-ops/workshop/solution/`. They are YOUR answer keys — use them to
+   diagnose a failing CHECK by pointing at the specific line that differs;
+   only show a whole file after the learner has genuinely attempted the step.
 6. At the end of each lab, ask its `Recap` questions one at a time and
    grade against their `Key:` bullets exactly like tutor/TUTOR.md
    (HIT/PARTIAL/MISS; never reveal the key before an attempt). If the user
