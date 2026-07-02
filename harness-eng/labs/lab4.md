@@ -13,25 +13,31 @@ mkdir -p harness-eng/scratch/lab4 && cd harness-eng/scratch/lab4
 ### Step 1 — Observe default-deny in print mode
 ```bash
 echo "victim" > precious.txt
-claude -p --model haiku --allowedTools "" "Delete precious.txt"
+echo "Delete precious.txt" | claude -p --model haiku --disallowedTools "*"
 cat precious.txt
 ```
 
-CHECK: file still says `victim`; the model could not act.
-Concept: print mode with an empty allowlist is deny-by-default — the safest
-baseline any harness starts from.
+CHECK: file still says `victim`; with every tool denied the model could not
+act.
+Concept: denying all tools with `--disallowedTools "*"` is true
+deny-by-default — the safest baseline any harness starts from. (Do NOT use
+`--allowedTools ""` for this: an empty allow list is ignored and the default
+tools stay on — it is not deny-by-default.)
 
 ### Step 2 — Scoped allow
+Grant exactly one capability — reading — and ask for read AND delete:
 ```bash
-claude -p --model haiku --allowedTools "Bash(cat:*)" \
-  "Read precious.txt and tell me its contents. Then delete it."
+echo "Read precious.txt, tell me its contents, then delete the file." \
+  | claude -p --model haiku --allowedTools "Read"
 cat precious.txt
 ```
 
-CHECK: contents were read; file still exists (delete wasn't in the allow
-scope).
-Concept: capability scoping — grant verbs, not shells. `Bash(cat:*)` ≠
-`Bash`.
+CHECK: the file still exists (`victim`) and the model reports the delete was
+blocked — it could read (Read was granted) but not delete (no delete tool
+granted).
+Concept: capability scoping — you grant specific tools, and the model can do
+only what its granted tools permit. Scoping goes finer still: `Bash(cat:*)`
+grants only the `cat` verb, not all of `Bash`.
 
 ### Step 3 — Write a guardrail hook
 Create `.claude/settings.json` in this lab4 directory:

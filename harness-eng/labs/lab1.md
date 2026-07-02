@@ -7,28 +7,38 @@ formula **Agent = Model + Harness** stops being a slogan.
 Prereqs: `claude` CLI installed and logged in. Work anywhere; steps are
 read-only.
 
-### Step 1 — Same model, no harness
-Run the model with the harness bypassed as far as possible — a single
-print-mode call with no tools:
+### Step 1 — Same model, no tools
+Give the model a task whose answer it CANNOT guess — a word only present in
+a local file — with every tool denied:
 
 ```bash
-claude -p --model haiku --allowedTools "" \
-  "List the files in the current directory."
+mkdir -p harness-eng/scratch/lab1 && cd harness-eng/scratch/lab1
+echo "banana47" > secret.txt
+echo "Read the file secret.txt and reply with only the word inside it." \
+  | claude -p --model haiku --disallowedTools "*"
 ```
 
-CHECK: the reply does NOT contain a real file listing — the model either
-refuses, asks for information, or hallucinates. It cannot act.
-Concept: a model without tools can only talk; capability lives in the harness.
+> Two harness-ergonomics details we use all lab: the prompt goes in via
+> **stdin** (an `--allowedTools`/`--disallowedTools` value placed right
+> before a positional prompt can swallow it), and we deny tools with
+> `--disallowedTools "*"`, NOT `--allowedTools ""` — an empty allow list is
+> ignored and the default read tools stay on, so `""` does not give you a
+> tool-less model.
 
-### Step 2 — Same model, with harness
+CHECK: the reply is NOT `banana47` — the model emits an unexecuted tool-call
+or guesses a random word. With every tool denied it cannot read the file.
+Concept: a model with no tools can only talk (and guess); capability lives
+in the harness.
+
+### Step 2 — Same model, one tool
 ```bash
-claude -p --model haiku --allowedTools "Bash(ls:*)" \
-  "List the files in the current directory."
+echo "Read the file secret.txt and reply with only the word inside it." \
+  | claude -p --model haiku --allowedTools "Read"
 ```
 
-CHECK: the reply reflects the actual directory contents.
-Concept: one flag changed — the tool surface — and the same model became an
-agent. The delta was 100% harness.
+CHECK: the reply is `banana47` — the real file contents.
+Concept: one flag changed — a single tool granted — and the same model can
+now act on the world. The delta was 100% harness.
 
 ### Step 3 — Inventory the tool surface
 ```bash
@@ -90,6 +100,26 @@ Key:
 - Tools (--allowedTools), permissions (settings.json allow/deny), static context (CLAUDE.md/AGENTS.md), observability/accounting (JSON result fields: cost, turns, session)
 
 ## Theory
+
+The harness anatomy you derived in Step 6 (compare your sketch — this is
+Figure 7 in text form):
+
+```
+                         ┌──────────────── HARNESS ────────────────┐
+   standing context ────▶│  static context (CLAUDE.md / AGENTS.md)  │
+   (Step 5)              │              │                          │
+   tools (Step 1–2) ────▶│         ┌────▼────┐   permissions ◀──── Step 4
+                         │  tools ─▶│  MODEL  │◀─ (settings.json    │
+   per-task context ────▶│         └────┬────┘   allow/deny)       │
+                         │              │                          │
+                         │   loop / session control  ── observability & │
+                         │   (perceive→act→observe)     accounting (Step 3:│
+                         │              │               cost, turns, id)   │
+                         └──────────────▼──────────────────────────┘
+                                   actions / output
+```
+Agent = Model + Harness: the model is one box; everything else is the
+harness you just inventoried.
 
 The day-1 whitepaper defines the harness as everything surrounding the
 model: tools, permissions, context sources, evaluation gates, feedback

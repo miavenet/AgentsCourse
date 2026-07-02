@@ -42,10 +42,13 @@ with open("tasks.jsonl") as f, open("traces.jsonl", "a") as log:
         task = json.loads(line)
         t0 = time.time()
         proc = subprocess.run(
-            ["claude", "-p", "--model", MODEL, "--allowedTools", "", *EXTRA,
-             task["prompt"]],
-            capture_output=True, text=True, timeout=120)
+            ["claude", "-p", "--model", MODEL, "--allowedTools", "", *EXTRA],
+            input=task["prompt"],          # prompt via stdin: an empty
+            capture_output=True, text=True, # --allowedTools would swallow a
+            timeout=120)                    # positional prompt arg
         answer = proc.stdout.strip()
+        if not answer and proc.stderr:      # surface CLI errors, never hide them
+            answer = f"[no output] {proc.stderr.strip()[:120]}"
         ok = bool(re.search(task["expect_regex"], answer))
         trace = {"task": task["id"], "model": MODEL, "extra": EXTRA,
                  "answer": answer[:200], "pass": ok,

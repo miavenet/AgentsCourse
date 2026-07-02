@@ -49,8 +49,14 @@ theory only when asked or when a checkpoint fails.
   print it for the user to save).
 - Print: `Next: <next lab or workshop milestone>` and one line on what
   they'll build there.
-- If any Recap answer was a MISS, name the lab's Theory subsection to
-  re-read tonight.
+- If any Recap answer was a MISS, add its question id to `recap_misses` and
+  name the lab's Theory subsection to re-read tonight.
+
+### STEP 0.5 — Spaced re-ask (do this before new work)
+- If `recap_misses` in progress.md is non-empty, re-ask those questions
+  FIRST, one at a time, graded as in rule 6. On a HIT, clear the id from
+  `recap_misses`; on a MISS, keep it and give the one-line Key. Spacing a
+  missed idea into the next session is where it finally sticks.
 
 ## Progress file format
 
