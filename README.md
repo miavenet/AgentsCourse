@@ -21,6 +21,14 @@ Each `dayN-*/` folder contains the day's **whitepaper PDF**, offline **codelab H
 | 5 | Spec-Driven Production Grade Development | `day5-spec-driven-production/` |
 | — | Capstone project | `capstone/` |
 
+## Study tutor
+
+`tutor/` contains an adaptive, spaced-repetition study system for the whole
+course, built on learning-science principles (see `tutor/PRINCIPLES.md`)
+and runnable by any Claude model — launch with `/tutor` inside Claude Code
+(`claude --model haiku` is sufficient). Progress lives in
+`tutor/progress.md`; commit it after each session to track your journey.
+
 ## Recommended daily flow
 
 1. Listen to the summary **podcast** (link in the day's `resources.md`).
