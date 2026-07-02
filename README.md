@@ -8,26 +8,36 @@ Self-paced materials for the June 15–19, 2026 course, fetched and organized lo
 
 Hosts for all livestreams: Anant Nawalgaria and Smitha Kolan, on Kaggle's YouTube channel.
 
-## Layout
+## Repository layout
 
-Each `dayN-*/` folder contains the day's **whitepaper PDF**, offline **codelab HTML copies**, and a `resources.md` with all links (podcast, codelabs, livestream, guests).
+- **`5-day-course/`** — the course itself: the five `dayN-*/` material folders
+  (whitepapers + codelabs), the `capstone/`, the `tutor/` study system, and the
+  whitepaper `tools/`.
+- **`harness-eng/`** — a separate, self-contained hands-on module (`/harness`).
+- **`agent-ops/`** — a separate, self-contained hands-on module (`/agentops`).
+- **`RIGOR.md`** — the repo-wide quality rubric; **`scripts/hooks/`** — the
+  permission-noise hook; **`.claude/`** — settings + slash commands.
+
+## The 5-day course
+
+Each `5-day-course/dayN-*/` folder contains the day's **whitepaper PDF**, offline **codelab HTML copies**, and a `resources.md` with all links (podcast, codelabs, livestream, guests).
 
 | Day | Topic | Folder |
 |-----|-------|--------|
-| 1 | Introduction to Agents & Vibe Coding | `day1-intro-agents-and-vibe-coding/` |
-| 2 | Agent Tools & Interoperability (MCP, A2A, A2UI, AP2/UCP) | `day2-agent-tools-and-interoperability/` |
-| 3 | Agent Skills (SKILL.md, progressive disclosure) | `day3-agent-skills/` |
-| 4 | Vibe Coding Agent Security & Evaluation | `day4-agent-security-and-evaluation/` |
-| 5 | Spec-Driven Production Grade Development | `day5-spec-driven-production/` |
-| — | Capstone project | `capstone/` |
+| 1 | Introduction to Agents & Vibe Coding | `5-day-course/day1-intro-agents-and-vibe-coding/` |
+| 2 | Agent Tools & Interoperability (MCP, A2A, A2UI, AP2/UCP) | `5-day-course/day2-agent-tools-and-interoperability/` |
+| 3 | Agent Skills (SKILL.md, progressive disclosure) | `5-day-course/day3-agent-skills/` |
+| 4 | Vibe Coding Agent Security & Evaluation | `5-day-course/day4-agent-security-and-evaluation/` |
+| 5 | Spec-Driven Production Grade Development | `5-day-course/day5-spec-driven-production/` |
+| — | Capstone project | `5-day-course/capstone/` |
 
 ## Study tutor
 
-`tutor/` contains an adaptive, spaced-repetition study system for the whole
-course, built on learning-science principles (see `tutor/PRINCIPLES.md`)
+`5-day-course/tutor/` contains an adaptive, spaced-repetition study system for the whole
+course, built on learning-science principles (see `5-day-course/tutor/PRINCIPLES.md`)
 and runnable by any Claude model — launch with `/tutor` inside Claude Code
 (`claude --model haiku` is sufficient). Progress lives in
-`tutor/progress.md`; commit it after each session to track your journey.
+`5-day-course/tutor/progress.md`; commit it after each session to track your journey.
 
 ## Harness engineering module
 
@@ -95,13 +105,13 @@ prompt + explicit tool policy) and asserts the expected output.
 
 ## Local files & tooling
 
-Each `dayN-*/` folder contains the whitepaper as **PDF** and as **enhanced markdown** (`whitepaper-*.md`) with real headings, a rebuilt table of contents, and every figure/table embedded as a PNG under `assets/`. Codelabs are saved as offline HTML plus readable markdown.
+Each `5-day-course/dayN-*/` folder contains the whitepaper as **PDF** and as **enhanced markdown** (`whitepaper-*.md`) with real headings, a rebuilt table of contents, and every figure/table embedded as a PNG under `assets/`. Codelabs are saved as offline HTML plus readable markdown.
 
 To regenerate a whitepaper markdown (e.g. after a PDF update):
 
 ```bash
-pip install -r tools/requirements.txt   # markitdown[pdf] + pymupdf
-python tools/enhance_whitepaper.py dayN-…/whitepaper-….pdf
+pip install -r 5-day-course/tools/requirements.txt   # markitdown[pdf] + pymupdf
+python 5-day-course/tools/enhance_whitepaper.py 5-day-course/dayN-…/whitepaper-….pdf
 ```
 
 The script converts with markitdown, strips per-page header/footer noise, promotes headings from the PDF bookmark outline, renders figure/table regions to PNGs, validates any ```mermaid blocks with `mmdc`, and prints a sanity report.

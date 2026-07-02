@@ -72,4 +72,4 @@ benefit (see `PRINCIPLES.md`). Wrong answers cost nothing; the tutor corrects
 them immediately, which is when your brain is most ready to encode the fix.
 
 Track your journey: commit `progress.md` after each session —
-`git add tutor/progress.md && git commit -m "study session $(date +%F)"`.
+`git add 5-day-course/tutor/progress.md && git commit -m "study session $(date +%F)"`.

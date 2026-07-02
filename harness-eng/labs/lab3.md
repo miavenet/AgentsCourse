@@ -18,7 +18,7 @@ echo "In the Vercel study cited in the Agent Skills whitepaper, what was the non
 > right before a positional prompt swallows it. Same pattern all lab long.
 
 CHECK: the model either admits it doesn't know or guesses (the true figure,
-from `day3-agent-skills/whitepaper-agent-skills.md`, is 56%). Note what it
+from `5-day-course/day3-agent-skills/whitepaper-agent-skills.md`, is 56%). Note what it
 said.
 Concept: no context → the model samples from priors. Confidence is not
 evidence.
@@ -28,7 +28,7 @@ Give it only the relevant section:
 
 ```bash
 { echo "Based only on the text below: what was the non-invocation rate? One sentence."; echo; \
-  grep -A6 "non-invocation" day3-agent-skills/whitepaper-agent-skills.md; } \
+  grep -A6 "non-invocation" 5-day-course/day3-agent-skills/whitepaper-agent-skills.md; } \
  | claude -p --model haiku --allowedTools ""
 ```
 
@@ -42,7 +42,7 @@ same question:
 
 ```bash
 { echo "What was the non-invocation rate in the Vercel study? Also list every protocol mentioned. One short paragraph."; echo; \
-  cat day1*/whitepaper-*.md day2*/whitepaper-*.md day3*/whitepaper-*.md; } \
+  cat 5-day-course/day1*/whitepaper-*.md 5-day-course/day2*/whitepaper-*.md 5-day-course/day3*/whitepaper-*.md; } \
  | claude -p --model haiku --allowedTools ""
 ```
 
@@ -62,7 +62,7 @@ Create `harness-eng/scratch/assemble.sh` — a 15-line curated-context tool:
 TERM="$1"; MAX="${2:-40}"
 {
   echo "## Context pack for: $TERM"
-  grep -rn -B2 -A4 "$TERM" day*/whitepaper-*.md tutor/lessons/*.md 2>/dev/null \
+  grep -rn -B2 -A4 "$TERM" 5-day-course/day*/whitepaper-*.md 5-day-course/tutor/lessons/*.md 2>/dev/null \
     | head -"$MAX"
 } 
 ```

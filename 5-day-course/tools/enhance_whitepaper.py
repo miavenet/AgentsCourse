@@ -24,7 +24,7 @@ Usage:
   python enhance_whitepaper.py input.pdf [-o out.md] [--assets DIR]
                                [--markitdown BIN] [--no-images] [--zoom 2.0]
 
-Requires: markitdown[pdf], pymupdf  (see tools/requirements.txt)
+Requires: markitdown[pdf], pymupdf  (see 5-day-course/tools/requirements.txt)
 Optional: mmdc (npm i -g @mermaid-js/mermaid-cli) for mermaid validation.
 """
 

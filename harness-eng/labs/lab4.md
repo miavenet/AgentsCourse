@@ -90,7 +90,7 @@ Concept: guardrails are an adversarial, iterative artifact — Red team finds,
 Green team builds the fix in (Day 4's triad, live).
 
 ### Step 6 — Human-in-the-loop by design
-State to your coach: for your capstone/current project, which THREE actions
+State to your coach: for your capstone or current project, which THREE actions
 would you put behind (a) hard block, (b) human approval, (c) free autonomy —
 and why those tiers.
 

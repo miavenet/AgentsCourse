@@ -54,7 +54,7 @@ until `action == "finish"`. History = list of "ASSISTANT: <json>" /
 Handle a JSON parse failure by appending
 "OBSERVATION: invalid JSON, reply with only a JSON object" and continuing.
 
-CHECK: task `"How many .md files are in the tutor/lessons directory? Finish with the number."`
+CHECK: task `"How many .md files are in the 5-day-course/tutor/lessons directory? Finish with the number."`
 completes in ≤ 4 steps with the right answer (5).
 Concept: perceive→plan→act→observe→iterate — Day 1's agent loop, now yours.
 
@@ -79,7 +79,7 @@ Long observations rot your context (Lab 3). Cap each observation at
 `"...[truncated N chars — read a more specific target]"`, and cap history
 at the last `MAX_TURNS = 10` entries.
 
-CHECK: task `"Read day3-agent-skills/whitepaper-agent-skills.md and tell me its main topic. Finish with one sentence."`
+CHECK: task `"Read 5-day-course/day3-agent-skills/whitepaper-agent-skills.md and tell me its main topic. Finish with one sentence."`
 completes without the prompt ballooning (print prompt length per step to
 verify it plateaus).
 Concept: the harness, not the model, owns the attention budget.

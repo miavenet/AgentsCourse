@@ -1,7 +1,7 @@
 # Day 4 — Vibe Coding Agent Security and Evaluation
 
-Whitepaper: `day4-agent-security-and-evaluation/whitepaper-vibe-coding-agent-security-and-evaluation.md`
-Figures: `day4-agent-security-and-evaluation/assets/whitepaper-vibe-coding-agent-security-and-evaluation/`
+Whitepaper: `5-day-course/day4-agent-security-and-evaluation/whitepaper-vibe-coding-agent-security-and-evaluation.md`
+Figures: `5-day-course/day4-agent-security-and-evaluation/assets/whitepaper-vibe-coding-agent-security-and-evaluation/`
 
 ## Concept cards
 

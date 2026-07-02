@@ -31,7 +31,7 @@ Or in any chat: paste `COACH.md` + the current lab file + `progress.md`.
 | Workshop (~2–3 h) | **Pocket-Agent**: loop, registry, gate, budget, traces, eval | all of them, from scratch |
 
 Labs are sequential — each one's artifact or lesson is used by a later one.
-Each lab ends with recap questions (graded like `tutor/TUTOR.md`) and a
+Each lab ends with recap questions (graded like `5-day-course/tutor/TUTOR.md`) and a
 `## Theory` section — the strong-theory layer, with pointers into
 `resources/` for depth.
 
@@ -45,7 +45,7 @@ Each lab ends with recap questions (graded like `tutor/TUTOR.md`) and a
 - `resources/transcripts/` — cleaned transcripts of the course's Day-1
   livestream and podcast (personal study copies)
 - The day-1 whitepaper's "Harness Engineering" section is the module's
-  origin text: `day1-intro-agents-and-vibe-coding/whitepaper-*.md`
+  origin text: `5-day-course/day1-intro-agents-and-vibe-coding/whitepaper-*.md`
 
 ## Quality bar
 

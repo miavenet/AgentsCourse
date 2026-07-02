@@ -6,7 +6,7 @@ The theory layer for the labs. Everything here is free. Items marked
 ## Primary texts
 
 - **[local]** Day-1 whitepaper, "Harness Engineering: What surrounds the model" —
-  `day1-intro-agents-and-vibe-coding/whitepaper-the-new-sdlc-with-vibe-coding.md`
+  `5-day-course/day1-intro-agents-and-vibe-coding/whitepaper-the-new-sdlc-with-vibe-coding.md`
   (the section this whole module grew from; figures 6–7 show harness anatomy)
 - Anthropic — *Building effective agents*:
   https://www.anthropic.com/engineering/building-effective-agents

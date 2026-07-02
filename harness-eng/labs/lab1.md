@@ -84,7 +84,7 @@ static context, accounting/observability — session/loop control also
 counts).
 Concept: this diagram *is* Figure 7 of the day-1 whitepaper — you just
 derived it empirically. Compare:
-`day1-intro-agents-and-vibe-coding/assets/whitepaper-the-new-sdlc-with-vibe-coding/figure-7.png`
+`5-day-course/day1-intro-agents-and-vibe-coding/assets/whitepaper-the-new-sdlc-with-vibe-coding/figure-7.png`
 
 ## Recap
 

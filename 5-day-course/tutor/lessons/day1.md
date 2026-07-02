@@ -1,7 +1,7 @@
 # Day 1 — Introduction to Agents & Vibe Coding
 
-Whitepaper: `day1-intro-agents-and-vibe-coding/whitepaper-the-new-sdlc-with-vibe-coding.md`
-Figures: `day1-intro-agents-and-vibe-coding/assets/whitepaper-the-new-sdlc-with-vibe-coding/`
+Whitepaper: `5-day-course/day1-intro-agents-and-vibe-coding/whitepaper-the-new-sdlc-with-vibe-coding.md`
+Figures: `5-day-course/day1-intro-agents-and-vibe-coding/assets/whitepaper-the-new-sdlc-with-vibe-coding/`
 
 ## Concept cards
 

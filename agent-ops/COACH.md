@@ -26,7 +26,7 @@ only when asked or when something breaks.
    diagnose a failing CHECK by pointing at the specific line that differs;
    only show a whole file after the learner has genuinely attempted the step.
 6. At the end of each lab, ask its `Recap` questions one at a time and
-   grade against their `Key:` bullets exactly like tutor/TUTOR.md
+   grade against their `Key:` bullets exactly like 5-day-course/tutor/TUTOR.md
    (HIT/PARTIAL/MISS; never reveal the key before an attempt). If the user
    marked an answer `(sure)` and it was a MISS, flag it — those corrections
    stick hardest; make them restate the right answer in their own words.
