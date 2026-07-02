@@ -58,6 +58,24 @@ Haiku-drivability, economy, safety) with hard gates. Modules target
 learner runs and every CHECK they're graded on has been executed against
 the real tool.
 
+## Reducing permission noise (and self-checking the labs)
+
+The labs run many shell commands (`claude -p` calls, `grep`, `python3`,
+`mkdir`, `mcp add/remove` …). To avoid a permission prompt on every one,
+`.claude/settings.json` wires a **PreToolUse hook**,
+`scripts/hooks/bash_guard.py`, that auto-**allows** provably-safe commands
+(read-only, or writes/deletes confined to this repo, `/tmp`, or `/dev/null`),
+forces **ask** on anything that mutates outside the repo / can't be bounded /
+reads a secret path / `git push`, and **denies** a small catastrophic set
+(`rm -rf /`, `mkfs`, `dd of=/dev/…`). It fails open — any parse error passes
+through to the normal prompt, so it can't break or silently approve a call.
+
+`harness-eng/verify.sh` is the module's evaluation harness: it runs each
+lab's canonical command through one noise-reduced `ask()` wrapper (stdin
+prompt + explicit tool policy) and asserts the expected output.
+`bash harness-eng/verify.sh` (fast) or `--full` (adds the Lab 5 eval and Lab
+2 MCP round-trip); exit code = number of failed checks.
+
 ## Recommended daily flow
 
 1. Listen to the summary **podcast** (link in the day's `resources.md`).

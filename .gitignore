@@ -6,3 +6,4 @@ harness-eng/scratch/
 agent-ops/scratch/
 traces.jsonl
 service_log.jsonl
+harness-eng/verify.log
