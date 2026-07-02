@@ -37,6 +37,16 @@ guardrail hooks, build an eval harness) plus a from-scratch agent-harness
 workshop. Launch with `/harness`. Theory on demand in
 `harness-eng/resources/`.
 
+## Agents-in-production module
+
+`agent-ops/` is the operations companion: five hands-on labs (SLOs for a
+non-deterministic system, observability & the Vibe Trajectory, eval-gated
+CI/CD with canary rollback, red-team-then-guardrail safeguards, incident
+drills) plus a workshop that wraps the `harness-eng` Pocket-Agent into a
+full **agent-as-a-service** (HTTP endpoint, health/kill switch, guardrails,
+eval gate, canary, metrics, incident drill). Launch with `/agentops`.
+Best-of-best reading in `agent-ops/resources/FURTHER-READING.md`.
+
 ## Recommended daily flow
 
 1. Listen to the summary **podcast** (link in the day's `resources.md`).
