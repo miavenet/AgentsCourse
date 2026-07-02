@@ -7,3 +7,4 @@ agent-ops/scratch/
 traces.jsonl
 service_log.jsonl
 verify.log
+HANDOFF.md

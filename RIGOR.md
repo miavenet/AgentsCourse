@@ -25,9 +25,9 @@ hour), Hands-On Verifiability, Haiku-Drivability, Safety, Economy/Clarity.**
   2. The top defects found (file/section references).
   3. Concrete recommendations, each tagged [BLOCKER] / [MAJOR] / [MINOR].
 - **Hard gates** (automatic caps) override the weighted sum — see §3.
-- Acceptance targets: a **module** (a `dayN-*/`, `tutor/`, `harness-eng/`,
-  `agent-ops/`) needs **≥ 95/100 with zero [BLOCKER]s**. An individual lab
-  ≥ 90 to ship; a workshop capstone ≥ 95.
+- Acceptance targets: a **module** (`5-day-course/` incl. its `tutor/`,
+  `harness-eng/`, `agent-ops/`) needs **≥ 95/100 with zero [BLOCKER]s**. An
+  individual lab ≥ 90 to ship; a workshop capstone ≥ 95.
 - The non-negotiable rule of this repo: **every command a learner is told
   to run, and every CHECK they are graded against, has been executed
   against the real tool** (the live `claude` CLI, the actual scripts) and

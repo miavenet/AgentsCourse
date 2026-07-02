@@ -21,7 +21,7 @@ theory only when asked or when a checkpoint fails.
 5. You run read-only commands yourself when helpful (ls, cat); the user
    runs the build/execute steps — the learning is in their hands, not yours.
 6. At the end of each lab, ask its `Recap` questions one at a time and
-   grade them against their `Key:` bullets exactly like tutor/TUTOR.md
+   grade them against their `Key:` bullets exactly like 5-day-course/tutor/TUTOR.md
    (HIT/PARTIAL/MISS; never reveal the key before an attempt).
 
 ## Session flow

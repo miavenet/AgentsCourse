@@ -1,7 +1,7 @@
 # Day 3 — Agent Skills
 
-Whitepaper: `day3-agent-skills/whitepaper-agent-skills.md`
-Figures: `day3-agent-skills/assets/whitepaper-agent-skills/`
+Whitepaper: `5-day-course/day3-agent-skills/whitepaper-agent-skills.md`
+Figures: `5-day-course/day3-agent-skills/assets/whitepaper-agent-skills/`
 
 ## Concept cards
 

@@ -1,7 +1,7 @@
 # Day 2 — Agent Tools & Interoperability
 
-Whitepaper: `day2-agent-tools-and-interoperability/whitepaper-agent-tools-and-interoperability.md`
-Figures: `day2-agent-tools-and-interoperability/assets/whitepaper-agent-tools-and-interoperability/`
+Whitepaper: `5-day-course/day2-agent-tools-and-interoperability/whitepaper-agent-tools-and-interoperability.md`
+Figures: `5-day-course/day2-agent-tools-and-interoperability/assets/whitepaper-agent-tools-and-interoperability/`
 
 ## Concept cards
 

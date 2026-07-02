@@ -1,7 +1,7 @@
 # Day 5 — Spec-Driven Production Grade Development
 
-Whitepaper: `day5-spec-driven-production/whitepaper-spec-driven-production-grade-development.md`
-Figures: `day5-spec-driven-production/assets/whitepaper-spec-driven-production-grade-development/`
+Whitepaper: `5-day-course/day5-spec-driven-production/whitepaper-spec-driven-production-grade-development.md`
+Figures: `5-day-course/day5-spec-driven-production/assets/whitepaper-spec-driven-production-grade-development/`
 
 ## Concept cards
 
