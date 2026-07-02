@@ -64,6 +64,16 @@ Each lesson also ends with **Go deeper** links — vetted, free external
 tutorials (official MCP/A2A/ADK docs, Anthropic's skills course, OWASP,
 GitHub Spec Kit) for topics you want beyond the whitepapers.
 
+## Quality bar
+
+Held to the repo's `RIGOR.md` rubric. Every card's facts and citations were
+checked against the source whitepapers: the statistics (Day 1: 85% use AI
+agents / 51% daily / 41% of new code; Day 3: 56% non-invocation, 58% vs 63%
+stripped-skill-vs-none, 100% vs 53% for a passive conventions index), every
+`Figure:`/`Table:` caption, and every `Source:` section heading resolve to
+the actual whitepaper. External "Go deeper" links are checked live (200) and
+point at canonical URLs.
+
 ## The one rule the human must follow
 
 **Answer from memory before looking anything up.** The struggle to retrieve

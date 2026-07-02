@@ -168,6 +168,6 @@ Key:
 
 ## Go deeper (external, free)
 
-- Google Agent Development Kit docs & quickstart — https://google.github.io/adk-docs/
-- Anthropic, "Building effective agents" (agent-loop patterns) — https://www.anthropic.com/research/building-effective-agents
+- Google Agent Development Kit docs & quickstart — https://adk.dev/
+- Anthropic, "Building effective agents" (agent-loop patterns) — https://www.anthropic.com/engineering/building-effective-agents
 - Addy Osmani's companion essay to this whitepaper — https://addyosmani.com/blog/new-sdlc-vibe-coding/
