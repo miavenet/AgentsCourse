@@ -13,6 +13,25 @@ line you add here is *operations* — the difference between "it works on my
 machine" and "it's running in production and I'd know within minutes if it
 weren't."
 
+The whole service is one request flowing through six layers you'll build
+in order. Keep this picture in view — every milestone adds one box:
+
+```
+              ┌─────────────────────── agent_service.py ───────────────────────┐
+  POST /task  │  guard_input ─▶ load prompt(active_version) ─▶ pocket_agent.run │
+  ──────────▶ │       │              (M1 boundary, M5 versioning)      │        │
+              │   (M3 flag)                                        (loop+gate,  │
+              │       │                                          from harness)  │
+              │       ▼                                                │        │
+   JSON  ◀─── │  guard_output ◀──────────── result ◀───────────────────┘        │
+  response    │   (M3 redact)         │                                         │
+              │                       ▼                                         │
+              │              service_log.jsonl ──▶ metrics.py ──▶ SLO exit code │
+              │                 (M4 observe)          (M4)      (M4 alert/gate)  │
+              └────────────────────────────────────────────────────────────────┘
+   guarded by:  /healthz + KILL (M2)      shipped through:  gate.py + canary.py (M5)
+```
+
 Work in `agent-ops/scratch/workshop/`. Copy your Pocket-Agent in first:
 
 ```bash

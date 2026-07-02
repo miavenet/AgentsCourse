@@ -16,10 +16,28 @@ mkdir inbox
 ```
 
 ### Step 1 — The lethal trifecta, applied to your agent
-Before attacking, model the risk. State whether pocket-agent (with
-`read_file` + `run_cmd` + a network tool it does NOT yet have) has each leg
-of Simon Willison's **lethal trifecta**: (1) access to private data,
-(2) exposure to untrusted content, (3) ability to exfiltrate externally.
+Before attacking, model the risk. All three legs together = exploitable;
+remove any one and a whole attack class becomes impossible:
+
+```
+        ┌───────────────────────┐
+        │  PRIVATE DATA access  │  read_file → secret.txt
+        └───────────┬───────────┘
+                    │
+   ┌────────────────┼────────────────┐
+   │                │                │      all three
+   ▼                ▼                ▼   overlapping = 💥
+┌──────────┐  ┌───────────┐  ┌───────────────┐
+│ UNTRUSTED│  │  (agent)  │  │  EXFILTRATION │  run_cmd / a
+│ content  │  │           │  │  channel out  │  network tool
+│ inbox/*  │  └───────────┘  └───────────────┘
+└──────────┘
+```
+
+State whether pocket-agent (with `read_file` + `run_cmd` + a network tool
+it does NOT yet have) has each leg of Simon Willison's **lethal trifecta**:
+(1) access to private data, (2) exposure to untrusted content,
+(3) ability to exfiltrate externally.
 
 CHECK: you classify all three legs and conclude where the danger becomes
 real (all three present at once).
@@ -69,6 +87,10 @@ CHECK: even if the model reads `secret.txt`, the emitted answer shows
 Concept: **defense in depth** — the output boundary catches what the input
 boundary and the model both missed. It's the last leg of the trifecta
 (exfiltration) closed with deterministic code, not model judgment.
+
+Reference (for your coach, or for you after an honest attempt):
+`agent-ops/labs/solution/guard.py` — tested `guard_input`/`guard_output`
+with a built-in self-test (`python3 guard.py`).
 
 ### Step 5 — Egress deny-by-default
 State (and, if a network tool existed, implement) the network posture that

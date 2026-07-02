@@ -64,7 +64,9 @@ lab, re-run its commands and keep the CHECK honest.
 ## Working space
 
 Labs write into `agent-ops/scratch/` (gitignored). Progress lives in
-`agent-ops/progress.md` — commit it to track the journey. The workshop
-reference solution is in `workshop/solution/` (`agent_service.py`,
-`metrics.py`, `gate.py`, `canary.py`) — it's the coach's answer key;
-opening it before workshop M6 is spoiling yourself.
+`agent-ops/progress.md` — commit it to track the journey. Tested reference
+answers are the coach's keys: `labs/solution/` (`agg.py`, `guard.py` — the
+scripts you build in Labs 2 and 4) and `workshop/solution/`
+(`agent_service.py`, `metrics.py`, `gate.py`, `canary.py`, `drill.sh`).
+Opening the workshop solution before M6 is spoiling yourself; for the lab
+scripts, try first, then compare.

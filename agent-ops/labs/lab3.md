@@ -6,6 +6,21 @@ offline **eval gate** that refuses regressions, then do a **canary
 rollout** with automatic rollback — the two judgment points every agent
 change must pass (offline before deploy, online during deploy).
 
+A change earns production traffic by passing TWO independent gates — one
+before deploy, one during. Hold this picture:
+
+```
+  new prompt/     ┌── OFFLINE GATE ──┐         ┌──── ONLINE CANARY ────┐
+  config    ─────▶│ score vs golden  │──pass──▶│ send a slice of live  │──promote─▶ 100%
+  version         │ set (gate.py)    │         │ traffic, score it     │           traffic
+                  └──────┬───────────┘         └──────────┬────────────┘
+                       fail│                          regress│
+                           ▼                                 ▼
+                    NOT deployed                    auto-rollback (canary.py)
+                  (active_version                    (active_version stays
+                   unchanged)                         last-good)
+```
+
 Prereqs: Labs 1–2. This lab uses the workshop's service scaffold so you
 have a real "deploy" to gate. Set it up:
 

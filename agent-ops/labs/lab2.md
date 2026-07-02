@@ -62,6 +62,9 @@ p50/p95 latency, mean steps/run, and a tool-error tally.
 Concept: metrics are a *reduction* over traces — the dashboard is just
 this table refreshed. (You just built the core of Lab 5's eval runner.)
 
+Reference (for your coach, or for you after an honest attempt):
+`agent-ops/labs/solution/agg.py` — a tested implementation of exactly this.
+
 Troubleshoot: split runs on `action == "finish"` OR a `parse_error` streak
 ending in max-steps; if unsure where a run ends, print raw lines first.
 
