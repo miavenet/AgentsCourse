@@ -15,11 +15,13 @@ from mcp.server.fastmcp import FastMCP
 
 mcp = FastMCP("course-costs")
 
-PRICES = {"haiku": 1.0, "sonnet": 3.0, "opus": 15.0}
+# Fictional internal rates (NOT public pricing) — chosen so the correct
+# answer can ONLY come from calling this tool, never the model's memory.
+PRICES = {"haiku": 2.0, "sonnet": 6.0, "opus": 40.0}
 
 @mcp.tool()
 def estimate_cost(model: str, million_tokens: float) -> str:
-    """Estimate USD cost for a model run given input size in millions of tokens."""
+    """Estimate this course's internal USD cost for a model run given input size in millions of tokens."""
     p = PRICES.get(model.lower())
     if p is None:
         return f"unknown model '{model}'; known: {', '.join(PRICES)}"
@@ -29,11 +31,17 @@ if __name__ == "__main__":
     mcp.run()
 ```
 
-Install the SDK and smoke-test the import:
+Install the SDK in a venv and smoke-test the import (a venv, not
+`pip install --user`: a Homebrew/system Python refuses global installs with
+"externally-managed-environment" — PEP 668):
 ```bash
-python3 -m pip install --user "mcp[cli]" 2>/dev/null || pip3 install "mcp[cli]"
+cd harness-eng/scratch
+python3 -m venv .venv && source .venv/bin/activate
+pip install "mcp[cli]"
 python3 -c "import mcp; print('sdk ok')"
 ```
+Keep this venv active for the rest of the lab (the server runs in it). To
+leave it later: `deactivate`.
 
 CHECK: `sdk ok`.
 Concept: an MCP server is just a process that describes and serves tools —
@@ -42,51 +50,71 @@ Concept: an MCP server is just a process that describes and serves tools —
 ### Step 2 — Plug it into the harness
 ```bash
 cd harness-eng/scratch
-claude mcp add course-costs -- python3 $(pwd)/costs_mcp.py
+# point it at the VENV's python so the server can import mcp:
+claude mcp add course-costs -- "$(pwd)/.venv/bin/python3" "$(pwd)/costs_mcp.py"
 claude mcp list
 ```
 
-CHECK: `course-costs` appears in the list.
+CHECK: `course-costs` appears in the list (and `claude mcp get course-costs`
+shows it Connected — if it shows failed, the interpreter path is wrong).
 Concept: discovery→configuration→connection (Day 2's consumer flow) — you
 just did all three from the producer side.
 
 ### Step 3 — Watch the agent choose your tool
+The tool is named `mcp__<server>__<tool>` — here
+`mcp__course-costs__estimate_cost`. Grant it, and ask for a number the
+model can't know without it:
 ```bash
-claude -p --model haiku \
-  "What would 2 million tokens cost on opus? Use available tools."
+echo "Using the available tools, what is this course's internal cost for 2 million tokens on opus? Reply with the dollar amount." \
+  | claude -p --model haiku --allowedTools "mcp__course-costs__estimate_cost"
 ```
 
-CHECK: the answer is $30.00 and the transcript shows a call to
-`estimate_cost` (rerun with `--output-format json` and look for the tool
-name if unsure).
-Concept: the model discovered your tool purely from its machine-readable
-self-description.
+CHECK: the answer is **$80.00** — a figure the model cannot produce from
+memory (the rates are fictional), which proves it called `estimate_cost`.
+Confirm with `--output-format json`: `num_turns` > 1 means a tool
+round-trip happened.
+Concept: the model discovered and selected your tool purely from its
+machine-readable self-description — and only a granted tool can fire.
 
 ### Step 4 — Sabotage the description (not the code)
 Edit ONLY the docstring in `costs_mcp.py` to something misleadingly vague:
-`"""Internal accounting helper."""` — leave the code identical. Then rerun
-Step 3's prompt.
+`"""Internal accounting helper."""` — leave the code identical. Restart the
+server so the new description loads (`claude mcp remove course-costs` then
+re-add it as in Step 2), then run Step 3's command **three times** and
+record the answers.
 
-CHECK: behavior degrades — the agent may not call the tool, may guess, or
-answers without it. (If it still calls it, make the description worse:
-`"""Do not use."""` and rerun.)
-Concept: the description IS the interface. Tool ergonomics — names,
-descriptions, error text — are prompt engineering that lives in the harness.
+CHECK: you ran it ≥3× and can state how the behavior *distribution* shifted
+versus Step 3 — more hedging, wrong numbers, or refusals mixed in. (You will
+often STILL see `$80.00`: a single granted tool whose *name* already says
+`estimate_cost` is an easy target, so the model leans on the name. The
+docstring's pull is real but partial when the name and grant already point
+the way — which is exactly why it matters most when many tools compete.)
+Concept: the description IS the interface — names, docstrings, arg docs, and
+error text are the only things the model reads to route, and they're
+engineering surface, not documentation. And because the effect is
+probabilistic, you measure it over runs (Lab 5), never from one glance.
 
 ### Step 5 — Repair and harden
-Restore a good docstring, but now also improve the *error path*: change the
-unknown-model return to include what the caller should do next
-(e.g. "call again with one of: haiku, sonnet, opus"). Test:
+Restore the good docstring, re-add the server. The error path already
+returns a helpful string (`unknown model 'gemini'; known: haiku, sonnet,
+opus`) — first see it deterministically, then watch the agent read it:
 
 ```bash
-claude -p --model haiku \
-  "What would 1 million tokens cost on gemini? Use available tools."
+# deterministic: the exact string the model will receive
+python3 -c "import costs_mcp; print(costs_mcp.estimate_cost('gemini', 1))"
+# live: force the call so the error path fires, and see the agent obey it
+echo "Call the estimate_cost tool for model 'gemini' with million_tokens 1, and report exactly what it returns." \
+  | claude -p --model haiku --allowedTools "mcp__course-costs__estimate_cost"
 ```
 
-CHECK: the agent recovers gracefully — it either reports the known models or
-asks you to pick one, instead of erroring out.
+CHECK: the direct call prints `unknown model 'gemini'; known: haiku,
+sonnet, opus`, and the agent relays that message and tells you which models
+ARE valid — it read your error as an instruction instead of crashing.
 Concept: agents read error messages as instructions. Write errors for the
-model, not for a stack trace.
+model (say what to do next), not for a stack trace. (Note we had to *tell*
+the model to call the tool — for an out-of-domain model like "gemini" it
+otherwise answers from its own priors; forcing the call is what exercises
+the error path.)
 
 ### Step 6 — Clean up
 ```bash
@@ -99,10 +127,10 @@ costs context tokens and adds a routing decision.
 ## Recap
 
 ### L2-R1
-Q: You changed only a docstring and agent behavior broke. Explain why, in harness terms.
+Q: You changed only a docstring — not a line of code — and the behavior distribution shifted. Explain why, in harness terms.
 Key:
-- The model selects tools from their machine-readable descriptions (that's all it sees at routing time)
-- Tool descriptions are part of the context/interface layer of the harness, so they are engineering surface, not documentation
+- The model selects and drives tools from their machine-readable descriptions (name, docstring, arg docs — that's all it sees at routing time)
+- Tool descriptions are part of the context/interface layer of the harness, so they are engineering surface, not documentation (and the effect is probabilistic — measured over runs, strongest when tools compete)
 
 ### L2-R2
 Q: Give two properties of a well-engineered agent tool besides "the code works".

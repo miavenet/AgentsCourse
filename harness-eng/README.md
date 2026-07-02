@@ -47,6 +47,14 @@ Each lab ends with recap questions (graded like `tutor/TUTOR.md`) and a
 - The day-1 whitepaper's "Harness Engineering" section is the module's
   origin text: `day1-intro-agents-and-vibe-coding/whitepaper-*.md`
 
+## Quality bar
+
+Held to the repo's `RIGOR.md` rubric (≥95, zero blockers): every command
+and CHECK has been run against the live `claude` CLI and the current MCP
+SDK. Note one CLI ergonomic the labs rely on — an empty `--allowedTools ""`
+placed right before a positional prompt swallows it, so the labs pipe the
+prompt via stdin. If you extend a lab, re-run its commands.
+
 ## Working space
 
 Labs write into `harness-eng/scratch/` (gitignored). Your progress lives in

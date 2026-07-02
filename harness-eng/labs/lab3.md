@@ -10,9 +10,12 @@ Prereqs: Labs 1–2. Run from the repo root.
 Pick something answerable only from this repo's materials:
 
 ```bash
-claude -p --model haiku --allowedTools "" \
-  "In the Vercel study cited in the Agent Skills whitepaper, what was the non-invocation rate for skills expected to trigger? One sentence."
+echo "In the Vercel study cited in the Agent Skills whitepaper, what was the non-invocation rate for skills expected to trigger? One sentence." \
+  | claude -p --model haiku --allowedTools ""
 ```
+
+> Prompt via stdin, `--allowedTools ""` last — an empty tool flag placed
+> right before a positional prompt swallows it. Same pattern all lab long.
 
 CHECK: the model either admits it doesn't know or guesses (the true figure,
 from `day3-agent-skills/whitepaper-agent-skills.md`, is 56%). Note what it
@@ -24,9 +27,9 @@ evidence.
 Give it only the relevant section:
 
 ```bash
-grep -A6 "non-invocation" day3-agent-skills/whitepaper-agent-skills.md \
- | claude -p --model haiku --allowedTools "" \
-  "Based only on the pasted text: what was the non-invocation rate? One sentence."
+{ echo "Based only on the text below: what was the non-invocation rate? One sentence."; echo; \
+  grep -A6 "non-invocation" day3-agent-skills/whitepaper-agent-skills.md; } \
+ | claude -p --model haiku --allowedTools ""
 ```
 
 CHECK: correct answer (56%), grounded in the excerpt.
@@ -38,9 +41,9 @@ Now bury the same fact in noise — feed three whole whitepapers and ask the
 same question:
 
 ```bash
-cat day1*/whitepaper-*.md day2*/whitepaper-*.md day3*/whitepaper-*.md \
- | claude -p --model haiku --allowedTools "" \
-  "What was the non-invocation rate in the Vercel study? Also list every protocol mentioned. One short paragraph."
+{ echo "What was the non-invocation rate in the Vercel study? Also list every protocol mentioned. One short paragraph."; echo; \
+  cat day1*/whitepaper-*.md day2*/whitepaper-*.md day3*/whitepaper-*.md; } \
+ | claude -p --model haiku --allowedTools ""
 ```
 
 CHECK: observe quality vs Step 2 — slower, and often fuzzier or partially
@@ -75,9 +78,9 @@ context (CLAUDE.md) and tools.
 
 ### Step 5 — Assembler + model
 ```bash
-harness-eng/scratch/assemble.sh "non-invocation" \
- | claude -p --model haiku --allowedTools "" \
-  "Based only on the pasted context pack: what was the non-invocation rate, and what does it imply for skill design? Two sentences."
+{ echo "Based only on the context pack below: what was the non-invocation rate, and what does it imply for skill design? Two sentences."; echo; \
+  harness-eng/scratch/assemble.sh "non-invocation"; } \
+ | claude -p --model haiku --allowedTools ""
 ```
 
 CHECK: correct figure AND a grounded implication, at a fraction of Step 3's
@@ -85,6 +88,19 @@ input size.
 Concept: curation beats volume. "Informative, yet tight" is the whole game.
 
 ### Step 6 — Compare the layers
+The four context layers, by lifetime and who fills them:
+
+```
+   LIFETIME →   always-on            per-session          per-task            accumulating
+              ┌──────────────┐    ┌───────────────┐   ┌──────────────┐    ┌────────────────┐
+   context →  │ static:      │    │ session inject:│   │ dynamic:     │    │ working memory:│
+              │ CLAUDE.md /  │    │ --append-      │   │ assemble.sh  │    │ message history│
+              │ AGENTS.md    │    │ system-prompt  │   │ (retrieval)  │    │ (grows, rots)  │
+              └──────────────┘    └───────────────┘   └──────────────┘    └────────────────┘
+   fix for →  rules every task    one run's framing   big corpora, load   compaction is the
+              needs                                    only what's needed  maintenance job
+```
+
 State (to your coach) where each of these lives in the harness: your
 `~/.claude/CLAUDE.md`, the assembler script, the `--append-system-prompt`
 flag, a conversation's message history.
