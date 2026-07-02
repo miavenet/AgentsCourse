@@ -1,0 +1,1842 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html 
+      lang="en"
+      dir="ltr">
+  <head>
+    <meta name="google-signin-client-id" content="721724668570-nbkv1cfusk7kk4eni4pjvepaus73b13t.apps.googleusercontent.com"><meta name="google-signin-scope"
+          content="profile email https://www.googleapis.com/auth/developerprofiles https://www.googleapis.com/auth/developerprofiles.award https://www.googleapis.com/auth/devprofiles.full_control.firstparty"><meta property="og:site_name" content="Google Codelabs">
+    <meta property="og:type" content="website"><meta name="theme-color" content="#1a73e8"><meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="manifest" href="/_pwa/codelabs/manifest.json"
+          crossorigin="use-credentials">
+    <link rel="preconnect" href="//www.gstatic.com" crossorigin>
+    <link rel="preconnect" href="//fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="//www.google-analytics.com" crossorigin><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap">
+      <link rel="stylesheet"
+            href="//fonts.googleapis.com/css2?family=Material+Icons&family=Material+Symbols+Outlined&display=block"><link rel="stylesheet" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/css/app.css">
+      <link rel="shortcut icon" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/favicon.png">
+    <link rel="apple-touch-icon" href="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/touchicon-180.png"><link rel="canonical" href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills"><link rel="search" type="application/opensearchdescription+xml"
+            title="Google Codelabs" href="https://codelabs.developers.google.com/s/opensearch.xml">
+      <link rel="alternate" hreflang="en"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills" /><link rel="alternate" hreflang="x-default" href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills" /><link rel="alternate" hreflang="ar"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=ar" /><link rel="alternate" hreflang="bn"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=bn" /><link rel="alternate" hreflang="zh-Hans"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=zh-cn" /><link rel="alternate" hreflang="zh-Hant"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=zh-tw" /><link rel="alternate" hreflang="fa"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=fa" /><link rel="alternate" hreflang="fr"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=fr" /><link rel="alternate" hreflang="de"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=de" /><link rel="alternate" hreflang="he"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=he" /><link rel="alternate" hreflang="hi"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=hi" /><link rel="alternate" hreflang="id"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=id" /><link rel="alternate" hreflang="it"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=it" /><link rel="alternate" hreflang="ja"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=ja" /><link rel="alternate" hreflang="ko"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=ko" /><link rel="alternate" hreflang="pl"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=pl" /><link rel="alternate" hreflang="pt-BR"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=pt-br" /><link rel="alternate" hreflang="ru"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=ru" /><link rel="alternate" hreflang="es-419"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=es-419" /><link rel="alternate" hreflang="th"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=th" /><link rel="alternate" hreflang="tr"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=tr" /><link rel="alternate" hreflang="vi"
+          href="https://codelabs.developers.google.com/getting-started-with-antigravity-skills?hl=vi" /><title>Authoring Google Antigravity Skills &nbsp;|&nbsp; Google Codelabs</title>
+
+<meta property="og:title" content="Authoring Google Antigravity Skills &nbsp;|&nbsp; Google Codelabs"><meta name="description" content="The codelab covers Antigravity Skills, a lightweight, open format for extending AI agent capabilities with specialized knowledge and workflows. The lab demonstrates how to build multiple Agent Skills and use them in Antigravity.">
+  <meta property="og:description" content="The codelab covers Antigravity Skills, a lightweight, open format for extending AI agent capabilities with specialized knowledge and workflows. The lab demonstrates how to build multiple Agent Skills and use them in Antigravity."><meta property="og:url" content="https://codelabs.developers.google.com/getting-started-with-antigravity-skills"><meta property="og:locale" content="en">
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  
+
+    </head>
+  <body class="color-scheme--light"
+        template="codelab"
+        theme="codelabs-theme"
+        type="codelab"
+        
+        
+        
+        layout="docs"
+        
+        
+        
+        
+        
+        display-toc
+        pending>
+  
+    <devsite-progress type="indeterminate" id="app-progress"></devsite-progress>
+  
+  
+    <a href="#main-content" class="skip-link button">
+      
+      Skip to main content
+    </a>
+    <section class="devsite-wrapper">
+      <devsite-cookie-notification-bar></devsite-cookie-notification-bar>
+        <devsite-header role="banner">
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-header--inner" data-nosnippet>
+  <div class="devsite-top-logo-row-wrapper-wrapper">
+    <div class="devsite-top-logo-row-wrapper">
+      <div class="devsite-top-logo-row">
+        <button type="button" id="devsite-hamburger-menu"
+          class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+          data-category="Site-Wide Custom Events"
+          data-label="Navigation menu button"
+          visually-hidden
+          aria-label="Open menu">
+        </button>
+        
+<div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+
+</div>
+        <div class="devsite-top-logo-row-middle">
+          <div class="devsite-header-upper-tabs">
+            
+           </div>
+          
+<devsite-search
+    enable-signin
+    enable-search
+    enable-suggestions
+      enable-query-completion
+    
+    enable-search-summaries
+    
+    tenant-name="Google Codelabs"
+    
+    
+    
+    
+    
+    >
+  <form class="devsite-search-form" action="https://codelabs.developers.google.com/s/results" method="GET">
+    <div class="devsite-search-container">
+      <button type="button"
+              search-open
+              class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+              
+              aria-label="Open search"></button>
+      <div class="devsite-searchbox">
+        <input
+          aria-activedescendant=""
+          aria-autocomplete="list"
+          
+          aria-label="Search"
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          autocomplete="off"
+          class="devsite-search-field devsite-search-query"
+          name="q"
+          
+          placeholder="Search"
+          role="combobox"
+          type="text"
+          value=""
+          >
+          <div class="devsite-search-image material-icons" aria-hidden="true">
+            
+              <svg class="devsite-search-ai-image" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0_6641_386)">
+                    <path d="M19.6 21L13.3 14.7C12.8 15.1 12.225 15.4167 11.575 15.65C10.925 15.8833 10.2333 16 9.5 16C7.68333 16 6.14167 15.375 4.875 14.125C3.625 12.8583 3 11.3167 3 9.5C3 7.68333 3.625 6.15 4.875 4.9C6.14167 3.63333 7.68333 3 9.5 3C10.0167 3 10.5167 3.05833 11 3.175C11.4833 3.275 11.9417 3.43333 12.375 3.65L10.825 5.2C10.6083 5.13333 10.3917 5.08333 10.175 5.05C9.95833 5.01667 9.73333 5 9.5 5C8.25 5 7.18333 5.44167 6.3 6.325C5.43333 7.19167 5 8.25 5 9.5C5 10.75 5.43333 11.8167 6.3 12.7C7.18333 13.5667 8.25 14 9.5 14C10.6667 14 11.6667 13.625 12.5 12.875C13.35 12.1083 13.8417 11.15 13.975 10H15.975C15.925 10.6333 15.7833 11.2333 15.55 11.8C15.3333 12.3667 15.05 12.8667 14.7 13.3L21 19.6L19.6 21ZM17.5 12C17.5 10.4667 16.9667 9.16667 15.9 8.1C14.8333 7.03333 13.5333 6.5 12 6.5C13.5333 6.5 14.8333 5.96667 15.9 4.9C16.9667 3.83333 17.5 2.53333 17.5 0.999999C17.5 2.53333 18.0333 3.83333 19.1 4.9C20.1667 5.96667 21.4667 6.5 23 6.5C21.4667 6.5 20.1667 7.03333 19.1 8.1C18.0333 9.16667 17.5 10.4667 17.5 12Z" fill="#5F6368"/>
+                  </g>
+                <defs>
+                <clipPath id="clip0_6641_386">
+                <rect width="24" height="24" fill="white"/>
+                </clipPath>
+                </defs>
+              </svg>
+            
+          </div>
+          <div class="devsite-search-shortcut-icon-container" aria-hidden="true">
+            <kbd class="devsite-search-shortcut-icon">/</kbd>
+          </div>
+      </div>
+    </div>
+  </form>
+  <button type="button"
+          search-close
+          class="devsite-search-button devsite-header-icon-button button-flat material-icons"
+          
+          aria-label="Close search"></button>
+</devsite-search>
+
+        </div>
+
+        
+
+          
+
+          
+
+          
+
+          
+
+          
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+
+          
+
+        
+
+        
+          <devsite-user 
+                        
+                        
+                          enable-profiles
+                        
+                        
+                          fp-auth
+                        
+                        id="devsite-user">
+            
+              
+              <span class="button devsite-top-button" aria-hidden="true" visually-hidden>Sign in</span>
+            
+          </devsite-user>
+        
+        
+        
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+  
+</devsite-header>
+        <devsite-book-nav scrollbars hidden>
+          
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="devsite-book-nav-filter"
+     hidden>
+  <span class="filter-list-icon material-icons" aria-hidden="true"></span>
+  <input type="text"
+         placeholder="Filter"
+         
+         aria-label="Type to filter"
+         role="searchbox">
+  
+  <span class="filter-clear-button hidden"
+        data-title="Clear filter"
+        aria-label="Clear filter"
+        role="button"
+        tabindex="0"></span>
+</div>
+
+<nav class="devsite-book-nav devsite-nav nocontent" data-nosnippet
+     aria-label="Side menu">
+  <div class="devsite-mobile-header">
+    <button type="button"
+            id="devsite-close-nav"
+            class="devsite-header-icon-button button-flat material-icons gc-analytics-event"
+            data-category="Site-Wide Custom Events"
+            data-label="Close navigation"
+            aria-label="Close navigation">
+    </button>
+    <div class="devsite-product-name-wrapper">
+
+  <a href="/" class="devsite-site-logo-link gc-analytics-event"
+   data-category="Site-Wide Custom Events" data-label="Site logo" track-type="globalNav"
+   track-name="googleCodelabs" track-metadata-position="nav"
+   track-metadata-eventDetail="nav">
+  
+  <picture>
+    
+    <img src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg" class="devsite-site-logo" alt="Google Codelabs">
+  </picture>
+  
+</a>
+
+
+</div>
+  </div>
+
+  <div class="devsite-book-nav-wrapper">
+    <div class="devsite-mobile-nav-top">
+      
+        <ul class="devsite-nav-list">
+          
+          
+          
+        </ul>
+      
+    </div>
+    
+  </div>
+</nav>
+          
+        </devsite-book-nav>
+      
+      <section id="gc-wrapper">
+        <main role="main" id="main-content" class="devsite-main-content"
+            
+              
+              has-sidebar
+            >
+          <div class="devsite-sidebar">
+            <div class="devsite-sidebar-content">
+                
+                <devsite-toc class="devsite-nav"
+                            role="navigation"
+                            aria-label="On this page"
+                            depth="1"
+                            scrollbars
+                            data-nosnippet
+                  ></devsite-toc>
+                <devsite-recommendations-sidebar class="nocontent devsite-nav" data-nosnippet>
+                </devsite-recommendations-sidebar>
+            </div>
+          </div>
+          <devsite-content>
+            
+              
+
+
+
+
+
+
+
+
+
+
+<article class="devsite-article"><style>
+      body {
+        transition: opacity ease-in 0.2s;
+      }
+
+      body[unresolved] {
+        opacity: 0;
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+      </style>
+  
+  
+  
+  
+  
+
+  <div class="devsite-article-meta nocontent" role="navigation" data-nosnippet>
+    
+    
+    <ul class="devsite-breadcrumb-list"
+  >
+  
+</ul>
+    
+  </div>
+  
+    <h1 class="devsite-page-title" tabindex="-1">
+      Authoring Google Antigravity Skills<devsite-actions hidden data-nosnippet></devsite-actions>
+  
+      
+    </h1>
+  
+
+  <devsite-toc class="devsite-nav"
+    depth="1"
+    devsite-toc-embedded
+    >
+  </devsite-toc>
+  
+    
+  <div class="devsite-article-body clearfix
+  ">
+
+  
+    
+    
+    <google-codelab-analytics gaid="UA-49880327-14" ga4id="G-JTFZSJVVVZ"></google-codelab-analytics>
+    <google-codelab codelab-gaid="UA-52746336-1"
+                    codelab-ga4id=""
+                    doc-id="112R80UlNpvwpAcS52UMUBbt7-RDaFY_PBh56VBYcHDg"
+                    id="getting-started-with-antigravity-skills"
+                    title="Authoring Google Antigravity Skills"
+                    no-tooltip=""
+                    environment="web"
+                    category="antigravity,googleantigravity,agenticai,developertools,agentskills,skills"
+                    feedback-link="https://github.com/googlecodelabs/feedback/issues/new?title=[authoring-antigravity-skills]&amp;labels=antigravity&amp;assignees=rominirani"
+                    layout="paginated"
+                    >
+      
+        <google-codelab-step label="Introduction" duration="5" step="0">
+          
+            <google-codelab-about codelab-title="Authoring Google Antigravity Skills"
+                                  authors="Romin Irani"
+                                  last-updated="2026-06-18T11:13:50Z"
+                                  duration="77">
+            </google-codelab-about>
+          
+          <h2 class="step-title" id="0" data-text="Introduction" tabindex="-1">
+              1. Introduction
+          </h2>
+          
+          <p><a href="https://antigravity.google/" target="_blank">Google Antigravity</a> is an agentic development platform that is designed to help you develop in this era of agents. Antigravity serves as your AI agents&#39; central command center, providing a unified platform to launch, monitor, and orchestrate their activities.</p>
+<p>In this codelab, we will first learn about Agent Skills, a lightweight, open format for extending AI agent capabilities with specialized knowledge and workflows. You will be able to learn what Agent Skills are, their benefits and how they are constructed. You will then build multiple Agent Skills ranging from a Git formatter, template generator, tool code scaffolding and more, all usable within Antigravity.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>Antigravity installed and configured.</li>
+<li>Basic understanding of Google Antigravity. It is recommended to complete the codelab:  <a href="https://codelabs.developers.google.com/getting-started-google-antigravity" target="_blank"><strong>Getting Started with Google Antigravity</strong></a>.</li>
+</ul>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Why Skills" duration="5" step="1">
+          
+          <h2 class="step-title" id="1" data-text="Why Skills" tabindex="-1">
+              2. Why Skills
+          </h2>
+          
+          <p>Modern AI agents have evolved from simple listeners to complex reasoners that integrate with local file systems and external tools (via  <a href="https://github.com/modelcontextprotocol/servers" target="_blank">MCP servers</a>). However, indiscriminately loading an agent with entire codebases and hundreds of tools leads to <strong>Context Saturation</strong> and &#34;Tool Bloat.&#34; Even with large context windows, dumping 40–50k tokens of unused tools into active memory causes high latency, financial waste, and &#34;context rot,&#34; where the model becomes confused by irrelevant data.</p>
+<h2 is-upgraded id="the-solution:-agent-skills" data-text="The Solution: Agent Skills" tabindex="-1">The Solution: Agent Skills</h2>
+<p>To solve this, Anthropic  <a href="https://claude.com/blog/equipping-agents-for-the-real-world-with-agent-skills" target="_blank">introduced <strong>Agent Skills</strong></a>, shifting the architecture from monolithic context loading to <strong>Progressive Disclosure</strong>. Instead of forcing the model to &#34;memorize&#34; every specific workflow (like database migrations or security audits) at the start of a session, these capabilities are packaged into modular, discoverable units.</p>
+<h2 is-upgraded id="how-it-works" data-text="How It Works" tabindex="-1">How It Works</h2>
+<p>The model is initially exposed only to a lightweight &#34;menu&#34; of metadata. It loads the heavy procedural knowledge (instructions and scripts) only when the user&#39;s intent specifically matches a skill. This ensures that a developer asking to refactor authentication middleware gets security context without loading unrelated CSS pipelines, keeping the context lean, fast, and cost-effective.</p>
+<p class="image-container"><img alt="d3f4bcb065a19fea.png" style="width: 624.00px" src="/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea.png" srcset="https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_36.png 36w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_48.png 48w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_72.png 72w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_96.png 96w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_480.png 480w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_720.png 720w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_856.png 856w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_960.png 960w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_1440.png 1440w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_1920.png 1920w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/d3f4bcb065a19fea_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Agent Skills and Antigravity" duration="5" step="2">
+          
+          <h2 class="step-title" id="2" data-text="Agent Skills and Antigravity" tabindex="-1">
+              3. Agent Skills and Antigravity
+          </h2>
+          
+          <p>In the Antigravity ecosystem, the <strong>Skills</strong> act as specialized training modules that bridge the gap between the generalist models and your specific context. They allow the agent to &#34;equip&#34; a defined set of instructions and protocols—such as database migration standards or security checks—only when a relevant task is requested. By dynamically loading these execution protocols, Skills effectively transform the AI from a generic programmer into a specialist that rigorously adheres to an organization&#39;s codified best practices and safety standards.</p>
+<h2 is-upgraded id="what-is-a-skill-in-antigravity" data-text="What is a Skill in Antigravity?" tabindex="-1">What is a Skill in Antigravity?</h2>
+<p>In the context of Google Antigravity, a Skill is a directory-based package containing a definition file (<code translate="no" dir="ltr">SKILL.md</code>) and optional supporting assets (scripts, references, templates).</p>
+<p>It is a mechanism for on-demand capability extension.</p>
+<ul>
+<li><strong>On-Demand</strong>: Unlike a System Prompt (which is always loaded), a Skill is only loaded into the agent&#39;s context when the agent determines it is relevant to the user&#39;s current request. This optimizes the context window and prevents the agent from being distracted by irrelevant instructions. In large projects with dozens of tools, this selective loading is crucial for performance and reasoning accuracy.</li>
+<li><strong>Capability Extension</strong>: Skills can do more than just instruct; they can execute. By bundling Python or Bash scripts, a Skill can give the agent the ability to perform complex, multi-step actions on the local machine or external networks without the user needing to manually run commands. This transforms the agent from a text generator into a tool user.</li>
+</ul>
+<h2 is-upgraded id="skills-vs-the-ecosystem-tools,-rules-and-workflows" data-text="Skills v/s the Ecosystem (Tools, Rules and Workflows)" tabindex="-1">Skills v/s the Ecosystem (Tools, Rules and Workflows)</h2>
+<p>While Model Context Protocol (MCP) functions as the agent&#39;s &#34;hands&#34;—providing heavy-duty, persistent connections to external systems like GitHub or PostgreSQL—Skills act as the &#34;brains&#34; that direct them.</p>
+<p>MCP handles the stateful infrastructure, whereas Skills are lightweight, ephemeral task definitions that package the methodology for using those tools. This serverless approach allows agents to execute ad-hoc tasks (like generating changelogs or migrations) without the operational overhead of running persistent processes, loading the context only when the task is active and releasing it immediately after.</p>
+<p>Skills are <strong>agent-triggered</strong>: the model automatically detects the user&#39;s intent and dynamically equips the specific expertise required. This architecture allows for powerful composability; for example, a global Rule can enforce the use of a &#34;Safe-Migration&#34; Skill during database changes, or a single Workflow can orchestrate multiple Skills to build a robust deployment pipeline.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Creating Skills" duration="10" step="3">
+          
+          <h2 class="step-title" id="3" data-text="Creating Skills" tabindex="-1">
+              4. Creating Skills
+          </h2>
+          
+          <p>Creating a Skill in Antigravity follows a specific directory structure and file format. This standardization ensures that skills are portable and that the agent can reliably parse and execute them. The design is intentionally simple, relying on widely understood formats like Markdown and YAML, lowering the barrier to entry for developers wishing to extend their IDE&#39;s capabilities.</p>
+<h2 is-upgraded id="directory-structure" data-text="Directory Structure" tabindex="-1">Directory Structure</h2>
+<p>A typical Skill directory looks like this:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Transact-SQL" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-n">my</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">skill</span><span class="devsite-syntax-o">/</span>
+<span class="devsite-syntax-err">├──</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">SKILL</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">md</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">#</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">definition</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">file</span>
+<span class="devsite-syntax-err">├──</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">scripts</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">#</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">Optional</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Python</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Bash</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Node</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">scripts</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-err">├──</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">run</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">py</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-err">└──</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">util</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">sh</span>
+<span class="devsite-syntax-err">├──</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">references</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">#</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">Optional</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Documentation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-ow">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">templates</span>
+<span class="devsite-syntax-w">     </span><span class="devsite-syntax-err">└──</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">api</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">docs</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">md</span>
+<span class="devsite-syntax-err">└──</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">assets</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">#</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">[</span><span class="devsite-syntax-n">Optional</span><span class="devsite-syntax-o">]</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Static</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">assets</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">images</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">logos</span><span class="devsite-syntax-p">)</span>
+</code></pre></devsite-code>
+<p>This structure separates concerns effectively. The logic (<code translate="no" dir="ltr">scripts</code>) is separated from the instruction (<code translate="no" dir="ltr">SKILL.md</code>) and the knowledge (<code translate="no" dir="ltr">references</code>), mirroring standard software engineering practices.</p>
+<h3 is-upgraded id="the-skill.md-definition-file" data-text="The SKILL.md Definition File" tabindex="-1">The SKILL.md Definition File</h3>
+<p>The <code translate="no" dir="ltr">SKILL.md</code> file is the brain of the Skill. It tells the agent what the skill is, when to use it, and how to execute it.</p>
+<p>It consists of two parts:</p>
+<ul>
+<li>YAML Frontmatter</li>
+<li>Markdown Body.</li>
+</ul>
+<p><strong>YAML Frontmatter</strong></p>
+<p>This is the metadata layer. It is the only part of the skill that is indexed by the agent&#39;s high-level router. When a user sends a prompt, the agent semantic-matches the prompt against the description fields of all available skills.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">---
+name: database-inspector
+description: Use this skill when the user asks to query the database, check table schemas, or inspect user data in the local PostgreSQL instance.
+---
+</code></pre></devsite-code>
+<p>Key Fields:</p>
+<ul>
+<li><strong>name</strong>: This is not mandatory. Must be unique within the scope. Lowercase, hyphens allowed (e.g., <code translate="no" dir="ltr">postgres-query</code>, <code translate="no" dir="ltr">pr-reviewer</code>). If it&#39;s not provided, it will default to the directory name.</li>
+<li><strong>description</strong>: This is mandatory and the most important field. It functions as the &#34;trigger phrase.&#34; It must be descriptive enough for the LLM to recognize semantic relevance. A vague description like &#34;Database tools&#34; is insufficient. A precise description like &#34;Executes read-only SQL queries against the local PostgreSQL database to retrieve user or transaction data. Use this for debugging data states&#34; ensures the skill is picked up correctly.</li>
+</ul>
+<p><strong>The Markdown Body</strong></p>
+<p>The body contains the instructions. This is &#34;prompt engineering&#34; persisted to a file. When the skill is activated, this content is injected into the agent&#39;s context window.</p>
+<p>The body should include:</p>
+<ol type="1">
+<li>Goal: A clear statement of what the skill achieves.</li>
+<li>Instructions: Step-by-step logic.</li>
+<li>Examples: Few-shot examples of inputs and outputs to guide the model&#39;s performance.</li>
+<li>Constraints: &#34;Do not&#34; rules (e.g., &#34;Do not run DELETE queries&#34;).</li>
+</ol>
+<p><strong>Example SKILL.md Body:</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Database Inspector
+
+Goal
+To safely query the local database and provide insights on the current data state.
+
+Instructions
+<span class="devsite-syntax-k">-</span> Analyze the user's natural language request to understand the data need.
+<span class="devsite-syntax-k">-</span> Formulate a valid SQL query.
+ <span class="devsite-syntax-k">-</span> CRITICAL: Only SELECT statements are allowed.
+<span class="devsite-syntax-k">-</span> Use the script scripts/query_runner.py to execute the SQL.
+ <span class="devsite-syntax-k">-</span> Command: python scripts/query_runner.py "SELECT * FROM..."
+<span class="devsite-syntax-k">-</span> Present the results in a Markdown table.
+
+Constraints
+<span class="devsite-syntax-k">-</span> Never output raw user passwords or API keys.
+<span class="devsite-syntax-k">-</span> If the query returns &gt; 50 rows, summarize the data instead of listing it all.
+</code></pre></devsite-code>
+<h2 is-upgraded id="script-integration" data-text="Script Integration" tabindex="-1">Script Integration</h2>
+<p>One of the most powerful features of Skills is the ability to delegate execution to scripts. This allows the agent to perform actions that are difficult or impossible for an LLM to do directly (like binary execution, complex mathematical calculation, or interacting with legacy systems).</p>
+<p>Scripts are placed in the <code translate="no" dir="ltr">scripts/</code> subdirectory. The <code translate="no" dir="ltr">SKILL.md</code> references them by relative path.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Authoring Skills" duration="50" step="4">
+          
+          <h2 class="step-title" id="4" data-text="Authoring Skills" tabindex="-1">
+              5. Authoring Skills
+          </h2>
+          
+          <p>The goal of this section is to build out Skills that integrate into Antigravity and progressively show various features like resources / scripts / etc.</p>
+<p>You can download the Skills from the Github repo here:  <a href="https://github.com/rominirani/antigravity-skills" target="_blank">https://github.com/rominirani/antigravity-skills</a>.</p>
+<p>Before we understand how each of these skills were built, let us see how we configure them and make them available within the Antigravity suite of products. The folders below are applicable at the time of publishing this lab.</p>
+<h2 is-upgraded id="using-antigravity-or-antigravity-cli" data-text="Using Antigravity or Antigravity CLI" tabindex="-1">Using Antigravity or Antigravity CLI</h2>
+<p>Skills can be defined at two scopes, allowing for both project-specific and user-specific i.e. global skills.:</p>
+<ul>
+<li>Global Scope (<code translate="no" dir="ltr">~/.gemini/config/skills/</code>): Available across all Antigravity products (Antigravity, Antigravity IDE, Antigravity CLI) and projects. These skills are available across all projects on the user&#39;s machine. This is suitable for general utilities like &#34;Format JSON,&#34; &#34;Generate UUIDs,&#34; &#34;Review Code Style,&#34; or integration with personal productivity tools.</li>
+<li>Project/Workspace Scope (<code translate="no" dir="ltr">&lt;project-root&gt;/.agents/skills/</code>): This would make the skill available only within a specific project. This is ideal for project-specific scripts, such as deployment to a specific environment, database management for that app, or generating boilerplate code for a proprietary framework.</li>
+</ul>
+<h2 is-upgraded id="installing-the-skills-in-either-antigravity-or-antigravity-cli" data-text="Installing the Skills in either Antigravity or Antigravity CLI" tabindex="-1">Installing the Skills in either Antigravity or Antigravity CLI</h2>
+<p>For this tutorial, all we need to do is the following steps (you can do it your way too):</p>
+<p><strong>Step 1</strong>: Do a <code translate="no" dir="ltr">git clone</code> of  <a href="https://github.com/rominirani/antigravity-skills" target="_blank">https://github.com/rominirani/antigravity-skills</a></p>
+<p><strong>Step 2</strong>: Now depending on whether you are using Antigravity or Antigravity CLI, you can navigate into the <code translate="no" dir="ltr">antigravity-skills/skills_tutorial</code> folder.</p>
+<p><strong>Step 3</strong>: You will find a set of skills, packaged into their respective folders. Copy the following 4 folders:</p>
+<ul>
+<li><code translate="no" dir="ltr">git-commit-formatter</code></li>
+<li><code translate="no" dir="ltr">license-header-adder</code></li>
+<li><code translate="no" dir="ltr">database-schema-validator</code></li>
+<li><code translate="no" dir="ltr">json-to-pydantic</code></li>
+</ul>
+<p>into the targeted skills folder for the product (project scope or global scope).</p>
+<p><strong>Step 4:</strong> If you are using <strong>Antigravity</strong> or <strong>Antigravity CLI</strong> , copy it to the <code translate="no" dir="ltr">&lt;project-root&gt;/.agents/skills/</code> (project scope).</p>
+<p>If you have launched Antigravity, you can ask a simple question &#34;<strong>What skills are available?</strong>&#34; and it responds with the same. You can see the 4 skills that are listed there. You might have additional skills too, if you have installed them in your environment.</p>
+<p class="image-container"><img alt="191842a2a0d69597.png" style="width: 624.00px" src="/static/getting-started-with-antigravity-skills/img/191842a2a0d69597.png" srcset="https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_36.png 36w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_48.png 48w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_72.png 72w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_96.png 96w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_480.png 480w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_720.png 720w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_856.png 856w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_960.png 960w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_1440.png 1440w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_1920.png 1920w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/191842a2a0d69597_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Similarly, if you are using Antigravity CLI, you can give the following command <code translate="no" dir="ltr">/skills</code> and it should list the 4 skills. A sample is shown below:</p>
+<p class="image-container"><img alt="46be7782d027aa41.png" style="width: 624.00px" src="/static/getting-started-with-antigravity-skills/img/46be7782d027aa41.png" srcset="https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_36.png 36w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_48.png 48w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_72.png 72w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_96.png 96w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_480.png 480w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_720.png 720w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_856.png 856w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_960.png 960w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_1440.png 1440w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_1920.png 1920w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/46be7782d027aa41_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<p>Now that we know how to set up the skills, let&#39;s go into each of the Skills and understand how they were constructed. You could use these templates to create your own skills too.</p>
+<h2 is-upgraded id="level-1-:-the-basic-router-git-commit-formatter" data-text="Level 1 : The Basic Router ( git-commit-formatter )" tabindex="-1">Level 1 : The Basic Router ( git-commit-formatter )</h2>
+<p>Let&#39;s consider this as the &#34;Hello World&#34; of Skills.</p>
+<p>Developers often write lazy commit messages e.g. &#34;wip&#34;, &#34;fix bug&#34;, &#34;updates&#34;. Enforcing &#34;Conventional Commits&#34; manually is tedious and often forgotten. Let&#39;s implement a Skill that enforces the Conventional Commits specification. By simply instructing the agent on the rules, we allow it to act as the enforcer.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">git-commit-formatter/
+└── SKILL.md  (Instructions only)
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">SKILL.md</code> file is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Objective-C" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-o">---</span>
+<span class="devsite-syntax-nl">name</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">git</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">formatter</span>
+<span class="devsite-syntax-nl">description</span><span class="devsite-syntax-p">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Formats</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">git</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">messages</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">according</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Conventional</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Commits</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">specification</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">this</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">when</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">user</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">asks</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">changes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">write</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">message</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-o">---</span>
+
+<span class="devsite-syntax-n">Git</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Commit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Formatter</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Skill</span>
+
+<span class="devsite-syntax-n">When</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">writing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">git</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">commit</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">message</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">you</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">MUST</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">follow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Conventional</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Commits</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">specification</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-n">Format</span>
+<span class="devsite-syntax-err">`</span>&lt;<span class="devsite-syntax-n">type</span>&gt;<span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">optional</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">scope</span><span class="devsite-syntax-p">]</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span>&lt;<span class="devsite-syntax-n">description</span>&gt;<span class="devsite-syntax-err">`</span>
+
+<span class="devsite-syntax-n">Allowed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Types</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">feat</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">A</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">feature</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">fix</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">A</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">bug</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fix</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">docs</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Documentation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">only</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">changes</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">style</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Changes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">do</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">not</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">affect</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">meaning</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">white</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">space</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">formatting</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">etc</span><span class="devsite-syntax-p">)</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">refactor</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">A</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">change</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">neither</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">fixes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">bug</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">nor</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">adds</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">feature</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">perf</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">A</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">code</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">change</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">improves</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">performance</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">test</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Adding</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">missing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tests</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">correcting</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">existing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tests</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">chore</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Changes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">build</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">process</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">auxiliary</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tools</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">libraries</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">such</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">as</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">documentation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">generation</span>
+
+<span class="devsite-syntax-n">Instructions</span>
+<span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Analyze</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">changes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">determine</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">primary</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">type</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-mf">2.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Identify</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">scope</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">if</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">applicable</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">e</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">g</span><span class="devsite-syntax-p">.,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">specific</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">component</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">file</span><span class="devsite-syntax-p">).</span>
+<span class="devsite-syntax-mf">3.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Write</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">concise</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">description</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">an</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">imperative</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">mood</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">e</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">g</span><span class="devsite-syntax-p">.,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"add feature"</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">not</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-s">"added feature"</span><span class="devsite-syntax-p">).</span>
+<span class="devsite-syntax-mf">4.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">If</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">there</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">are</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">breaking</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">changes</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">add</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">footer</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">starting</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">BREAKING</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">CHANGE</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-err">`</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-n">Example</span>
+<span class="devsite-syntax-err">`</span><span class="devsite-syntax-n">feat</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">auth</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">implement</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">login</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">google</span><span class="devsite-syntax-err">`</span>
+</code></pre></devsite-code>
+<h3 is-upgraded id="how-to-run-this-example-in-antigravity" data-text="How to Run This Example in Antigravity" tabindex="-1">How to Run This Example in Antigravity</h3>
+<p>The steps below assume that you have Git available on your local machine and setup correctly.</p>
+<p>Assuming that you have launched Antigravity or Antigravity CLI, follow these steps:</p>
+<p><strong>Step 1: Set Up a Test Git Repository</strong></p>
+<p>Ask the agent to set up a clean, isolated directory for testing Git operations.</p>
+<p>Your prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Create a folder named git_test in the workspace, initialize a git repository inside it, and create an initial file auth.py with def login(): pass. Stage this file and make an initial commit.
+</code></pre></devsite-code>
+<p>The agent will create the directory, initialize the repository, stage the file, and commit it with a message like &#34;<code translate="no" dir="ltr">initial commit</code>&#34;.</p>
+<p><strong>Step 2: Make a Code Change</strong></p>
+<p>Tell the agent to modify the code so there is a change to commit.</p>
+<p>Your prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">In the git_test folder, modify auth.py to add Google Login functionality.
+</code></pre></devsite-code>
+<p>The agent will edit the file to add a new feature, preparing it for the commit phase.</p>
+<p><strong>Step 3: Stage and Commit the Changes</strong></p>
+<p>Trigger the <code translate="no" dir="ltr">git-commit-formatter</code> skill by asking the agent to stage the changes and create a commit.</p>
+<p>Your prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Stage the changes in the git_test folder and commit them. Make sure to format the commit message using the Conventional Commits skill.
+</code></pre></devsite-code>
+<p>The agent will run <code translate="no" dir="ltr">git add auth.py</code>, analyze the diff to determine that a new feature was added to the <code translate="no" dir="ltr">auth</code> module, and formulate a conventional commit message like <code translate="no" dir="ltr">feat(auth): implement google login</code> before running <code translate="no" dir="ltr">git commit</code>.</p>
+<p><strong>Step 4: Verify the Git Log</strong></p>
+<p>Ask the agent to retrieve the git history so you can confirm that the formatted commit was successfully recorded.</p>
+<p>Your prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Show me the git log in the git_test folder.
+</code></pre></devsite-code>
+<p>The agent will run <code translate="no" dir="ltr">git log -n 5</code> and return the output showing the formatted commit message.</p>
+<h2 is-upgraded id="level-2:-asset-utilization-license-header-adder" data-text="Level 2: Asset Utilization (license-header-adder)" tabindex="-1">Level 2: Asset Utilization (license-header-adder)</h2>
+<p>This is the &#34;Reference&#34; pattern.</p>
+<p>Every source file in a corporate project might need a specific 20-line Apache 2.0 license header. Putting this static text directly into the prompt (or <code translate="no" dir="ltr">SKILL.md</code>) is wasteful. It consumes tokens every time the skill is indexed, and the model might &#34;hallucinate&#34; typos in legal text. It is a good practice to offload the static text to a plain text file in a <code translate="no" dir="ltr">resources/</code> folder. The skill instructs the agent to read this file only when needed.</p>
+<p>You will find the files in the <code translate="no" dir="ltr">license-header-adder</code> folder in the <code translate="no" dir="ltr">skills</code> directory.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">license-header-adder/
+├── SKILL.md
+└── resources/
+   └── HEADER_TEMPLATE.txt  (The heavy text)
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">SKILL.md</code> file is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="MySQL" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-o">---</span>
+<span class="devsite-syntax-k">name</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">license</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-k">header</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">adder</span>
+<span class="devsite-syntax-k">description</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Adds</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">standard</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">open</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-k">source</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">license</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">header</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">source</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">files</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">involves</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">creating</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">code</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">require</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">copyright</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">attribution</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-o">---</span>
+
+<span class="devsite-syntax-c1"># License Header Adder Skill</span>
+
+<span class="devsite-syntax-n">This</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">skill</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ensures</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">all</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">source</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">have</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">correct</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">copyright</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">header</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-c1">## Instructions</span>
+
+<span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-k">Read</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Template</span><span class="devsite-syntax-o">**:</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-k">First</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">read</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">content</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">of</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">header</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">template</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">located</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`resources/HEADER_TEMPLATE.txt`</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-mf">2.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Prepend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">File</span><span class="devsite-syntax-o">**:</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-k">When</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">creating</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">e</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-n">g</span><span class="devsite-syntax-p">.,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`.py`</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`.java`</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`.js`</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`.ts`</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`.go`</span><span class="devsite-syntax-p">),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">prepend</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`target_file`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">content</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">template</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">content</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-mf">3.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-k">Modify</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Comment</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Syntax</span><span class="devsite-syntax-o">**:</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">For</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">C</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">style</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">languages</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">Java</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">JS</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">TS</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">C</span><span class="devsite-syntax-o">++</span><span class="devsite-syntax-p">),</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">keep</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`/* ... */`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">block</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">as</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">is</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">For</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Python</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Shell</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">YAML</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">convert</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">block</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`#`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">comments</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">For</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">HTML</span><span class="devsite-syntax-o">/</span><span class="devsite-syntax-k">XML</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`&lt;!-- ... --&gt;`</span><span class="devsite-syntax-p">.</span>
+</code></pre></devsite-code>
+<h3 is-upgraded id="how-to-run-this-example-in-antigravity_1" data-text="How to Run This Example in Antigravity" tabindex="-1">How to Run This Example in Antigravity</h3>
+<p>Assuming that you have launched Antigravity or Antigravity CLI, follow these steps:</p>
+<p><strong>Step 1: Create the Python File with Sample Code</strong></p>
+<p>Your Prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Create a new file my_script.py with the following python code:
+
+def hello():
+   print("Hello, World!")
+</code></pre></devsite-code>
+<p>What Happened (Explanation): The agent invoked a file-writing tool (write_to_file) to create a new file named my_script.py directly in your active workspace directory and wrote the basic Python function to it. Additionally, the prompt triggered the <code translate="no" dir="ltr">license-header-adder</code> skill. The agent located and read the license template file (<code translate="no" dir="ltr">HEADER_TEMPLATE.txt</code>), modified the comment style from C-style block comments (/* ... */) to Python-style comments (#), and prepended it to the top of the file using the <code translate="no" dir="ltr">replace_file_content</code> tool.</p>
+<p><strong>Step 2: Verify the File Contents</strong></p>
+<p>Take a look at the <code translate="no" dir="ltr">my_script.py</code> file. It will contain the license header at the top.</p>
+<h2 is-upgraded id="level-3:-learning-by-example-json-to-pydantic" data-text="Level 3: Learning by Example (json-to-pydantic)" tabindex="-1">Level 3: Learning by Example (json-to-pydantic)</h2>
+<p>The &#34;Few-Shot&#34; pattern.</p>
+<p>Converting loose data (like a JSON API response) to strict code (like Pydantic models) involves dozens of decisions. How should we name the classes? Should we use <code translate="no" dir="ltr">Optional</code>? <code translate="no" dir="ltr">snake_case</code> or <code translate="no" dir="ltr">camelCase</code>? Writing out these 50 rules in English is tedious and error-prone.</p>
+<p>LLMs are pattern-matching engines.</p>
+<p>Authoring your skill with a golden example (<code translate="no" dir="ltr">Input</code> -&gt; <code translate="no" dir="ltr">Output</code>) is often more effective than verbose instructions.</p>
+<p>Go to the <code translate="no" dir="ltr">json-to-pydantic/</code>folder that contains the skill files, as shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">json-to-pydantic/
+├── SKILL.md
+└── examples/
+   ├── input_data.json   (The Before State)
+   └── output_model.py   (The After State)
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">SKILL.md</code> file is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="MySQL" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-o">---</span>
+<span class="devsite-syntax-k">name</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">json</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">pydantic</span>
+<span class="devsite-syntax-k">description</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Converts</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">JSON</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">snippets</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">into</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Python</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Pydantic</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">models</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-o">---</span>
+
+<span class="devsite-syntax-c1"># JSON to Pydantic Skill</span>
+
+<span class="devsite-syntax-n">This</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">skill</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">helps</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">convert</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">raw</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">JSON</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">data</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">API</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">responses</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">into</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">structured</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">strongly</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">typed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Python</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">classes</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">using</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Pydantic</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-n">Instructions</span>
+
+<span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-k">Analyze</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Input</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Look</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kt">JSON</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">object</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">provided</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">user</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-mf">2.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Infer</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Types</span><span class="devsite-syntax-o">**:</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`string`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`str`</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`number`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`int`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`float`</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`boolean`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`bool`</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`array`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`List[Type]`</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`null`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`Optional[Type]`</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Nested</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Objects</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">-</span>&gt;<span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Create</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">separate</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">sub</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">class</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w"> </span>
+<span class="devsite-syntax-mf">3.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Follow</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Example</span><span class="devsite-syntax-o">**:</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-n">Review</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`examples/`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">see</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">how</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">structure</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">output</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">code</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">notice</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">how</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">nested</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">dictionaries</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">like</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`preferences`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">are</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">extracted</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">into</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">their</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">own</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">class</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-w"> </span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Input</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`examples/input_data.json`</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Output</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`examples/output_model.py`</span>
+
+<span class="devsite-syntax-n">Style</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Guidelines</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`PascalCase`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">names</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">type</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">hints</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`List`</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`Optional`</span><span class="devsite-syntax-p">)</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`typing`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">module</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-o">-</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">If</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">field</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">can</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">be</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">missing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">or</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-no">null</span><span class="devsite-syntax-p">,</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">default</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">it</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`None`</span><span class="devsite-syntax-p">.</span>
+</code></pre></devsite-code>
+<p>In the <code translate="no" dir="ltr">/examples</code> folder , there is the JSON file and the output file i.e. Python file. Both of them are shown below:</p>
+<p><strong>input_data.json</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">{
+   "user_id": 12345,
+   "username": "jdoe_88",
+   "is_active": true,
+   "preferences": {
+       "theme": "dark",
+       "notifications": [
+           "email",
+           "push"
+       ]
+   },
+   "last_login": "2024-03-15T10:30:00Z",
+   "meta_tags": null
+}
+</code></pre></devsite-code>
+<p><strong>output_model.py</strong></p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">pydantic</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">BaseModel</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Field</span>
+<span class="devsite-syntax-kn">from</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">typing</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-kn">import</span> <span class="devsite-syntax-n">List</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">Optional</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">Preferences</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">BaseModel</span><span class="devsite-syntax-p">):</span>
+   <span class="devsite-syntax-n">theme</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span>
+   <span class="devsite-syntax-n">notifications</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">List</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">]</span>
+
+<span class="devsite-syntax-k">class</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nc">User</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">BaseModel</span><span class="devsite-syntax-p">):</span>
+   <span class="devsite-syntax-n">user_id</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">int</span>
+   <span class="devsite-syntax-n">username</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">str</span>
+   <span class="devsite-syntax-n">is_active</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-nb">bool</span>
+   <span class="devsite-syntax-n">preferences</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Preferences</span>
+   <span class="devsite-syntax-n">last_login</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Optional</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-kc">None</span>
+   <span class="devsite-syntax-n">meta_tags</span><span class="devsite-syntax-p">:</span> <span class="devsite-syntax-n">Optional</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-n">List</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-nb">str</span><span class="devsite-syntax-p">]]</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-kc">None</span>
+</code></pre></devsite-code>
+<h3 is-upgraded id="how-to-run-this-example-in-antigravity_2" data-text="How to Run This Example in Antigravity" tabindex="-1">How to Run This Example in Antigravity</h3>
+<p>Assuming that you have launched Antigravity or Antigravity CLI, follow these steps:</p>
+<p><strong>Step 1: Create the JSON File with Sample Data</strong></p>
+<p>Ask the agent to create a new file <code translate="no" dir="ltr">product.json</code> containing the raw JSON payload.</p>
+<p>Your Prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Create a new file product.json with the following JSON:
+
+{
+ "product": "Widget",
+ "cost": 10.99,
+ "stock": null
+}
+</code></pre></devsite-code>
+<p><strong>Step 2: Convert the JSON to a Pydantic Model</strong></p>
+<p>Trigger the <code translate="no" dir="ltr">json-to-pydantic</code> skill to convert the JSON data into a structured Pydantic class.</p>
+<p>Your Prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Convert the JSON in product.json to a Pydantic model and save it to product_model.py.
+</code></pre></devsite-code>
+<p><strong>Step 3: Verify the Output</strong></p>
+<p>Take a look at the <code translate="no" dir="ltr">product_model.py</code> file. It will contain the completed Pydantic model.</p>
+<h2 is-upgraded id="level-4:-procedural-logic-database-schema-validator" data-text="Level 4: Procedural Logic (database-schema-validator)" tabindex="-1">Level 4: Procedural Logic (database-schema-validator)</h2>
+<p>This is the &#34;Tool Use&#34; Pattern.</p>
+<p>If you ask an LLM &#34;Is this schema safe?&#34;, it might say all is well, even if a critical primary key is missing, simply because the SQL looks correct.</p>
+<p>Let&#39;s delegate this check to a deterministic Script. Our <code translate="no" dir="ltr">database-schema-validator</code> skill will route the agent to run a Python script that we wrote. The script provides binary (True/False) truth.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">database-schema-validator/
+├── SKILL.md
+└── scripts/
+   └── validate_schema.py  (The Validator)
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">SKILL.md</code> file is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="MySQL" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-o">---</span>
+<span class="devsite-syntax-k">name</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">database</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-k">schema</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-n">validator</span>
+<span class="devsite-syntax-k">description</span><span class="devsite-syntax-o">:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Validates</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">SQL</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">schema</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">compliance</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">internal</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">safety</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">naming</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">policies</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-o">---</span>
+
+<span class="devsite-syntax-c1"># Database Schema Validator Skill</span>
+
+<span class="devsite-syntax-n">This</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">skill</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">ensures</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">that</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">all</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">SQL</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">files</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">provided</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">user</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">comply</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">our</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">strict</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">database</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">standards</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-n">Policies</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Enforced</span>
+<span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Safety</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">No</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`DROP TABLE`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">statements</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-mf">2.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Naming</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">All</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">tables</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">must</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`snake_case`</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-mf">3.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Structure</span><span class="devsite-syntax-o">**:</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Every</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">table</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">must</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">have</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">an</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`id`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">column</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">as</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">PRIMARY</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">KEY</span><span class="devsite-syntax-p">.</span>
+
+<span class="devsite-syntax-n">Instructions</span>
+
+<span class="devsite-syntax-mf">1.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-k">Do</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">not</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">read</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">manually</span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">check</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">for</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">errors</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">The</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">rules</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">are</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">complex</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">easily</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">missed</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">by</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">eye</span><span class="devsite-syntax-p">.</span>
+<span class="devsite-syntax-mf">2.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">**</span><span class="devsite-syntax-n">Run</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">Validation</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">Script</span><span class="devsite-syntax-o">**:</span>
+<span class="devsite-syntax-w">  </span><span class="devsite-syntax-k">Use</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`run_command`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">tool</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">to</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">execute</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">python</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">script</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">provided</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">in</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n devsite-syntax-n-Quoted">`scripts/`</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">folder</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">against</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">user</span><span class="devsite-syntax-s1">'s file.</span>
+<span class="devsite-syntax-s1"> </span>
+<span class="devsite-syntax-s1">  `python scripts/validate_schema.py &lt;path_to_user_file&gt;`</span>
+
+<span class="devsite-syntax-s1">3. **Interpret Output**:</span>
+<span class="devsite-syntax-s1">  - If the script returns **exit code 0**: Tell the user the schema looks good.</span>
+<span class="devsite-syntax-s1">  - If the script returns **exit code 1**: Report the specific error messages printed by the script to the user and suggest fixes.</span>
+</code></pre></devsite-code>
+<p>The <code translate="no" dir="ltr">validate_schema.py</code> file is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Python" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">sys</span>
+<span class="devsite-syntax-kn">import</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nn">re</span>
+
+<span class="devsite-syntax-k">def</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nf">validate_schema</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">filename</span><span class="devsite-syntax-p">):</span>
+<span class="devsite-syntax-w">   </span><span class="devsite-syntax-sd">"""</span>
+<span class="devsite-syntax-sd">   Validates a SQL schema file against internal policy:</span>
+<span class="devsite-syntax-sd">   1. Table names must be snake_case.</span>
+<span class="devsite-syntax-sd">   2. Every table must have a primary key named 'id'.</span>
+<span class="devsite-syntax-sd">   3. No 'DROP TABLE' statements allowed (safety).</span>
+<span class="devsite-syntax-sd">   """</span>
+   <span class="devsite-syntax-k">try</span><span class="devsite-syntax-p">:</span>
+       <span class="devsite-syntax-k">with</span> <span class="devsite-syntax-nb">open</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">filename</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-s1">'r'</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-k">as</span> <span class="devsite-syntax-n">f</span><span class="devsite-syntax-p">:</span>
+           <span class="devsite-syntax-n">content</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">f</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">read</span><span class="devsite-syntax-p">()</span>
+          
+       <span class="devsite-syntax-n">lines</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">content</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">split</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">'</span><span class="devsite-syntax-se">\n</span><span class="devsite-syntax-s1">'</span><span class="devsite-syntax-p">)</span>
+       <span class="devsite-syntax-n">errors</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-p">[]</span>
+      
+       <span class="devsite-syntax-c1"># Check 1: No DROP TABLE</span>
+       <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">search</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">r</span><span class="devsite-syntax-s1">'DROP TABLE'</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">content</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">IGNORECASE</span><span class="devsite-syntax-p">):</span>
+           <span class="devsite-syntax-n">errors</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">append</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"ERROR: 'DROP TABLE' statements are forbidden."</span><span class="devsite-syntax-p">)</span>
+          
+       <span class="devsite-syntax-c1"># Check 2 &amp; 3: CREATE TABLE checks</span>
+       <span class="devsite-syntax-n">table_defs</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">finditer</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">r</span><span class="devsite-syntax-s1">'CREATE TABLE\s+(?P&lt;name&gt;\w+)\s*\((?P&lt;body&gt;.*?)\);'</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">content</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">DOTALL</span> <span class="devsite-syntax-o">|</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">IGNORECASE</span><span class="devsite-syntax-p">)</span>
+      
+       <span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">match</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">table_defs</span><span class="devsite-syntax-p">:</span>
+           <span class="devsite-syntax-n">table_name</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">match</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">group</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">'name'</span><span class="devsite-syntax-p">)</span>
+           <span class="devsite-syntax-n">body</span> <span class="devsite-syntax-o">=</span> <span class="devsite-syntax-n">match</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">group</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s1">'body'</span><span class="devsite-syntax-p">)</span>
+          
+           <span class="devsite-syntax-c1"># Snake case check</span>
+           <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-ow">not</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">match</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">r</span><span class="devsite-syntax-s1">'^[a-z][a-z0-9_]*$'</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">table_name</span><span class="devsite-syntax-p">):</span>
+               <span class="devsite-syntax-n">errors</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">append</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"ERROR: Table '</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">table_name</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">' must be snake_case."</span><span class="devsite-syntax-p">)</span>
+              
+           <span class="devsite-syntax-c1"># Primary key check</span>
+           <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-ow">not</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">search</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">r</span><span class="devsite-syntax-s1">'\bid\b.*PRIMARY KEY'</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">body</span><span class="devsite-syntax-p">,</span> <span class="devsite-syntax-n">re</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">IGNORECASE</span><span class="devsite-syntax-p">):</span>
+               <span class="devsite-syntax-n">errors</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">append</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"ERROR: Table '</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">table_name</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">' is missing a primary key named 'id'."</span><span class="devsite-syntax-p">)</span>
+
+       <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-n">errors</span><span class="devsite-syntax-p">:</span>
+           <span class="devsite-syntax-k">for</span> <span class="devsite-syntax-n">err</span> <span class="devsite-syntax-ow">in</span> <span class="devsite-syntax-n">errors</span><span class="devsite-syntax-p">:</span>
+               <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">err</span><span class="devsite-syntax-p">)</span>
+           <span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">exit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">)</span>
+       <span class="devsite-syntax-k">else</span><span class="devsite-syntax-p">:</span>
+           <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"Schema validation passed."</span><span class="devsite-syntax-p">)</span>
+           <span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">exit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">0</span><span class="devsite-syntax-p">)</span>
+          
+   <span class="devsite-syntax-k">except</span> <span class="devsite-syntax-ne">FileNotFoundError</span><span class="devsite-syntax-p">:</span>
+       <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-sa">f</span><span class="devsite-syntax-s2">"Error: File '</span><span class="devsite-syntax-si">{</span><span class="devsite-syntax-n">filename</span><span class="devsite-syntax-si">}</span><span class="devsite-syntax-s2">' not found."</span><span class="devsite-syntax-p">)</span>
+       <span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">exit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">)</span>
+
+<span class="devsite-syntax-k">if</span> <span class="devsite-syntax-vm">__name__</span> <span class="devsite-syntax-o">==</span> <span class="devsite-syntax-s2">"__main__"</span><span class="devsite-syntax-p">:</span>
+   <span class="devsite-syntax-k">if</span> <span class="devsite-syntax-nb">len</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">argv</span><span class="devsite-syntax-p">)</span> <span class="devsite-syntax-o">!=</span> <span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">:</span>
+       <span class="devsite-syntax-nb">print</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-s2">"Usage: python validate_schema.py &lt;schema_file&gt;"</span><span class="devsite-syntax-p">)</span>
+       <span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">exit</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">)</span>
+      
+   <span class="devsite-syntax-n">validate_schema</span><span class="devsite-syntax-p">(</span><span class="devsite-syntax-n">sys</span><span class="devsite-syntax-o">.</span><span class="devsite-syntax-n">argv</span><span class="devsite-syntax-p">[</span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">])</span>
+</code></pre></devsite-code>
+<h3 is-upgraded id="how-to-run-this-example-in-antigravity_3" data-text="How to Run This Example in Antigravity" tabindex="-1">How to Run This Example in Antigravity</h3>
+<p>Assuming that you have launched Antigravity or Antigravity CLI, follow these steps:</p>
+<p><strong>Step 1: Create the JSON File with Sample Data</strong></p>
+<p>Ask the agent to create a new file <code translate="no" dir="ltr">bad_schema.sql</code> containing multiple policy violations.</p>
+<p>Your Prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="CSS+Lasso" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-nt">Create</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">new</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">file</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">bad_schema</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-nc">sql</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">with</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">following</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">SQL</span><span class="devsite-syntax-o">:</span>
+
+<span class="devsite-syntax-nt">DROP</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TABLE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">IF</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">EXISTS</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">legacy_users</span><span class="devsite-syntax-o">;</span>
+
+<span class="devsite-syntax-nt">CREATE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TABLE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">userProfile</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">id</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">INT</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">PRIMARY</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">KEY</span><span class="devsite-syntax-o">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">bio</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TEXT</span>
+<span class="devsite-syntax-o">);</span>
+
+<span class="devsite-syntax-nt">CREATE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TABLE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">posts</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">title</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TEXT</span><span class="devsite-syntax-o">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">content</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TEXT</span><span class="devsite-syntax-o">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">created_at</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TIMESTAMP</span>
+<span class="devsite-syntax-o">);</span>
+
+<span class="devsite-syntax-nt">CREATE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TABLE</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">comments</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">(</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">id</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">INT</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">PRIMARY</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">KEY</span><span class="devsite-syntax-o">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">post_id</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">INT</span><span class="devsite-syntax-o">,</span>
+<span class="devsite-syntax-w">    </span><span class="devsite-syntax-nt">body</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nt">TEXT</span>
+<span class="devsite-syntax-o">);</span>
+</code></pre></devsite-code>
+<p>The above schema file violates all three policies: it uses a forbidden <code translate="no" dir="ltr">DROP TABLE</code> statement, uses <code translate="no" dir="ltr">camelCase</code> for the <code translate="no" dir="ltr">userProfile</code> table name, and forgets the <code translate="no" dir="ltr">id</code> primary key in the <code translate="no" dir="ltr">posts</code> table.</p>
+<p><strong>Step 2: Validate the SQL Schema</strong></p>
+<p>Trigger the <code translate="no" dir="ltr">database-schema-validator</code> skill to run the Python validator script against your file.</p>
+<p>Your prompt:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Validate bad_schema.sql using the database-schema-validator skill.
+</code></pre></devsite-code>
+<p><strong>Step 3: Verify the Output</strong></p>
+<p>The agent will report the failure and display the specific errors found by the script directly in the chat. The sample output is shown below:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Suggested Fixes:
+</code></pre></devsite-code>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Remove the line DROP TABLE IF EXISTS legacy_users; as dropping tables is forbidden by safety policy.
+</code></pre></devsite-code>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="scdoc" syntax-guessed><code translate="no" dir="ltr">Rename the table userProfile to use snake_case (e.g., user_profile).
+</code></pre></devsite-code>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">Add a primary key column named id to the posts table definition.
+</code></pre></devsite-code>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="The Developer Toolkit (Agents CLI Skills)" duration="0" step="5">
+          
+          <h2 class="step-title" id="5" data-text="The Developer Toolkit (Agents CLI Skills)" tabindex="-1">
+              6. The Developer Toolkit (Agents CLI Skills)
+          </h2>
+          
+          <p>The &#34;Action &amp; Lifecycle&#34; Pattern.</p>
+<p>Developing AI agents involves repetitive lifecycle tasks: scaffolding boilerplate files, configuring local runtime environments, running test prompts, and starting interactive playgrounds.</p>
+<p>Instead of forcing your coding assistant to guess directory structures or write boilerplate agent configuration from scratch,  <a href="https://github.com/google/agents-cli" target="_blank">Agents CLI Skills</a> packages this lifecycle expertise into specific agent skills.</p>
+<p>The Agent CLI (Command Line Interface) skills bring streamlined, developer-centric automation directly into your terminal, bridging the gap between raw code and autonomous execution. While the <strong>Agent Development Kit (ADK)</strong> focuses on the programmatic framework, giving you the SDKs, APIs, and structural blueprints to build and orchestrate AI agents, the Agent CLI skills provide the operational muscle. It allows developers to scaffold, test, and deploy agents locally with rapid feedback loops, completely bypassing heavy UI overhead.</p>
+<p>Optionally, when mapped to <strong>Google Cloud</strong>, Agent CLI skills act as a direct pipeline to enterprise-grade infrastructure. Instead of clicking through consoles, you can use CLI commands to instantly package agent workflows, manage access permissions, and deploy them into Google Cloud ecosystems (like Vertex AI or Cloud Run). This turns what used to be complex cloud architecture tasks into simple, reproducible terminal commands, making it much easier to integrate autonomous agents into existing CI/CD deployment pipelines.</p>
+<h2 is-upgraded id="how-to-install" data-text="How to Install" tabindex="-1">How to Install</h2>
+<p>Ensure you have <code translate="no" dir="ltr">Python 3.11+</code>, <code translate="no" dir="ltr">Node.js</code>, and the <code translate="no" dir="ltr">uv</code> package manager installed. Then, run the setup command in your terminal:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">uvx google-agents-cli setup
+</code></pre></devsite-code>
+<p>This command installs the <code translate="no" dir="ltr">agents-cli</code> binary and registers its specialized skills for scaffolding and evaluation within your coding assistant&#39;s environment.</p>
+<p>Note: The skills will be installed in the <code translate="no" dir="ltr">~/.agents/skills</code> folder, which is visible to Antigravity. If you would like to see these skills in Antigravity CLI, you will have to move them to the <code translate="no" dir="ltr">~/.gemini/antigravity-cli/skills</code> folder (global scope).</p>
+<p>You can check that the Skills have been loaded in Antigravity by simply asking about which skills are available. A sample response is shown below, for the Agent CLI Skills that we have just installed.</p>
+<p class="image-container"><img alt="aade8c84acacf956.png" style="width: 624.00px" src="/static/getting-started-with-antigravity-skills/img/aade8c84acacf956.png" srcset="https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_36.png 36w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_48.png 48w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_72.png 72w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_96.png 96w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_480.png 480w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_720.png 720w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_856.png 856w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_960.png 960w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_1440.png 1440w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_1920.png 1920w,https://codelabs.developers.google.com/static/getting-started-with-antigravity-skills/img/aade8c84acacf956_2880.png 2880w" sizes="(max-width: 840px) 100vw, 856px"></p>
+<h2 is-upgraded id="step-by-step-walkthrough" data-text="Step-by-Step Walkthrough" tabindex="-1">Step-by-Step Walkthrough</h2>
+<p>Once <code translate="no" dir="ltr">uvx google-agents-cli setup</code> is complete, you can spin up, interact with, and test an AI agent entirely on your local machine.</p>
+<h3 is-upgraded id="step-1:-scaffold-and-initialize-a-new-agent-project" data-text="Step 1: Scaffold and Initialize a New Agent Project" tabindex="-1">Step 1: Scaffold and Initialize a New Agent Project</h3>
+<p>Run the creation command to scaffold a standardized layout. Once created, you must install its project dependencies before running any execution tasks.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Carbon" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-err">#</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">1</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Create</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">a</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">lightweight</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">prototype</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">project</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">structure</span>
+<span class="devsite-syntax-nx">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">cli</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">create</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">weather</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">assistant</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">prototype</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-o">--</span><span class="devsite-syntax-nx">yes</span>
+
+<span class="devsite-syntax-err">#</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-mi">2</span><span class="devsite-syntax-p">.</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">Move</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">into</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">the</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">directory</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-k">and</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">install</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">required</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">ADK</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">dependencies</span>
+<span class="devsite-syntax-nx">cd</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">weather</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">assistant</span>
+<span class="devsite-syntax-nx">agents</span><span class="devsite-syntax-o">-</span><span class="devsite-syntax-nx">cli</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-nx">install</span>
+</code></pre></devsite-code>
+<p>What happens behind the scenes: This creates a clean workspace featuring <code translate="no" dir="ltr">app/agent.py</code> (your core code), <code translate="no" dir="ltr">pyproject.toml</code> (package metadata), and <code translate="no" dir="ltr">agents-cli-manifest.yaml</code> (project tracker).</p>
+<h3 is-upgraded id="step-2:-run-a-local-test-query" data-text="Step 2: Run a Local Test Query" tabindex="-1">Step 2: Run a Local Test Query</h3>
+<p>Execute a rapid, direct command-line test against your agent. Ensure you have your <code translate="no" dir="ltr">GEMINI_API_KEY</code> exported in your terminal if you aren&#39;t using Google Cloud&#39;s ADC (Application Default Credentials). You can get a Gemini API Key from  <a href="https://aistudio.google.com/api-keys" target="_blank">here</a>. Once you have the key, export it in your terminal via the following command:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="GDScript" syntax-guessed><code translate="no" dir="ltr"><span class="devsite-syntax-k">export</span><span class="devsite-syntax-w"> </span><span class="devsite-syntax-n">GEMINI_API_KEY</span><span class="devsite-syntax-o">=</span><span class="devsite-syntax-s2">"YOUR_GEMINI_API_KEY"</span>
+</code></pre></devsite-code>
+<p>Give the following command in your terminal:</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">agents-cli run "How are you?"
+</code></pre></devsite-code>
+<p>What happens behind the scenes: The CLI initializes the Agent Development Kit (ADK) lifecycle entirely in memory on your terminal. It securely routes the prompt through your local credentials and logs the live streaming response directly back into your command line.</p>
+<h3 is-upgraded id="step-3:-start-the-interactive-web-playground" data-text="Step 3: Start the Interactive Web Playground" tabindex="-1">Step 3: Start the Interactive Web Playground</h3>
+<p>Launch the built-in, local web-based playground to interact with your agent visually.</p>
+<div></div><devsite-code><pre class="devsite-click-to-copy" translate="no" dir="ltr" is-upgraded syntax="Text only" syntax-guessed><code translate="no" dir="ltr">agents-cli playground
+</code></pre></devsite-code>
+<p>What happens behind the scenes: The CLI fires up an ADK web UI server, typically accessible at <code translate="no" dir="ltr">http://localhost:8080</code> or fallback <code translate="no" dir="ltr">http://127.0.0.1:8000</code>, complete with hot-reloading. From the web interface select <strong>app</strong> in the <strong>Select an app</strong> dropdown at the top and interact with the agent in the conversational interface on the right side of the web application.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Installing Agent Skills using npx skills" duration="0" step="6">
+          
+          <h2 class="step-title" id="6" data-text="Installing Agent Skills using npx skills" tabindex="-1">
+              7. Installing Agent Skills using npx skills
+          </h2>
+          
+          <p><a href="https://github.com/vercel-labs/skills" target="_blank">npx skills</a> is a command-line tool developed by Vercel Labs that acts as a package manager for AI agents (like Antigravity, Claude Code, GitHub Copilot, Cursor, and Cline). It is the CLI for the open agent skills ecosystem.</p>
+<p>If you are looking to download and install Agent Skills using the <code translate="no" dir="ltr">npx skills</code> package, do note that it places the Skills in the <code translate="no" dir="ltr">~/.agents/skills</code> folder. While it mentions that tools like Antigravity will pick up the skills from this folder, please note that at the time of writing, Antigravity picks it up from this folder but Antigravity CLI does not. As mentioned earlier, you will need to copy these skills installed in <code translate="no" dir="ltr">~/.agents/skills</code> folder, to either the project or global scope for skills folders in Antigravity CLI i.e.</p>
+<ol type="1">
+<li><strong>Project Scope</strong>: Located in <code translate="no" dir="ltr">&lt;project-root&gt;/.agent/skills/</code>.</li>
+<li><strong>Global Scope</strong>: Located in <code translate="no" dir="ltr">~/.gemini/antigravity-cli/skills/</code>.</li>
+</ol>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Congratulations" duration="2" step="7">
+          
+          <h2 class="step-title" id="7" data-text="Congratulations" tabindex="-1">
+              8. Congratulations
+          </h2>
+          
+          <p>Congratulations! You have successfully used Google Antigravity to build your first Agent skill, configured it and added custom capabilities to it.</p>
+<p>You also managed to configure a set of Agent Skills, at both project and global scopes, bringing customized tools to life!.</p>
+<p>You are now ready to let Antigravity handle the heavy lifting on your own projects and write code your way.</p>
+<h2 is-upgraded id="earn-your-kaggle-5-day-ai-agents-badge" data-text="Earn your Kaggle 5-Day AI Agents badge" tabindex="-1">Earn your Kaggle 5-Day AI Agents badge</h2>
+<p>Completed this lab as part of Kaggle&#39;s <strong>5-Day AI Agents: Intensive Vibe Coding Course with Google</strong>? Claim your completion badge: Get the  <a href="https://developers.google.com/profile/badges/events/cloud/five-day-ai-agents/award" target="_blank">5-Day AI Agents badge</a>.</p>
+
+
+        </google-codelab-step>
+      
+        <google-codelab-step label="Reference docs" duration="0" step="8">
+          
+          <h2 class="step-title" id="8" data-text="Reference docs" tabindex="-1">
+              9. Reference docs
+          </h2>
+          
+          <ul>
+<li><a href="https://codelabs.developers.google.com/getting-started-google-antigravity" target="_blank">Codelab : Getting Started with Google Antigravity</a></li>
+<li>Official Site :  <a href="https://antigravity.google/" target="_blank">https://antigravity.google/</a></li>
+<li>Documentation:  <a href="https://antigravity.google/docs" target="_blank">https://antigravity.google/docs</a></li>
+<li>Download :  <a href="https://antigravity.google/download" target="_blank">https://antigravity.google/download</a></li>
+<li>Antigravity Skills documentation:  <a href="https://antigravity.google/docs/skills" target="_blank">https://antigravity.google/docs/skills</a></li>
+</ul>
+
+
+        </google-codelab-step>
+      
+    </google-codelab>
+  
+  
+
+  
+</div>
+
+  
+    
+    
+    
+  
+
+  <div class="devsite-floating-action-buttons"></div></article>
+
+
+<devsite-content-footer class="nocontent" data-nosnippet>
+  <p>Except as otherwise noted, the content of this page is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 License</a>, and code samples are licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. For details, see the <a href="https://developers.google.com/site-policies">Google Developers Site Policies</a>. Java is a registered trademark of Oracle and/or its affiliates.</p>
+  
+</devsite-content-footer>
+
+
+<devsite-notification
+>
+</devsite-notification>
+
+
+  
+<div class="devsite-content-data">
+  
+  
+    <template class="devsite-content-data-template">
+      [[["Easy to understand","easyToUnderstand","thumb-up"],["Solved my problem","solvedMyProblem","thumb-up"],["Other","otherUp","thumb-up"]],[["Missing the information I need","missingTheInformationINeed","thumb-down"],["Too complicated / too many steps","tooComplicatedTooManySteps","thumb-down"],["Out of date","outOfDate","thumb-down"],["Samples / code issue","samplesCodeIssue","thumb-down"],["Other","otherDown","thumb-down"]],[],[],[]]
+    </template>
+  
+</div>
+            
+          </devsite-content>
+        </main>
+        <devsite-footer-promos class="devsite-footer">
+          
+            
+          
+        </devsite-footer-promos>
+        <devsite-footer-linkboxes class="devsite-footer">
+          
+            
+<nav class="devsite-footer-linkboxes nocontent"
+     aria-label="Footer links"
+     data-nosnippet>
+  
+  <ul class="devsite-footer-linkboxes-list">
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Connect</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//googledevelopers.blogspot.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Blog
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.facebook.com/Google-Developers-967415219957038"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Facebook
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//medium.com/google-developers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Medium
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//twitter.com/googledevs"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Twitter
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.youtube.com/user/GoogleDevelopers"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+              
+              
+            
+          
+            YouTube
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Programs</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//www.womentechmakers.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Women Techmakers
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/gdg"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Developer Groups
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/experts"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Developer Experts
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//developers.google.com/community/accelerators"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+              
+              
+            
+          
+            Accelerators
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+    <li class="devsite-footer-linkbox ">
+    <h3 class="devsite-footer-linkbox-heading no-link">Developer consoles</h3>
+      <ul class="devsite-footer-linkbox-list">
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.developers.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 1)"
+            >
+            
+          
+            Google API Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.cloud.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 2)"
+            >
+            
+          
+            Google Cloud Platform Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//play.google.com/apps/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 3)"
+            >
+            
+          
+            Google Play Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.firebase.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 4)"
+            >
+            
+          
+            Firebase Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//console.actions.google.com"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 5)"
+            >
+            
+          
+            Actions on Google Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//cast.google.com/publish"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 6)"
+            >
+            
+          
+            Cast SDK Developer Console
+          
+          </a>
+          
+          
+        </li>
+        
+        <li class="devsite-footer-linkbox-item">
+          
+          <a href="//chrome.google.com/webstore/developer/dashboard"
+             class="devsite-footer-linkbox-link gc-analytics-event"
+             data-category="Site-Wide Custom Events"
+            
+             data-label="Footer Link (index 7)"
+            >
+            
+              
+              
+            
+          
+            Chrome Web Store Dashboard
+          
+          </a>
+          
+          
+        </li>
+        
+      </ul>
+    </li>
+    
+  </ul>
+  
+</nav>
+          
+        </devsite-footer-linkboxes>
+        <devsite-footer-utility class="devsite-footer">
+          
+            
+
+<div class="devsite-footer-utility nocontent" data-nosnippet>
+  
+  
+  <nav class="devsite-footer-sites" aria-label="Other Google Developers websites">
+    <a href="https://developers.google.com/"
+       class="devsite-footer-sites-logo-link gc-analytics-event"
+       data-category="Site-Wide Custom Events"
+       data-label="Footer Google Developers Link">
+      <picture>
+        
+        <img class="devsite-footer-sites-logo"
+             src="https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup-google-for-developers.svg"
+             loading="lazy"
+             alt="Google Developers">
+      </picture>
+    </a>
+    <ul class="devsite-footer-sites-list">
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.android.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Android Link"
+         
+         >
+          Android
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developer.chrome.com/home"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Chrome Link"
+         
+         >
+          Chrome
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//firebase.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Firebase Link"
+         
+         >
+          Firebase
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//cloud.google.com"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer Google Cloud Platform Link"
+         
+         >
+          Google Cloud Platform
+        </a>
+      </li>
+      
+      <li class="devsite-footer-sites-item">
+        <a href="//developers.google.com/products"
+           class="devsite-footer-sites-link
+                  gc-analytics-event"
+           data-category="Site-Wide Custom Events"
+         
+           data-label="Footer All products Link"
+         
+         >
+          All products
+        </a>
+      </li>
+      
+    </ul>
+  </nav>
+  
+
+  
+  <nav class="devsite-footer-utility-links" aria-label="Utility links">
+    
+    <ul class="devsite-footer-utility-list">
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//developers.google.com/terms/site-terms"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Terms link"
+         >
+          Terms
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 ">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//policies.google.com/privacy"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Privacy link"
+         >
+          Privacy
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 glue-cookie-notification-bar-control">
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="#"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Manage cookies link"
+         
+           aria-hidden="true"
+         >
+          Manage cookies
+        </a>
+        
+      </li>
+      
+      <li class="devsite-footer-utility-item
+                 devsite-footer-utility-button">
+        
+        <span class="devsite-footer-utility-description">Sign up for the Google Developers newsletter</span>
+        
+        
+        <a class="devsite-footer-utility-link gc-analytics-event"
+           href="//services.google.com/fb/forms/googledevelopersnewsletter/?utm_medium=referral&amp;utm_source=google-products&amp;utm_team=googledevs&amp;utm_campaign=201611-newsletter-launch"
+           data-category="Site-Wide Custom Events"
+           data-label="Footer Subscribe link"
+         >
+          Subscribe
+        </a>
+        
+      </li>
+      
+    </ul>
+    
+    
+<devsite-language-selector>
+  <ul role="presentation">
+    
+    
+    <li role="presentation">
+      <a role="menuitem" lang="en"
+        >English</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="de"
+        >Deutsch</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es"
+        >Español</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="es_419"
+        >Español – América Latina</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fr"
+        >Français</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="id"
+        >Indonesia</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="it"
+        >Italiano</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pl"
+        >Polski</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="pt_br"
+        >Português – Brasil</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="vi"
+        >Tiếng Việt</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="tr"
+        >Türkçe</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ru"
+        >Русский</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="he"
+        >עברית</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ar"
+        >العربيّة</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="fa"
+        >فارسی</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="hi"
+        >हिंदी</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="bn"
+        >বাংলা</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="th"
+        >ภาษาไทย</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_cn"
+        >中文 – 简体</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="zh_tw"
+        >中文 – 繁體</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ja"
+        >日本語</a>
+    </li>
+    
+    <li role="presentation">
+      <a role="menuitem" lang="ko"
+        >한국어</a>
+    </li>
+    
+  </ul>
+</devsite-language-selector>
+
+  </nav>
+</div>
+          
+        </devsite-footer-utility>
+        <devsite-panel>
+          
+        </devsite-panel>
+        
+      </section>
+      </section>
+    <devsite-sitemask></devsite-sitemask>
+    <devsite-snackbar></devsite-snackbar>
+    <devsite-tooltip ></devsite-tooltip>
+    <devsite-heading-link></devsite-heading-link>
+    <devsite-analytics>
+      
+        <script type="application/json" analytics>[]</script>
+<script type="application/json" tag-management>{&#34;at&#34;: &#34;True&#34;, &#34;ga4&#34;: [], &#34;ga4p&#34;: [], &#34;gtm&#34;: [], &#34;parameters&#34;: {&#34;internalUser&#34;: &#34;False&#34;, &#34;language&#34;: {&#34;machineTranslated&#34;: &#34;False&#34;, &#34;requested&#34;: &#34;en&#34;, &#34;served&#34;: &#34;en&#34;}, &#34;pageType&#34;: &#34;codelab&#34;, &#34;projectName&#34;: null, &#34;signedIn&#34;: &#34;False&#34;, &#34;tenant&#34;: &#34;codelabs&#34;, &#34;recommendations&#34;: {&#34;sourcePage&#34;: &#34;&#34;, &#34;sourceType&#34;: 0, &#34;sourceRank&#34;: 0, &#34;sourceIdenticalDescriptions&#34;: 0, &#34;sourceTitleWords&#34;: 0, &#34;sourceDescriptionWords&#34;: 0, &#34;experiment&#34;: &#34;&#34;}, &#34;experiment&#34;: {&#34;ids&#34;: &#34;&#34;}}}</script>
+      
+    </devsite-analytics>
+    
+      <devsite-badger></devsite-badger>
+    
+    
+    
+    
+<script nonce="AFumYLIUptsDDdpNV3eN5iPIHS7x8e">
+  
+  (function(d,e,v,s,i,t,E){d['GoogleDevelopersObject']=i;
+    t=e.createElement(v);t.async=1;t.src=s;E=e.getElementsByTagName(v)[0];
+    E.parentNode.insertBefore(t,E);})(window, document, 'script',
+    'https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/js/app_loader.js', '[17,"en",null,"/js/devsite_app_module.js","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs","https://codelabs-dot-devsite-v2-prod.appspot.com",1,null,["/_pwa/codelabs/manifest.json","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/images/video-placeholder.svg","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/favicon.png","https://www.gstatic.com/devrel-devsite/prod/v11431966d26d9f049ef61662c2b798f1cdee8af320f1ba0f77a43eee64301d60/codelabs/images/lockup.svg","https://fonts.googleapis.com/css?family=Google+Sans:400,500|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700&display=swap"],1,null,[1,6,8,12,14,17,21,25,50,52,63,70,75,76,80,87,91,92,93,97,98,100,101,102,103,104,105,107,108,109,110,112,113,116,117,118,120,122,124,125,126,127,129,130,131,132,133,134,135,136,138,140,141,147,148,149,151,152,156,157,158,159,161,163,164,168,169,170,179,180,182,183,186,191,193,196],"AIzaSyAP-jjEJBzmIyKR4F-3XITp8yM9T1gEEI8","AIzaSyB6xiKGDR5O3Ak2okS4rLkauxGUG7XP0hg","codelabs.developers.google.com","AIzaSyAQk0fBONSGUqCNznf6Krs82Ap1-NV6J4o","AIzaSyCCxcqdrZ_7QMeLCRY20bh_SXdAYqy70KY",null,null,null,["DevPro__enable_devpro_offers","DevPro__enable_google_one_card","Profiles__enable_page_saving","MiscFeatureFlags__enable_view_transitions","Profiles__enable_awarding_url","MiscFeatureFlags__enable_explain_this_code","Profiles__enable_profile_collections","Profiles__enable_dashboard_curated_recommendations","Search__enable_ai_search_summaries_for_all","Cloud__enable_cloud_shell","Profiles__enable_completequiz_endpoint","AIStudioInteractionsToggle__interactions_are_default","MiscFeatureFlags__remove_cross_domain_tracking_params","DevPro__enable_embed_profile_creation","Search__enable_page_map","Profiles__enable_targeted_hero","MiscFeatureFlags__enable_variable_operator_index_yaml","DevPro__enable_g1_integration","TpcFeatures__enable_unmirrored_page_left_nav","DevPro__enable_enterprise","DevPro__enable_credits_banner","Profiles__enable_developer_profile_benefits_ui_redesign","MiscFeatureFlags__gdp_dashboard_reskin_enabled","MiscFeatureFlags__enable_appearance_cookies","MiscFeatureFlags__developers_footer_image","Profiles__enable_join_program_group_endpoint","TpcFeatures__proxy_prod_host","Profiles__enable_recognition_badges","DevPro__enable_code_assist","Cloud__enable_free_trial_server_call","Profiles__enable_auto_apply_credits","Cloud__enable_legacy_calculator_redirect","Profiles__enable_developer_profile_pages_as_content","Profiles__enable_completecodelab_endpoint","Profiles__enable_user_type","DevPro__enable_nvidia_credits_card","Profiles__enable_playlist_community_acl","EngEduTelemetry__enable_engedu_telemetry","CloudShell__cloud_shell_button","MiscFeatureFlags__enable_variable_operator","DevPro__enable_firebase_workspaces_card","Concierge__enable_pushui","Profiles__enable_release_notes_notifications","MiscFeatureFlags__enable_project_variables","DevPro__enable_free_benefits","Concierge__enable_actions_menu","Concierge__enable_remove_info_panel_tags","Search__enable_dynamic_content_confidential_banner","MiscFeatureFlags__fix_lower_breadcrumbs","Experiments__reqs_query_experiments","Analytics__enable_clearcut_logging","DevPro__enable_devsite_captcha","DevPro__enable_vertex_credit_card","Cloud__enable_cloud_shell_fte_user_flow","DevPro__enable_g1_ineligible_redirect","Search__enable_ai_eligibility_checks","Cloud__enable_cloudx_experiment_ids","MiscFeatureFlags__enable_explicit_template_dependencies","Cloud__enable_llm_concierge_chat","MiscFeatureFlags__developers_footer_dark_image","CloudShell__cloud_code_overflow_menu","Profiles__enable_callout_notifications","Profiles__require_profile_eligibility_for_signin","MiscFeatureFlags__enable_firebase_utm","DevPro__enable_cloud_innovators_plus","MiscFeatureFlags__enable_framebox_badge_methods","DevPro__enable_google_payments_buyflow","Search__enable_suggestions_from_borg","Cloud__cache_serialized_dynamic_content","Cloud__enable_cloud_dlp_service","Profiles__enable_purchase_prompts","DevPro__remove_eu_tax_intake_form","SignIn__enable_l1_signup_flow","DevPro__enable_google_payments","Profiles__enable_stripe_subscription_management","Profiles__enable_public_developer_profiles","Cloud__fast_free_trial","DevPro__enable_developer_subscriptions","Profiles__enable_developer_profiles_callout","Profiles__enable_complete_playlist_endpoint","Analytics__enable_devpro_interaction_logging","BookNav__enable_tenant_cache_key"],null,null,"AIzaSyBLEMok-5suZ67qRPzx0qUtbnLmyT_kCVE","https://developerscontentserving-pa.clients6.google.com","AIzaSyCM4QpTRSqP5qI4Dvjt4OAScIN8sOUlO-k","https://developerscontentsearch-pa.clients6.google.com",1,4,null,"https://developerprofiles-pa.clients6.google.com",[17,"codelabs","Google Codelabs","codelabs.developers.google.com",null,"codelabs-dot-devsite-v2-prod.appspot.com",null,null,[null,1,null,null,null,null,null,null,null,null,null,[1],null,null,null,null,null,null,[1],null,null,null,null,[1],null,null,null,null,null,null,[1]],null,[33,null,null,null,null,null,"/images/lockup.svg",null,null,null,null,1,1,null,null,null,null,null,null,null,null,1,null,null,null,null,[]],[],null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,[6,1,14,15,20,22,23,29,32,36],null,[[],[1,1]],[[null,null,null,null,null,null,null,null,null,null,null,null,1]],null,4],null,"pk_live_5170syrHvgGVmSx9sBrnWtA5luvk9BwnVcvIi7HizpwauFG96WedXsuXh790rtij9AmGllqPtMLfhe2RSwD6Pn38V00uBCydV4m",1,1,"https://developerscontentinsights-pa.clients6.google.com","AIzaSyCg-ZUslalsEbXMfIo9ZP8qufZgo3LSBDU","AIzaSyDxT0vkxnY_KeINtA4LSePJO-4MAZPMRsE","https://developers.clients6.google.com",null,null,"AIzaSyBQom12tzI-rybN7Sf-KfeL4nwm-Rf7PmI\n",null,null,"https://developers.googleapis.com"]')
+  
+</script>
+
+    <devsite-a11y-announce></devsite-a11y-announce>
+  </body>
+</html>
