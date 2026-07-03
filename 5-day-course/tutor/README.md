@@ -72,7 +72,10 @@ agents / 51% daily / 41% of new code; Day 3: 56% non-invocation, 58% vs 63%
 stripped-skill-vs-none, 100% vs 53% for a passive conventions index), every
 `Figure:`/`Table:` caption, and every `Source:` section heading resolve to
 the actual whitepaper. External "Go deeper" links are checked live (200) and
-point at canonical URLs.
+point at canonical URLs. This is repeatable: `bash 5-day-course/tutor/verify.sh`
+re-greps every cited statistic, figure caption, and section heading against
+the whitepapers (add `--links` to also curl the Go-deeper URLs). Run it after
+any whitepaper is re-fetched or re-enhanced.
 
 ## The one rule the human must follow
 
