@@ -167,6 +167,9 @@ def _confined(path: str, cwd: "str | None", varmap: "dict[str, str] | None" = No
     path = _expand_vars(path, varmap)
     if path in DEV_SINKS:
         return True
+    if path == "~" or path.startswith("~/"):
+        path = HOME + path[1:]   # a leading ~/ is deterministic; expand it BEFORE the meta check
+                                 # (~user/ is a different home — leave it unbounded -> ask)
     m = _META_FIRST.search(path)
     if m:                                            # still unbounded after expansion
         if ".." in path.split("/"):
